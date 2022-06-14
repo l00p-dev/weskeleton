@@ -1,0 +1,132 @@
+$btn-styles: (
+        color--accent: (
+                background: $cl-ac,
+                color: white,
+                border: 1px solid transparent,
+                shadow: none,
+                transition-color: $cl-ac,
+        ),
+        color--secondary: (
+                background: $cl-sec,
+                color: white,
+                border: 1px solid transparent,
+                shadow: none,
+                transition-color: $cl-sec,
+        ),
+        color--foreground: (
+                background: $cl-txt,
+                color: white,
+                border: 1px solid transparent,
+                shadow: none,
+                transition-color: $cl-txt,
+        ),
+        color--transparent: (
+                background: transparent,
+                color: white,
+                border: 1px solid transparent,
+                shadow: none,
+                transition-color: rgba(white, 0.1),
+        ),
+        outline--accent: (
+                background: transparent !important,
+                color: $cl-ac,
+                border: 1px solid $cl-ac,
+                shadow: none,
+                transition-color: $cl-ac,
+        ),
+        outline--secondary: (
+                background: transparent !important,
+                color: $cl-sec,
+                border: 1px solid $cl-sec,
+                shadow: none,
+                transition-color: $cl-sec,
+        ),
+        outline--foreground: (
+                background: transparent !important,
+                color: $cl-txt,
+                border: 1px solid $cl-txt,
+                shadow: none,
+                transition-color: $cl-txt,
+        ),
+);
+
+$btn-sizes: (
+        size--small: ($height-btn * 0.75),
+);
+
+%btn-style {
+  min-height: $height-btn;
+  padding: 0 ($height-btn * 0.5);
+  border-radius: $borad-btn;
+  @include unselectable;
+  transition: $tr-dur-fast $tr-timing;
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: $min-width-btn;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    transform: translateY(0);
+  }
+}
+
+%btn-disabled-style {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+@each $class, $style in $btn-styles {
+  .cm_btn.#{$class} {
+    border: map-get($style, 'border');
+    background: map-get($style, 'background');
+    color: map-get($style, 'color');
+    box-shadow: map-get($style, 'shadow');
+
+    &:hover {
+      background: darken(map-get($style, 'transition-color'), 5%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(map-get($style, 'transition-color'), 0.2);
+    }
+  }
+}
+
+@each $class, $height in $btn-sizes {
+  .cm_btn.#{$class} {
+    min-height: $height;
+
+    &.square {
+      @include btn-make-square($height);
+    }
+
+    &.circle {
+      @include btn-make-circle($height);
+    }
+  }
+}
+
+.cm_btn {
+  @extend %btn-style;
+
+  &.square {
+    @include btn-make-square($height-btn);
+  }
+
+  &.circle {
+    @include btn-make-circle($height-btn);
+  }
+
+  &.capsule {
+    border-radius: 200px;
+  }
+
+  &.disabled, &:disabled {
+    @extend %btn-disabled-style;
+  }
+}

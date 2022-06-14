@@ -1,0 +1,50 @@
+.cm_menu {
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: rgba(black, 0.5);
+    display: none;
+  }
+
+  &__content {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    background-color: $cl-bg;
+    transition: $tr-dur-fast $tr-timing;
+    width: 100%;
+
+    &.position--start {
+      #{$start}: 0;
+
+      @if($direction == rtl) {
+        transform: translateX(100%);
+      }
+      @else {
+        transform: translateX(-100%);
+      }
+    }
+
+    &.position--end {
+      #{$end} : 0;
+
+      @if($direction == rtl) {
+        transform: translateX(-100%);
+      }
+      @else  {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  &.open &__overlay {
+    display: block;
+  }
+
+  &.open &__content {
+    transform: translateX(0);
+  }
+}

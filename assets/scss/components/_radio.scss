@@ -1,0 +1,53 @@
+.cm_radio {
+  @include unselectable;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  input {
+    @include vh;
+  }
+
+  &__input {
+    content: "";
+    display: inline-block;
+    width: $size-radio;
+    height: $size-radio;
+    border: 2px solid $cl-gray-2;
+    border-radius: 50%;
+    position: relative;
+    transition: $tr-dur-fast $tr-timing;
+
+    &::before {
+      content: "";
+      @include center-pos;
+      background-color: $cl-bg;
+      transition: $tr-dur-fast $tr-timing;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transition-delay: .1s;
+    }
+  }
+
+  input:checked ~ &__input {
+    border-color: $cl-ac;
+    background-color: $cl-ac;
+
+    &::before {
+      width: 40%;
+      height: 40%;
+    }
+  }
+
+  input:checked ~ &__input ~ &__text {
+
+  }
+}
+
+//<label class="cm_radio">
+//<input type="radio" name="gender">
+//<span class="cm_radio__input"></span>
+//<span class="cm_radio__text">Radio Button</span>
+//</label>

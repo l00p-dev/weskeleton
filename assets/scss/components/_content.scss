@@ -1,0 +1,144 @@
+.cm_content {
+  font-size: 110%;
+
+  h1, .h1 {
+    font-size: 210%;
+  }
+
+  h2, .h2 {
+    font-size: 190%;
+  }
+
+  h3, .h3 {
+    font-size: 170%;
+  }
+
+  h4, .h4 {
+    font-size: 150%;
+  }
+
+  h5, .h5 {
+    font-size: 130%;
+  }
+
+  h6, .h6 {
+    font-size: 100%;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, blockquote, figure, ol, ul, pre, iframe, table {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 8px;
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  blockquote {
+    background-color: $cl-gray-0;
+    border-#{$start}: 4px solid $cl-gray-3;
+    padding: 20px 24px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+
+    cite {
+      color: $cl-gray-10;
+    }
+  }
+
+  q {
+    background-color: $cl-gray-1;
+    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+    padding: 6px;
+  }
+
+  ul, ol {
+    li {
+      &::marker {
+        color: $cl-ac;
+      }
+    }
+  }
+
+  pre {
+    background-color: $cl-gray-0;
+    padding: 20px 24px;
+  }
+
+  figure {
+    img {
+      margin: 0 auto;
+    }
+
+    figcaption {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 80%;
+      color: $cl-gray-8;
+    }
+  }
+
+  a {
+    color: $cl-ac;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      #{$start}: 0;
+      bottom: 0;
+      width: 50%;
+      height: 1px;
+      background-color: $cl-ac;
+      transition: $tr-dur-fast $tr-timing;
+    }
+
+    &:hover, &:focus {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border: 1px solid $cl-gray-2;
+    border-radius: 4px;
+
+    td, th {
+      border: 1px solid $cl-gray-1;
+      border-width: 0 1px 1px 0;
+      text-align: #{$start};
+      padding: .45rem .75rem;
+    }
+
+    tr {
+      td, th {
+        &:last-child {
+          border-width: 0 0 1px 0;
+        }
+      }
+
+      &:last-child {
+        td, th {
+          border-width: 0 1px 0 0;
+
+          &:last-child {
+            border-width: 0;
+          }
+        }
+      }
+    }
+  }
+}

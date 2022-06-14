@@ -1,0 +1,187 @@
+$faq-styles: (
+        style--arrow: (
+                background: $cl-bg,
+                border: 1px solid $cl-gray-1,
+                color: inherit,
+                padding: .75rem 1rem,
+                radius: 6px,
+                shadow: none,
+
+                content-background : $cl-gray-0,
+                content-color : inherit,
+                content-border : none,
+                content-padding : .5rem .75rem,
+                content-margin : 8px,
+                content-radius : 8px,
+
+                open-background : $cl-bg,
+                open-border: 1px solid $cl-ac,
+                open-color: $cl-ac,
+                open-shadow : 0 10px 8px -5px rgba($cl-ac, 0.2),
+
+                arrow-type : 'arrow',
+                arrow-color : $cl-gray-10,
+                arrow-color-open : $cl-ac,
+                arrow-margin : 24px,
+        ),
+
+        style--plus: (
+                background: $cl-bg,
+                border: 1px solid $cl-gray-1,
+                color: inherit,
+                padding: .75rem 1rem,
+                radius: 6px,
+                shadow: none,
+
+                content-background : $cl-gray-0,
+                content-color : inherit,
+                content-border : none,
+                content-padding : .5rem .75rem,
+                content-margin : 8px,
+                content-radius : 8px,
+
+                open-background : $cl-bg,
+                open-border: 1px solid $cl-ac,
+                open-color: $cl-ac,
+                open-shadow : 0 10px 8px -5px rgba($cl-ac, 0.2),
+
+                arrow-type : 'plus',
+                arrow-color : $cl-gray-10,
+                arrow-color-open : $cl-ac,
+                arrow-margin : 20px,
+        ),
+);
+
+.cm_faq {
+  overflow: hidden;
+
+  &__title {
+    position: relative;
+    cursor: pointer;
+    @include unselectable;
+  }
+
+  &__content {
+    transition: $tr-dur-fast $tr-timing;
+    overflow-y: hidden;
+  }
+}
+
+@each $class, $style in $faq-styles {
+  .cm_faq.#{$class} {
+    border: map-get($style, 'border');
+    border-radius: map-get($style, 'radius');
+    background: map-get($style, 'background');
+    box-shadow: map-get($style, 'shadow');
+
+    .cm_faq__title {
+      padding: map-get($style, 'padding');
+      color: map-get($style, 'color');
+      padding-#{$end}: 44px;
+
+      @if(map-get($style, 'arrow-type') == 'plus') {
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transform-origin: center center;
+          #{$end}: map-get($style, 'arrow-margin');
+          width: 16px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: map-get($style, 'arrow-color');
+          transition: .3s $tr-timing;
+        }
+
+        &::after {
+          transform: translateY(-50%);
+        }
+
+        &::before {
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+
+      @if(map-get($style, 'arrow-type') == 'arrow') {
+        &::after, &::before {
+          content: "";
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+          transform-origin: right center;
+          #{$end}: map-get($style, 'arrow-margin');
+          width: 10px;
+          height: 2px;
+          border-radius: 2px;
+          background-color: map-get($style, 'arrow-color');
+          transition: .3s $tr-timing;
+        }
+
+        &::before {
+          transform: translateY(-50%) rotate(45deg);
+          top: 60%;
+        }
+
+        &::after {
+          transform: translateY(-50%) rotate(135deg);
+          top: 60%;
+
+        }
+      }
+    }
+
+    .cm_faq__content {
+      color: map-get($style, 'content-color');
+
+      p {
+        background: map-get($style, 'content-background');
+        border: map-get($style, 'content-border');
+        padding: map-get($style, 'content-padding');
+        margin: map-get($style, 'content-margin');
+        border-radius: map-get($style, 'content-radius');
+      }
+    }
+
+    &.open {
+      background: map-get($style, 'open-background');
+      border: map-get($style, 'open-border');
+      box-shadow: map-get($style, 'open-shadow');
+
+      .cm_faq__title {
+        color: map-get($style, 'open-color');
+
+        @if(map-get($style, 'arrow-type') == 'plus') {
+          &::after {
+            background-color: map-get($style, 'arrow-color-open');
+          }
+
+          &::before {
+            background-color: map-get($style, 'arrow-color-open');
+            opacity: 0;
+          }
+        }
+
+        @if(map-get($style, 'arrow-type') == 'arrow') {
+          &::before {
+            transform: translateY(-50%) rotate(-45deg);
+            background-color: map-get($style, 'arrow-color-open');
+            top: 40%;
+          }
+
+          &::after {
+            transform: translateY(-50%) rotate(225deg);
+            background-color: map-get($style, 'arrow-color-open');
+            top: 40%;
+          }
+        }
+      }
+
+      .cm_faq__content {
+        p {
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@font-face {
+  font-family: Vazirmatn;
+  src: url('../font/vazrimatn/Vazirmatn-RD-Regular.woff2') format('woff2'),
+  url('../font/vazrimatn/Vazirmatn-RD-Regular.woff2') format('truetype');
+  font-weight: normal;
+  font-display:swap;
+}
+
+@font-face {
+  font-family: Vazirmatn;
+  src: url('../font/vazrimatn/Vazirmatn-RD-Bold.woff2') format('woff2'),
+  url('../font/vazrimatn/Vazirmatn-RD-Bold.woff2') format('truetype');
+  font-weight: bold;
+  font-display:swap;
+}
+
+//@font-face {
+//  font-family: Vazirmatn;
+//  src: url('../font/vazir-matn/vazir-bold.eot');
+//  src: url('../font/vazir-matn/vazir-bold.eot?#iefix') format('embedded-opentype'),
+//  url('../font/vazir-matn/vazir-bold.woff2') format('woff2'),
+//  url('../font/vazir-matn/vazir-bold.woff') format('woff'),
+//  url('../font/vazir-matn/vazir-bold.ttf') format('truetype');
+//  font-weight: bold;
+//  font-display:swap;
+//}
+
+* {
+  font-family: Vazirmatn;
+}
+
+body {
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+p {
+  &.justify {
+    text-align: justify;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: bold;
+  display: block;
+}
+
+h1, .h1 {
+  font-size: 195%;
+}
+
+h2, .h2 {
+  font-size: 180%;
+}
+
+h3, .h3 {
+  font-size: 165%;
+}
+
+h4, .h4 {
+  font-size: 150%;
+}
+
+h5, .h5 {
+  font-size: 135%;
+}
+
+h6, .h6 {
+  font-size: 120%;
+}
+
+small {
+  font-size: 85%;
+}
+
+code, pre {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+  line-height: 1.3;
+
+  * {
+    font-family: inherit;
+  }
+}

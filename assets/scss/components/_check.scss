@@ -1,0 +1,73 @@
+.cm_checkbox {
+  @include unselectable;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  input {
+    @include vh;
+  }
+
+  &__input {
+    content: "";
+    display: inline-block;
+    width: $size-check;
+    height: $size-check;
+    border: 2px solid $cl-gray-2;
+    border-radius: $borad-check;
+    position: relative;
+    transition: $tr-dur-fast $tr-timing;
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      bottom: 4px;
+      width: 0;
+      height: 2px;
+      border-radius: 8px;
+      background-color: $cl-ac;
+      transform: rotate(45deg);
+      transform-origin: right center;
+      transition: $tr-dur-fast $tr-timing;
+      transition-delay: .1s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 10px;
+      bottom: 4px;
+      width: 0;
+      height: 2px;
+      border-radius: 8px;
+      background-color: $cl-ac;
+      transform: rotate(135deg);
+      transform-origin: right center;
+      transition: $tr-dur-fast $tr-timing;
+    }
+  }
+
+  input:checked ~ &__input {
+    border-color: $cl-ac;
+
+    &::before {
+      width: 8px;
+    }
+
+    &::after {
+      width: 16px;
+    }
+  }
+
+  input:checked ~ &__input ~ &__text {
+
+  }
+}
+
+//<label class="cm_checkbox">
+//<input type="checkbox">
+//<span class="cm_checkbox__input"></span>
+//<span class="cm_checkbox__text">Checkbox</span>
+//</label>

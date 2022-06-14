@@ -1,0 +1,25 @@
+.cm_popup {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+
+  &__overlay {
+    @include str-pos();
+    background-color: rgba(black, 0.8);
+    backdrop-filter: blur(3px);
+  }
+
+  &__content {
+    @include center-pos();
+    width: 100%;
+    background-color: $cl-bg;
+    box-shadow: 0 8px 20px rgba(black, 0.2);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  &.open {
+    display: block;
+  }
+}

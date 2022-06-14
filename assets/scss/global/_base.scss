@@ -1,0 +1,54 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  -o-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background-color: $cl-bg;
+  color: $cl-txt;
+  fill: $cl-txt;
+  direction: $direction;
+}
+
+main {
+  min-height: 100vh;
+}
+
+ol, ul {
+  &::marker {
+    color: $cl-ac;
+  }
+}
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: $cl-gray-3;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $cl-ac;
+    cursor: pointer;
+  }
+}
+
+.swiper-scrollbar {
+  height: 5px;
+  background-color: $cl-gray-3;
+
+  .swiper-scrollbar-drag {
+    background-color: $cl-ac;
+    height: inherit;
+    cursor: pointer;
+  }
+}

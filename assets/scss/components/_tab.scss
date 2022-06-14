@@ -1,0 +1,31 @@
+.cm_tab {
+  &__nav {
+    display: flex;
+    gap: 4px;
+
+    &__item {
+      border-bottom: 2px solid transparent;
+      padding: .25rem .75rem;
+      transition: $tr-timing $tr-dur-fast;
+
+      &:hover {
+        border-bottom-color: rgba($cl-txt, 0.2);
+      }
+
+      &.active {
+        color: $cl-ac;
+        border-bottom-color: $cl-ac;
+      }
+    }
+  }
+
+  &__content {
+    &__item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

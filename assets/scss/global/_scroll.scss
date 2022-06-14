@@ -1,0 +1,24 @@
+$cl-scrollbar-bg : $cl-bg;
+$cl-scrollbar-thumb : $cl-gray-5;
+
+*::-webkit-scrollbar {
+  width:  8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $cl-scrollbar-thumb;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $cl-scrollbar-bg;
+}
+
+* {
+  scrollbar-face-color: $cl-scrollbar-thumb;
+  scrollbar-track-color: $cl-scrollbar-bg;
+
+  scrollbar-color: $cl-scrollbar-thumb $cl-scrollbar-bg;
+  scrollbar-width: thin;
+}

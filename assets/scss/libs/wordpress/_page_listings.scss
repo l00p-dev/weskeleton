@@ -1,0 +1,22 @@
+.pagenav {}               /* outermost list item */
+.page_item {}             /* any page item */
+//.page-item-{id} {}        /* specific page id */
+.current_page_item {}     /* current page */
+.current_page_parent {}   /* parent of current page */
+.current_page_ancestor {} /* any ancestor of current page */
+
+.pagenav ul,
+.pagenav .current_page_item ul,
+.pagenav .current_page_ancestor ul,
+.pagenav .current_page_ancestor .current_page_item ul,
+.pagenav .current_page_ancestor .current_page_ancestor ul,
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul,
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul {}
+
+.pagenav  ul ul,
+.pagenav .current_page_item ul ul,
+.pagenav .current_page_ancestor ul ul,
+.pagenav .current_page_ancestor .current_page_item ul ul,
+.pagenav .current_page_ancestor .current_page_ancestor ul ul {}
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_item ul ul,
+.pagenav .current_page_ancestor .current_page_ancestor .current_page_ancestor ul ul {}

@@ -1,0 +1,15 @@
+svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  align-self: center;
+}
+
+$icon-sizes : 16, 20, 24, 28, 32, 36, 40, 44, 48, 50, 54, 64;
+
+@each $size in $icon-sizes {
+  .icon-#{$size} {
+    width: $size + px;
+    height: $size + px;
+  }
+}

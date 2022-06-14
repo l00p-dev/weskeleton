@@ -1,0 +1,48 @@
+$colors: (
+        ac : $cl-ac,
+        sec : $cl-sec,
+        txt : $cl-txt,
+        bg : $cl-bg,
+        0 : $cl-gray-0,
+        1 : $cl-gray-1,
+        2 : $cl-gray-2,
+        3 : $cl-gray-3,
+        4 : $cl-gray-4,
+        5 : $cl-gray-5,
+        6 : $cl-gray-6,
+        7 : $cl-gray-7,
+        8 : $cl-gray-8,
+        9 : $cl-gray-9,
+        10 : $cl-gray-10,
+        11 : $cl-gray-11,
+        12 : $cl-gray-12,
+        13 : $cl-gray-13,
+        14 : $cl-gray-14,
+        15 : $cl-gray-15,
+        16 : $cl-gray-16,
+        17 : $cl-gray-17,
+        18 : $cl-gray-18,
+        19 : $cl-gray-19,
+        20 : $cl-gray-20,
+        21 : $cl-gray-21,
+        22 : $cl-gray-22,
+        23 : $cl-gray-23,
+
+        success : $cl-success,
+        warning : $cl-warning,
+        error : $cl-error,
+);
+
+@each $id, $color in $colors {
+  .cl-#{$id} {
+    color: $color !important;
+  }
+
+  .bg-#{$id} {
+    background-color: $color !important;
+  }
+
+  .fl-#{$id} {
+    fill: $color !important;
+  }
+}

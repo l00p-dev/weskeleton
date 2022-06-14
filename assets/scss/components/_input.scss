@@ -1,0 +1,196 @@
+$cl-placeholder : $cl-gray-8;
+
+$input-styles: (
+        style--normal: (
+                background: $cl-gray-1,
+                color: $cl-txt,
+                border: 1px solid transparent,
+                radius: $borad-input,
+                shadow: none,
+                placeholder: $cl-placeholder,
+
+                hover-background: $cl-gray-0,
+                hover-border: 1px solid transparent,
+                hover-shadow: none,
+
+                focus-background: $cl-bg,
+                focus-border: 1px solid $cl-gray-2,
+                focus-bo focus-shadow: none,rder: 1px solid $cl-gray-3,
+        ),
+);
+
+$input-sizes: (
+        size--small: $height-btn * 0.75,
+        size--big: $height-btn * 1.5,
+);
+
+%input-style {
+  display: flex;
+  align-items: center;
+  max-width: unset;
+  min-width: unset;
+  width: 100%;
+  min-height: $height-input;
+  padding: 0 ($height-input * .4);
+  transition: $tr-dur-fast $tr-timing;
+
+  &.validate--success {
+    border-color: $cl-success !important;
+
+    &::placeholder {
+      color: $cl-success;
+    }
+  }
+
+  &.validate--error {
+    border-color: $cl-error !important;
+
+    &::placeholder {
+      color: $cl-error;
+    }
+  }
+}
+
+.cm_input {
+  @extend %input-style;
+}
+
+textarea.cm_input {
+  padding-top: ($height-input * 0.3);
+  padding-bottom: ($height-input * 0.3);
+  resize: none;
+}
+
+.cm_input__floating {
+  display: grid;
+  padding-top: 20px;
+  position: relative;
+  transition: $tr-dur-fast $tr-timing;
+
+  &__text {
+    order: 1;
+    font-size: 80%;
+    position: absolute;
+    top: 36px;
+    transform: translateY(-50%);
+    transition: inherit;
+    color: $cl-placeholder;
+  }
+
+  input {
+    padding: 4px 0;
+    border: 0;
+    width: 100%;
+    background: none;
+  }
+
+  &__status {
+    order: 3;
+    font-size: 80%;
+    border-top: 2px solid $cl-gray-2;
+    color: $cl-gray-4;
+    transition: inherit;
+
+    span {
+      margin-top: 8px;
+      display: block;
+    }
+  }
+
+  input:focus ~ &__status {
+    border-top-color: $cl-ac;
+    color: $cl-ac;
+  }
+
+  input.valuable ~ &__text {
+    transform: translateY(0);
+    top: 0;
+  }
+
+  &.validate--error &__status {
+    border-top-color: $cl-error;
+  }
+
+  &.validate--error input:focus ~ &__status {
+    color: $cl-error;
+  }
+
+  &.validate--success &__status {
+    border-top-color: $cl-success;
+  }
+
+  &.validate--success input:focus ~ &__status {
+    color: $cl-success;
+  }
+}
+
+.cm_input__password {
+  position: relative;
+
+  input {
+    padding-#{$end}: ($height-btn * 1.5);
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    #{$end}: 0;
+
+    &:hover, &:focus {
+      transform: translateY(-50%) !important;
+    }
+  }
+
+  &.show-password {
+    .vis {
+      display: initial;
+    }
+
+    .invis {
+      display: none;
+    }
+
+  }
+
+  .vis {
+    display: none;
+  }
+
+  .invis {
+    display: initial;
+  }
+}
+
+@each $class, $style in $input-styles {
+  .cm_input.#{$class} {
+    border: map-get($style, 'border');
+    background: map-get($style, 'background');
+    color: map-get($style, 'color');
+    box-shadow: map-get($style, 'shadow');
+    border-radius: map-get($style, 'radius');
+
+    &::placeholder {
+      color: map-get($style, 'placeholder');
+    }
+
+    &:hover {
+      background: map-get($style, 'hover-background');
+      border: map-get($style, 'hover-border');
+      box-shadow: map-get($style, 'hover-shadow');
+    }
+
+    &:focus {
+      background: map-get($style, 'focus-background');
+      border: map-get($style, 'focus-border');
+      box-shadow: map-get($style, 'focus-shadow');
+    }
+  }
+}
+
+@each $class, $height in $input-sizes {
+  .cm_input.#{$class} {
+    min-height: $height;
+    padding: 0 ($height * .4);
+  }
+}

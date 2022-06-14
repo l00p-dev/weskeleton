@@ -1,0 +1,53 @@
+.cm_toggle {
+  @include unselectable;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+
+  input {
+    @include vh;
+  }
+
+  &__input {
+    content: "";
+    display: inline-block;
+    width: $width-toggle-track;
+    height: $height-toggle-track;
+    border-radius: 100px;
+    background-color: $cl-gray-2;
+    position: relative;
+    transition: $tr-dur-fast $tr-timing;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: calc(100% - #{$size-toggle-thumb} - #{$padding-toggle-track});
+      transform: translateY(-50%);
+      width: $size-toggle-thumb;
+      height: $size-toggle-thumb;
+      border-radius: 100px;
+      background-color: $cl-bg;
+      transition: $tr-dur-fast $tr-timing;
+    }
+  }
+
+  input:checked ~ &__input {
+    background-color: $cl-ac;
+    &::before {
+      right: $padding-toggle-track;
+    }
+  }
+
+  input:checked ~ &__input ~ &__text {
+
+  }
+}
+
+//<label class="cm_toggle">
+//<input type="checkbox">
+//<span class="cm_toggle__input"></span>
+//<span class="cm_toggle__text">Toggle Button</span>
+//</label>
