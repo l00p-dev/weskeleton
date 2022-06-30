@@ -447,7 +447,7 @@ h6, .h6 {
   font-size: 120%;
 }
 
-small {
+small, .small {
   font-size: 85%;
 }
 
@@ -1197,6 +1197,7 @@ svg {
   border: 1px solid transparent;
   background: #4ECCA3;
   color: white;
+  fill: white;
   box-shadow: none;
 }
 .cm_btn.color--accent:hover {
@@ -1210,6 +1211,7 @@ svg {
   border: 1px solid transparent;
   background: #75787D;
   color: white;
+  fill: white;
   box-shadow: none;
 }
 .cm_btn.color--secondary:hover {
@@ -1223,6 +1225,7 @@ svg {
   border: 1px solid transparent;
   background: #232931;
   color: white;
+  fill: white;
   box-shadow: none;
 }
 .cm_btn.color--foreground:hover {
@@ -1232,23 +1235,39 @@ svg {
   box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
 }
 
-.cm_btn.color--transparent {
+.cm_btn.color--transparent--white {
   border: 1px solid transparent;
   background: transparent;
   color: white;
+  fill: white;
   box-shadow: none;
 }
-.cm_btn.color--transparent:hover {
+.cm_btn.color--transparent--white:hover {
   background: rgba(242, 242, 242, 0.1);
 }
-.cm_btn.color--transparent:focus {
+.cm_btn.color--transparent--white:focus {
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.cm_btn.color--transparent--black {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #232931;
+  fill: #232931;
+  box-shadow: none;
+}
+.cm_btn.color--transparent--black:hover {
+  background: rgba(24, 29, 34, 0.1);
+}
+.cm_btn.color--transparent--black:focus {
+  box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
 }
 
 .cm_btn.outline--accent {
   border: 1px solid #4ECCA3;
   background: transparent !important;
   color: #4ECCA3;
+  fill: #4ECCA3;
   box-shadow: none;
 }
 .cm_btn.outline--accent:hover {
@@ -1262,6 +1281,7 @@ svg {
   border: 1px solid #75787D;
   background: transparent !important;
   color: #75787D;
+  fill: #75787D;
   box-shadow: none;
 }
 .cm_btn.outline--secondary:hover {
@@ -1275,6 +1295,7 @@ svg {
   border: 1px solid #232931;
   background: transparent !important;
   color: #232931;
+  fill: #232931;
   box-shadow: none;
 }
 .cm_btn.outline--foreground:hover {
@@ -1955,7 +1976,7 @@ input:checked ~ .cm_toggle__input::before {
   opacity: 0;
 }
 .cm_content {
-  font-size: 110%;
+  font-size: 100%;
 }
 .cm_content h1, .cm_content .h1 {
   font-size: 210%;

@@ -2,6 +2,7 @@ $btn-styles: (
         color--accent: (
                 background: $cl-ac,
                 color: white,
+                fill: white,
                 border: 1px solid transparent,
                 shadow: none,
                 transition-color: $cl-ac,
@@ -9,6 +10,7 @@ $btn-styles: (
         color--secondary: (
                 background: $cl-sec,
                 color: white,
+                fill: white,
                 border: 1px solid transparent,
                 shadow: none,
                 transition-color: $cl-sec,
@@ -16,20 +18,31 @@ $btn-styles: (
         color--foreground: (
                 background: $cl-txt,
                 color: white,
+                fill: white,
                 border: 1px solid transparent,
                 shadow: none,
                 transition-color: $cl-txt,
         ),
-        color--transparent: (
+        color--transparent--white: (
                 background: transparent,
                 color: white,
+                fill: white,
                 border: 1px solid transparent,
                 shadow: none,
                 transition-color: rgba(white, 0.1),
         ),
+        color--transparent--black: (
+                background: transparent,
+                color: $cl-txt,
+                fill: $cl-txt,
+                border: 1px solid transparent,
+                shadow: none,
+                transition-color: rgba($cl-txt, 0.1),
+        ),
         outline--accent: (
                 background: transparent !important,
                 color: $cl-ac,
+                fill: $cl-ac,
                 border: 1px solid $cl-ac,
                 shadow: none,
                 transition-color: $cl-ac,
@@ -37,6 +50,7 @@ $btn-styles: (
         outline--secondary: (
                 background: transparent !important,
                 color: $cl-sec,
+                fill: $cl-sec,
                 border: 1px solid $cl-sec,
                 shadow: none,
                 transition-color: $cl-sec,
@@ -44,6 +58,7 @@ $btn-styles: (
         outline--foreground: (
                 background: transparent !important,
                 color: $cl-txt,
+                fill: $cl-txt,
                 border: 1px solid $cl-txt,
                 shadow: none,
                 transition-color: $cl-txt,
@@ -85,6 +100,7 @@ $btn-sizes: (
     border: map-get($style, 'border');
     background: map-get($style, 'background');
     color: map-get($style, 'color');
+    fill: map-get($style, 'fill');
     box-shadow: map-get($style, 'shadow');
 
     &:hover {
