@@ -8,7 +8,7 @@ Do not forget to star this project 😇☘️
 
 # Tab Component
 # Html Code
-```
+```html
 <div class="cm_tab">
    <nav class="cm_tab__nav">
       <button class="cm_tab__nav__item active">Tab One</button>
@@ -33,7 +33,7 @@ Do not forget to star this project 😇☘️
 # Html Code
 
 You can change ``mw-250`` class to your prefered ``max-width``
-```
+```html
 <div class="cm_popup" id="popup-test">
    <div class="cm_popup__overlay" onclick="togglePoup('popup-test')"></div>
    <div class="cm_popup__content mw-250">
@@ -43,7 +43,7 @@ You can change ``mw-250`` class to your prefered ``max-width``
 ```
 # JavaScript Code
 Only function you need to open or close your popup
-```
+```js
 togglePoup('popup-test')
 ```
 # Menu Component
@@ -52,7 +52,7 @@ You can change ``mw-250`` class to your prefered ``max-width``
 
 Change position to left or right by ``position--start`` or ``position--end`` class (end or start phrases are based on direction of page)
 
-```
+```html
 <div class="cm_menu" id="menu-test">
    <div class="cm_menu__overlay" onclick="toggleMenu('menu-test')"></div>
    <div class="cm_menu__content position--end mw-300">Content Here</div>
@@ -61,7 +61,7 @@ Change position to left or right by ``position--start`` or ``position--end`` cla
 
 # JavaScript Code
 Only function you need to open or close your menu
-```
+```js
 toggleMenu('menu-test')
 ```
 
@@ -73,7 +73,7 @@ This component is alternative for ``<select>`` tag in HTML. Instead of ``<select
 The data-value attribute act's as value for ``<option>``.
 
 Style of select components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
-```
+```html
 <div class="cm_select">
    <input type="text" readonly>
    <div class="cm_select__input style--normal" tabindex="2">
@@ -98,7 +98,7 @@ The ``data-group`` attribute is optional but if you put ``king`` class you shoul
 
 If you want one of your accordions be open, put ``open`` class new ``.cm_faq then remove style="height: 0;"``.
 
-```
+```html
 <div class="cm_faq style--plus king mb-3" data-group="faq-group">
     <div class="cm_faq__title">First Question?</div>
     <div class="cm_faq__content" style="height: 0;">
@@ -128,7 +128,7 @@ This component is wrote to hold your article in it. You can put your single pos'
 - Tables will style perfectly
 - Styles for heading texts, lists, links, ``<figure>`` and ``<blockquote>``
 # Html Code
-```
+```html
 <article class="cm_content">
   Your html here...
 </article>
@@ -136,7 +136,7 @@ This component is wrote to hold your article in it. You can put your single pos'
 
 # Checkbox Component
 # Html Code
-```
+```html
 <label class="cm_checkbox">
     <input type="checkbox" />
     <span class="cm_checkbox__input"></span>
@@ -145,7 +145,7 @@ This component is wrote to hold your article in it. You can put your single pos'
 ```
 # Radio Button Component
 # Html Code
-```
+```html
 <label class="cm_radio">
     <input type="radio" />
     <span class="cm_radio__input"></span>
@@ -155,7 +155,7 @@ This component is wrote to hold your article in it. You can put your single pos'
 
 # Toggle Button Component
 # Html Code
-```
+```html
 <label class="cm_toggle">
     <input type="checkbox" />
     <span class="cm_toggle__input"></span>
@@ -176,7 +176,7 @@ Use ``capsule`` class to round the edges.
 Use ``circle`` class to have a circle button.
 
 Use ``square`` class to have a square button.
-```
+```html
 <button class="cm_btn color--accent">Accent</button>
 <button class="cm_btn color--secondary">Secondary</button>
 <button class="cm_btn color--foreground">Foreground</button>
@@ -201,7 +201,7 @@ To set a new style for inputs, you can edit ``$input-styles`` variable from ``as
 Use ``validate--error`` to show error state.
 
 Use ``validate--success`` class to show success state.
-```
+```html
 <label class="mb-3">
     <small class="mb-1 d-block cl-10">Username</small>
     <input type="text" placeholder="Username" class="cm_input style--normal" />
@@ -223,7 +223,7 @@ Use ``validate--success`` class to show success state.
 </label>
 ```
 # Password Input Html Code
-```
+```html
 <div class="cm_input__password">
     <input type="password" placeholder="Password" class="cm_input style--normal" autocomplete="new-password" />
     <button class="cm_btn color--transparent square">
@@ -238,7 +238,7 @@ Use ``validate--success`` class to show success state.
 ```
 # Floating Inputs Html Code
 If you want to show a message under the input, use ``span`` inside ``.cm_input__floating__status``.
-```
+```html
 <label class="cm_input__floating mb-4">
     <input type="text" />
     <span class="cm_input__floating__text">First Name</span>
@@ -265,7 +265,7 @@ In this freamwork we use [aos](https://michalsnik.github.io/aos/http:// "aos"), 
 
 # Swiper.JS
 # Html Code
-```
+```html
 <div class="swiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide">Slide 1</div>
@@ -282,7 +282,7 @@ In this freamwork we use [aos](https://michalsnik.github.io/aos/http:// "aos"), 
 ```
 
 # JavaScript Code
-```
+```js
 const swiper = new Swiper(".swiper", {
     pagination: {
         el: ".swiper-pagination",
@@ -310,7 +310,7 @@ const swiper = new Swiper(".swiper", {
 ```
 
 # Social Network Sharing Button
-```
+```html
 <nav class="d-flex flex-wrap gap-2">
    <button onclick="socialNetwordShare('whatsapp')">
    <img src="assets/img/social-network/whatsapp.svg" alt="share to whatsapp" width="32" />
@@ -336,7 +336,7 @@ const swiper = new Swiper(".swiper", {
 # Using Icons
 if you want to use an icon, change svg tag to symbol, put the svg code inside svg tag in assets/sprites.svg, then add an id to symbol tag. To use this icons inside of your codes, use code below:
 
-```
+```html
 <svg>
 # ID-OF-YOUR-SYMBOL"></use>
 </svg>
