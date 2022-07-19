@@ -238,7 +238,7 @@ const swiper = new Swiper('.swiper', {
         draggable: true,
     },
 
-    breakpoint: {
+    breakpoints: {
         576:  {},
         768:  {},
         992:  {},
