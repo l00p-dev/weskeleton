@@ -1235,6 +1235,62 @@ svg {
   box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
 }
 
+.cm_btn.color--bg {
+  border: 1px solid transparent;
+  background: white;
+  color: #232931;
+  fill: #232931;
+  box-shadow: none;
+}
+.cm_btn.color--bg:hover {
+  background: #f2f2f2;
+}
+.cm_btn.color--bg:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.cm_btn.color--white {
+  border: 1px solid transparent;
+  background: white;
+  color: #232931;
+  fill: #232931;
+  box-shadow: none;
+}
+.cm_btn.color--white:hover {
+  background: #f2f2f2;
+}
+.cm_btn.color--white:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.cm_btn.color--transparent--bg {
+  border: 1px solid transparent;
+  background: transparent;
+  color: white;
+  fill: white;
+  box-shadow: none;
+}
+.cm_btn.color--transparent--bg:hover {
+  background: rgba(242, 242, 242, 0.1);
+}
+.cm_btn.color--transparent--bg:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.cm_btn.color--transparent--txt {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #232931;
+  fill: #232931;
+  box-shadow: none;
+}
+.cm_btn.color--transparent--txt:hover {
+  background: rgba(24, 29, 34, 0.1);
+}
+.cm_btn.color--transparent--txt:focus {
+  box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
+}
+
 .cm_btn.color--transparent--white {
   border: 1px solid transparent;
   background: transparent;
@@ -1247,20 +1303,6 @@ svg {
 }
 .cm_btn.color--transparent--white:focus {
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
-}
-
-.cm_btn.color--transparent--black {
-  border: 1px solid transparent;
-  background: transparent;
-  color: #232931;
-  fill: #232931;
-  box-shadow: none;
-}
-.cm_btn.color--transparent--black:hover {
-  background: rgba(24, 29, 34, 0.1);
-}
-.cm_btn.color--transparent--black:focus {
-  box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
 }
 
 .cm_btn.outline--accent {
@@ -1303,6 +1345,34 @@ svg {
 }
 .cm_btn.outline--foreground:focus {
   box-shadow: 0 0 0 4px rgba(35, 41, 49, 0.2);
+}
+
+.cm_btn.outline--bg {
+  border: 1px solid white;
+  background: transparent !important;
+  color: white;
+  fill: white;
+  box-shadow: none;
+}
+.cm_btn.outline--bg:hover {
+  background: #f2f2f2;
+}
+.cm_btn.outline--bg:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+.cm_btn.outline--white {
+  border: 1px solid white;
+  background: transparent !important;
+  color: white;
+  fill: white;
+  box-shadow: none;
+}
+.cm_btn.outline--white:hover {
+  background: #f2f2f2;
+}
+.cm_btn.outline--white:focus {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
 
 .cm_btn.size--small {
