@@ -70,8 +70,6 @@ $width-toggle-track : 40px;
 $padding-toggle-track : 2px;
 $size-toggle-thumb : 20px;
 
-$url-test: url('data:image/');
-
 @if($is_dark_theme) {
   $cl-gray-23 : #FAFAFA;
   $cl-gray-22 : #F0F0F0;
@@ -99,3 +97,4 @@ $url-test: url('data:image/');
   $cl-gray-0 : #050505;
 }
 
+$cl-placeholder : $cl-gray-8;
