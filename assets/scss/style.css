@@ -1466,6 +1466,7 @@ input.valuable ~ .cm_input__floating__text {
 .cm_input.style--normal:focus {
   background: white;
   border: 1px solid #E5E5E5;
+  box-shadow: none;
 }
 
 .cm_input.size--small {
@@ -1831,6 +1832,7 @@ input:checked ~ .cm_toggle__input::before {
 .cm_select__input.style--normal:focus {
   background: #F0F0F0;
   border: 1px solid transparent;
+  box-shadow: none;
 }
 
 .cm_select__input.size--small {
