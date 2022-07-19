@@ -1,6 +1,6 @@
 # Welcome to Weskeleton
 
-Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! Some pre-written components, libraries, and tools are included in this library you can read about them below.
+Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! Some pre-written components, libraries, and tools are included in this library you can read about them below. 
 
 Do not forget to star this project 😇☘️
 [l00p Studio](http://l00p.dev/ "l00p Studio")
@@ -127,7 +127,7 @@ This component is wrote to hold your article in it. You can put your single pos'
 - Text will be easier for reader
 - Tables will style perfectly
 - Styles for heading texts, lists, links, ``<figure>`` and ``<blockquote>``
-  ####Html Code
+####Html Code
 ```
 <article class="cm_content">
   Your html here...
