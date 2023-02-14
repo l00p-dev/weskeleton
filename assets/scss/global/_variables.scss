@@ -1,25 +1,10 @@
-$direction : ltr;
-$start : '';
-$end : '';
-
-@if($direction == rtl) {
-  $start : right;
-  $end : left;
-  $direction-sign : -1;
-}
-@else {
-  $start : left;
-  $end : right;
-  $direction-sign : 1;
-}
-
 $is_dark_theme : false;
 $cl-ac : #4ECCA3;
 $cl-sec : #75787D;
 $cl-txt : #232931;
 $cl-bg : white;
 
-$cl-success : #81d561;
+$cl-success : #4BB543;
 $cl-warning : #ffc32e;
 $cl-error : #f53411;
 
