@@ -135,13 +135,14 @@ document.querySelectorAll('.cm_select').forEach(select => {
     })
 
     selectDropdownItems.forEach(dropDownItem => {
-        dropDownItem.input = input
-        dropDownItem.text = selectInput.querySelector('.cm_select__text')
+        console.log(dropDownItem);
+        dropDownItem.data_input = input
+        dropDownItem.data_text = selectInput.querySelector('.cm_select__text')
 
         dropDownItem.addEventListener('click', event => {
             const value = event.target.dataset.value
-            event.currentTarget.input.value = value
-            event.currentTarget.text.innerHTML = event.target.innerHTML
+            event.currentTarget.data_input.value = value
+            event.currentTarget.data_text.innerHTML = event.target.innerHTML
         })
     })
 })
