@@ -228,10 +228,10 @@ Use ``validate--success`` class to show success state.
     <input type="password" placeholder="Password" class="cm_input style--normal" autocomplete="new-password" />
     <button class="cm_btn color--transparent square">
         <svg class="icon-20 invis">
-# password-invisible"></use>
+            <use href="assets/sprites.svg#password-invisible"></use>
         </svg>
         <svg class="icon-20 vis">
-# password-visible"></use>
+            <use href="assets/sprites.svg#password-visible"></use>
         </svg>
     </button>
 </div>
@@ -338,6 +338,6 @@ if you want to use an icon, change svg tag to symbol, put the svg code inside sv
 
 ```html
 <svg>
-# ID-OF-YOUR-SYMBOL"></use>
+<use href="sprites.svg#ID-OF-YOUR-SYMBOL"></use>
 </svg>
 ```
