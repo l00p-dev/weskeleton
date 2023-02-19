@@ -75,16 +75,16 @@ The data-value attribute act's as value for ``<option>``.
 Style of select components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
 ```html
 <div class="cm_select">
-   <input type="text" readonly>
-   <div class="cm_select__input style--normal" tabindex="2">
-      <span class="cm_select__text">Choose One</span>
-      <nav class="cm_select__dropdown">
-         <button class="cm_select__dropdown__item" data-value="123">Item One</button>
-         <button class="cm_select__dropdown__item" data-value="123">Item Two</button>
-         <button class="cm_select__dropdown__item" data-value="123">Item Three</button>
-         <button class="cm_select__dropdown__item" data-value="123">Item Four</button>
-      </nav>
-   </div>
+    <input type="text" readonly>
+    <button class="cm_select__input style--normal">
+        <span class="cm_select__text">Choose One</span>
+        <div class="cm_select__dropdown">
+            <span class="cm_select__dropdown__item" data-value="123">Item One</span>
+            <span class="cm_select__dropdown__item" data-value="123">Item Two</span>
+            <span class="cm_select__dropdown__item" data-value="123">Item Three</span>
+            <span class="cm_select__dropdown__item" data-value="123">Item Four</span>
+        </div>
+    </button>
 </div>
 ```
 

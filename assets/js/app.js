@@ -123,10 +123,7 @@ function componentSelectInit() {
     
         selectInput.addEventListener('blur', event => {
             const dropdown = event.currentTarget.dropdown
-    
-            setTimeout(() => {
-                dropdown.style.display = 'none'
-            }, 100)
+            dropdown.style.display = 'none'
         })
     
         selectDropdownItems.forEach(dropDownItem => {
