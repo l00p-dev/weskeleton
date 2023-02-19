@@ -88,9 +88,6 @@ function componentFAQInit() {
                             collapseSection(item.querySelector('.cm_faq__content'))
                             item.classList.remove('open')
                         }
-                        else {
-                            console.log('this is not true')
-                        }
                     })
                 }
             }
@@ -127,7 +124,6 @@ function componentSelectInit() {
         })
     
         selectDropdownItems.forEach(dropDownItem => {
-            console.log(dropDownItem);
             dropDownItem.data_input = input
             dropDownItem.data_text = selectInput.querySelector('.cm_select__text')
     
@@ -174,6 +170,8 @@ componentVideoInit()
 
 iziToast.settings({
     icon: '',
+    theme: 'dark',
+    rtl: true,
 });
 
 // Functions
