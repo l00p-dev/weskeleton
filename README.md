@@ -15,7 +15,7 @@ Do not forget to star this project 😇☘️
       <button class="cm_tab__nav__item">Tab Two</button>
       <button class="cm_tab__nav__item">Tab Three</button>
    </nav>
-   <div class="cm_tab_content">
+   <div class="cm_tab__content">
       <div class="cm_tab__content__item active">
          1) Lorem ipsum dolor sit amet
       </div>
