@@ -34,7 +34,7 @@ Do not forget to star this project 😇☘️
 
 You can change ``mw-250`` class to your prefered ``max-width``
 ```html
-<div class="cm_popup" id="popup-test">
+<div class="cm_popup d-none" id="popup-test">
    <div class="cm_popup__overlay" onclick="togglePoup('popup-test')"></div>
    <div class="cm_popup__content mw-250">
       <button onclick="togglePoup('popup-test')">Close</button>
@@ -54,7 +54,7 @@ Change position to left or right by ``position--start`` or ``position--end`` cla
 
 ```html
 <div class="cm_menu" id="menu-test">
-   <div class="cm_menu__overlay" onclick="toggleMenu('menu-test')"></div>
+   <div class="cm_menu__overlay d-none" onclick="toggleMenu('menu-test')"></div>
    <div class="cm_menu__content position--end mw-300">Content Here</div>
 </div>
 ```
@@ -66,23 +66,23 @@ toggleMenu('menu-test')
 ```
 
 
-# Select Component
+# Combobox Component
 This component is alternative for ``<select>`` tag in HTML. Instead of ``<select>`` tag, we use an hidden input and handle the behavior of ``<select>`` with JavaScript.
 
 # Html Code
 The data-value attribute act's as value for ``<option>``.
 
-Style of select components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
+Style of combobox components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
 ```html
-<div class="cm_select">
+<div class="cm_combo">
     <input type="text" readonly>
-    <button class="cm_select__input style--normal">
-        <span class="cm_select__text">Choose One</span>
-        <div class="cm_select__dropdown">
-            <span class="cm_select__dropdown__item" data-value="123">Item One</span>
-            <span class="cm_select__dropdown__item" data-value="123">Item Two</span>
-            <span class="cm_select__dropdown__item" data-value="123">Item Three</span>
-            <span class="cm_select__dropdown__item" data-value="123">Item Four</span>
+    <button class="cm_combo__input style--normal">
+        <span class="cm_combo__text">Choose One</span>
+        <div class="cm_combo__dropdown">
+            <span class="cm_combo__dropdown__item" data-value="123">Item One</span>
+            <span class="cm_combo__dropdown__item" data-value="123">Item Two</span>
+            <span class="cm_combo__dropdown__item" data-value="123">Item Three</span>
+            <span class="cm_combo__dropdown__item" data-value="123">Item Four</span>
         </div>
     </button>
 </div>

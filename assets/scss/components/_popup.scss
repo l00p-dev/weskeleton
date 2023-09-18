@@ -2,7 +2,7 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  display: none;
+  display: block;
 
   &__overlay {
     @include str-pos();
@@ -17,9 +17,5 @@
     box-shadow: 0 8px 20px rgba(black, 0.2);
     max-height: 90vh;
     overflow-y: auto;
-  }
-
-  &.open {
-    display: block;
   }
 }

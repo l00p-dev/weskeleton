@@ -5,7 +5,7 @@
     inset: 0;
     z-index: 999;
     background-color: rgba(black, 0.5);
-    display: none;
+    display: block;
   }
 
   &__content {
@@ -38,10 +38,6 @@
         transform: translateX(100%);
       }
     }
-  }
-
-  &.open &__overlay {
-    display: block;
   }
 
   &.open &__content {

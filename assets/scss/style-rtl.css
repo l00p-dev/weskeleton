@@ -1453,7 +1453,7 @@ svg {
 .cm_btn.capsule {
   border-radius: 200px;
 }
-.cm_select__input, .cm_input {
+.cm_combo__input, .cm_input {
   display: flex;
   align-items: center;
   max-width: unset;
@@ -1463,22 +1463,22 @@ svg {
   transition: 0.2s cubic-bezier(0.75, 0.725, 0.395, 1);
   padding: 0 20px;
 }
-.validate--success.cm_select__input, .validate--success.cm_input {
+.validate--success.cm_combo__input, .validate--success.cm_input {
   border-color: #4BB543 !important;
 }
-.validate--success.cm_select__input::-moz-placeholder, .validate--success.cm_input::-moz-placeholder {
+.validate--success.cm_combo__input::-moz-placeholder, .validate--success.cm_input::-moz-placeholder {
   color: #4BB543;
 }
-.validate--success.cm_select__input::placeholder, .validate--success.cm_input::placeholder {
+.validate--success.cm_combo__input::placeholder, .validate--success.cm_input::placeholder {
   color: #4BB543;
 }
-.validate--error.cm_select__input, .validate--error.cm_input {
+.validate--error.cm_combo__input, .validate--error.cm_input {
   border-color: #f53411 !important;
 }
-.validate--error.cm_select__input::-moz-placeholder, .validate--error.cm_input::-moz-placeholder {
+.validate--error.cm_combo__input::-moz-placeholder, .validate--error.cm_input::-moz-placeholder {
   color: #f53411;
 }
-.validate--error.cm_select__input::placeholder, .validate--error.cm_input::placeholder {
+.validate--error.cm_combo__input::placeholder, .validate--error.cm_input::placeholder {
   color: #f53411;
 }
 
@@ -1796,7 +1796,7 @@ input:checked ~ .cm_toggle__input::before {
   position: fixed;
   inset: 0;
   z-index: 999;
-  display: none;
+  display: block;
 }
 .cm_popup__overlay {
   position: absolute;
@@ -1822,16 +1822,13 @@ input:checked ~ .cm_toggle__input::before {
   max-height: 90vh;
   overflow-y: auto;
 }
-.cm_popup.open {
-  display: block;
-}
 
 .cm_menu__overlay {
   position: fixed;
   inset: 0;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: block;
 }
 .cm_menu__content {
   position: fixed;
@@ -1850,14 +1847,11 @@ input:checked ~ .cm_toggle__input::before {
   left: 0;
   transform: translateX(-100%);
 }
-.cm_menu.open .cm_menu__overlay {
-  display: block;
-}
 .cm_menu.open .cm_menu__content {
   transform: translateX(0);
 }
 
-.cm_select select, .cm_select input {
+.cm_combo select, .cm_combo input {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1867,7 +1861,7 @@ input:checked ~ .cm_toggle__input::before {
   position: absolute;
   width: 1px;
 }
-.cm_select__input {
+.cm_combo__input {
   position: relative;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -1876,7 +1870,7 @@ input:checked ~ .cm_toggle__input::before {
   padding-left: 44px;
   cursor: pointer;
 }
-.cm_select__input::after, .cm_select__input::before {
+.cm_combo__input::after, .cm_combo__input::before {
   content: "";
   position: absolute;
   top: 40%;
@@ -1889,28 +1883,28 @@ input:checked ~ .cm_toggle__input::before {
   background-color: #A7A7A7;
   transition: 0.3s cubic-bezier(0.75, 0.725, 0.395, 1);
 }
-.cm_select__input::before {
+.cm_combo__input::before {
   transform: translateY(-50%) rotate(45deg);
   top: 60%;
 }
-.cm_select__input::after {
+.cm_combo__input::after {
   transform: translateY(-50%) rotate(135deg);
   top: 60%;
 }
-.cm_select__input:focus::before {
+.cm_combo__input:focus::before {
   transform: translateY(-50%) rotate(-45deg);
   top: 40%;
 }
-.cm_select__input:focus::after {
+.cm_combo__input:focus::after {
   transform: translateY(-50%) rotate(225deg);
   top: 40%;
 }
-.cm_select__text {
+.cm_combo__text {
   display: inline-flex;
   align-items: center;
   gap: 24px;
 }
-.cm_select__dropdown {
+.cm_combo__dropdown {
   display: none;
   position: absolute;
   right: 0;
@@ -1924,17 +1918,17 @@ input:checked ~ .cm_toggle__input::before {
   z-index: 5;
   border-radius: inherit;
 }
-.cm_select__dropdown__item {
+.cm_combo__dropdown__item {
   padding: 0.4rem 0.6rem;
   display: flex;
   align-items: center;
   gap: 24px;
   width: 100%;
 }
-.cm_select__dropdown__item:not(:last-child) {
+.cm_combo__dropdown__item:not(:last-child) {
   border-bottom: 1px solid #F0F0F0;
 }
-.cm_select__dropdown__item:hover {
+.cm_combo__dropdown__item:hover {
   background-color: #FAFAFA;
 }
 

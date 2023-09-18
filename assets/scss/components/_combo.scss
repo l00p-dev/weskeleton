@@ -1,7 +1,6 @@
 // To add a style or size go to input.scss
 
-.cm_select {
-
+.cm_combo {
   select, input {
     @include vh;
   }
