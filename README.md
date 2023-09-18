@@ -1,3 +1,4 @@
+![Weskeleton Front End Freamwork Logo](https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg)
 #  Welcome to Weskeleton
 
 Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! Some pre-written components, libraries, and tools are included in this library you can read about them below.
