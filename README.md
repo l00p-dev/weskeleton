@@ -1,16 +1,13 @@
 #  Welcome to Weskeleton
 
-Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! We provide pre-written components, imported popuplar libraries, and developed lots of tools and techniques to make front-end development much easier!
-
-Do not forget to star this project.
-[Developed at l00p Studio](http://l00p.dev/ "l00p Studio")
+Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! We provide pre-written components, imported popuplar libraries, and developed lots of tools and techniques to make front-end development much easier! Do not forget to star this project. [Developed at l00p Studio](http://l00p.dev/ "l00p Studio")
 
 <img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" width="60%">
 
-# Components
+## Components
 
-# Tab Component
-# Html Code
+### Tab Component
+#### Html Code
 ```html
 <div class="cm_tab">
    <nav class="cm_tab__nav">
