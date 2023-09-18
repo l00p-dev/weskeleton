@@ -446,7 +446,7 @@ h6, .h6 {
   font-size: 120%;
 }
 
-small, .small {
+small, .small, * small {
   font-size: 85%;
 }
 
@@ -2117,6 +2117,11 @@ input:checked ~ .cm_toggle__input::before {
 }
 .cm_content h1:not(:first-child), .cm_content h2:not(:first-child), .cm_content h3:not(:first-child), .cm_content h4:not(:first-child), .cm_content h5:not(:first-child), .cm_content h6:not(:first-child) {
   margin-top: 40px;
+}
+.cm_content code, .cm_content kbd {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 12px;
 }
 .cm_content p {
   line-height: 1.8;

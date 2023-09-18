@@ -39,6 +39,12 @@
     }
   }
 
+  code, kbd {
+    background-color: rgba(black, .1);
+    border-radius: 10px;
+    padding: 12px;
+  }
+
   p {
     line-height: 1.8;
   }
