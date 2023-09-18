@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" width="50%" height="50%">
+<img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" style="width: 100%; max-with: 500px; margin: 40px 0; display:block">
 
 #  Welcome to Weskeleton
 
