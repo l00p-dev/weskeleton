@@ -1,11 +1,12 @@
-<img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" style="width: 100%; max-with: 500px; margin: 40px 0; display:block">
-
 #  Welcome to Weskeleton
 
 Weskeleton is a lightweight library that provides your initial needs to develop the front-end of an awesome website! Some pre-written components, libraries, and tools are included in this library you can read about them below.
 
 Do not forget to star this project 😇☘️
 [l00p Studio](http://l00p.dev/ "l00p Studio")
+
+<img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" width="70%">
+
 # Components
 
 # Tab Component
