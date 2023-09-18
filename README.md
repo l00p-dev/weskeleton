@@ -4,10 +4,10 @@ Weskeleton is a lightweight library that provides your initial needs to develop 
 
 <img src="https://raw.githubusercontent.com/l00p-dev/weskeleton/main/assets/img/weskeleton-logo.svg" alt="Weskeleton Front End Freamwork Logo" width="60%">
 
-## Components
+## Components List
 
 ### Tab Component
-#### Html Code
+Html Code:
 ```html
 <div class="cm_tab">
    <nav class="cm_tab__nav">
@@ -29,10 +29,8 @@ Weskeleton is a lightweight library that provides your initial needs to develop 
 </div>
 ```
 
-# Popup Component
-# Html Code
-
-You can change ``mw-250`` class to your prefered ``max-width``
+### Popup Component
+Html Code: You can change ``mw-250`` class to your prefered ``max-width``
 ```html
 <div class="cm_popup d-none" id="popup-test">
    <div class="cm_popup__overlay" onclick="togglePoup('popup-test')"></div>
@@ -41,15 +39,13 @@ You can change ``mw-250`` class to your prefered ``max-width``
    </div>
 </div>
 ```
-# JavaScript Code
-Only function you need to open or close your popup
+JavaScript Code: Only function you need to open or close your popup
 ```js
 togglePoup('popup-test')
 ```
-# Menu Component
-# Html Code
-You can change ``mw-250`` class to your prefered ``max-width``
 
+### Menu Component
+Html Code: You can change ``mw-250`` class to your prefered ``max-width``
 Change position to left or right by ``position--start`` or ``position--end`` class (end or start phrases are based on direction of page)
 
 ```html
@@ -59,19 +55,16 @@ Change position to left or right by ``position--start`` or ``position--end`` cla
 </div>
 ```
 
-# JavaScript Code
-Only function you need to open or close your menu
+JavaScript Code: Only function you need to open or close your menu
 ```js
 toggleMenu('menu-test')
 ```
 
 
-# Combobox Component
+### Combobox Component
 This component is alternative for ``<select>`` tag in HTML. Instead of ``<select>`` tag, we use an hidden input and handle the behavior of ``<select>`` with JavaScript.
 
-# Html Code
-The data-value attribute act's as value for ``<option>``.
-
+Html Code: The data-value attribute act's as value for ``<option>``.
 Style of combobox components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
 ```html
 <div id="combo-test" class="cm_combo">
@@ -87,14 +80,10 @@ Style of combobox components are like input components. If you want to define ne
 </div>
 ```
 
-# FAQ Component
+### FAQ Component
 If you need an accordion in your page, Don't forgety, we name it faq in l00p :)
-
-# Html Code
-If ``.cm_faq`` has ``king`` class, then all accordion in same group will connect each other and if you hit one, others will be expanded.
-
+Html Code: If ``.cm_faq`` has ``king`` class, then all accordion in same group will connect each other and if you hit one, others will be expanded.
 The ``data-group`` attribute is optional but if you put ``king`` class you should set this data too.
-
 If you want one of your accordions be open, put ``open`` class new ``.cm_faq then remove style="height: 0;"``.
 
 ```html
@@ -122,19 +111,19 @@ If you want one of your accordions be open, put ``open`` class new ``.cm_faq the
 
 # Article Component
 This component is wrote to hold your article in it. You can put your single pos'ts content inside this component to automaticly put proper styles for multiple purposes:
-
 - Text will be easier for reader
 - Tables will style perfectly
 - Styles for heading texts, lists, links, ``<figure>`` and ``<blockquote>``
-# Html Code
+
+Html Code:
 ```html
 <article class="cm_content">
   Your html here...
 </article>
 ```
 
-# Checkbox Component
-# Html Code
+### Checkbox Component
+Html Code:
 ```html
 <label class="cm_checkbox">
     <input type="checkbox" />
