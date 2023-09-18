@@ -1,7 +1,8 @@
 $is_dark_theme : false;
-$cl-ac : #4ECCA3;
-$cl-sec : #75787D;
+$cl-ac : #0DB14B;
+$cl-sec : #154238;
 $cl-txt : #232931;
+$cl-gray : #9a99a0;
 $cl-bg : white;
 
 $cl-success : #4BB543;
@@ -38,12 +39,14 @@ $tr-dur-fast : .2s;
 $tr-dur-med : .5s;
 $tr-dur-slow : .7s;
 
-$borad-btn : 6px;
-$height-btn: 40px;
+$borad-btn : 10px;
+$height-btn: 56px;
 $min-width-btn: unset;
 
+$font-size-body: 16px;
+
 $borad-input : 6px;
-$height-input: 40px;
+$height-input: 56px;
 
 $borad-check : 4px;
 $size-check : 24px;

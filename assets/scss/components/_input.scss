@@ -1,26 +1,26 @@
 
 $input-styles: (
-        style--normal: (
-                background: $cl-gray-1,
-                color: $cl-txt,
-                border: 1px solid transparent,
-                radius: $borad-input,
-                shadow: none,
-                placeholder: $cl-placeholder,
+  style--normal: (
+    background: rgba(black, .05),
+    color: $cl-txt,
+    border: 1px solid transparent,
+    radius: $borad-input,
+    shadow: none,
+    placeholder: $cl-placeholder,
 
-                hover-background: $cl-gray-0,
-                hover-border: 1px solid transparent,
-                hover-shadow: none,
+    hover-background: rgba(black, .1),
+    hover-border: 1px solid transparent,
+    hover-shadow: none,
 
-                focus-background: $cl-bg,
-                focus-border: 1px solid $cl-gray-2,
-                focus-shadow: none,
-        ),
+    focus-background: white,
+    focus-border: 1px solid rgba($cl-ac, 1),
+    focus-shadow: 0 0 0 5px rgba($cl-ac, .2),
+  ),
 );
 
 $input-sizes: (
-        size--small: $height-btn * 0.75,
-        size--big: $height-btn * 1.5,
+  size--small: $height-input * 0.75,
+  size--big: $height-input * 1.5,
 );
 
 %input-style {
@@ -30,8 +30,8 @@ $input-sizes: (
   min-width: unset;
   width: 100%;
   min-height: $height-input;
-  padding: 0 ($height-input * .4);
   transition: $tr-dur-fast $tr-timing;
+  padding: 0 ($height-btn - $font-size-body) / 2;
 
   &.validate--success {
     border-color: $cl-success !important;
@@ -190,6 +190,6 @@ textarea.cm_input {
 @each $class, $height in $input-sizes {
   .cm_input.#{$class} {
     min-height: $height;
-    padding: 0 ($height * .4);
+    padding: 0 ($height - $font-size-body) / 2;
   }
 }

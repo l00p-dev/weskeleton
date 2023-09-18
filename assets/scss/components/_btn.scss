@@ -1,117 +1,118 @@
 $btn-styles: (
-        color--accent: (
-                background: $cl-ac,
-                color: white,
-                fill: white,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: $cl-ac,
-        ),
-        color--secondary: (
-                background: $cl-sec,
-                color: white,
-                fill: white,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: $cl-sec,
-        ),
-        color--foreground: (
-                background: $cl-txt,
-                color: white,
-                fill: white,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: $cl-txt,
-        ),
-        color--bg: (
-                background: $cl-bg,
-                color: $cl-txt,
-                fill: $cl-txt,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: $cl-bg,
-        ),
-        color--white: (
-                background: white,
-                color: $cl-txt,
-                fill: $cl-txt,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: $cl-bg,
-        ),
-        color--transparent--bg: (
-                background: transparent,
-                color: $cl-bg,
-                fill: $cl-bg,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: rgba($cl-bg, 0.1),
-        ),
-        color--transparent--txt: (
-                background: transparent,
-                color: $cl-txt,
-                fill: $cl-txt,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: rgba($cl-txt, 0.1),
-        ),
-        color--transparent--white: (
-                background: transparent,
-                color: white,
-                fill: white,
-                border: 1px solid transparent,
-                shadow: none,
-                transition-color: rgba(white, 0.1),
-        ),
-        outline--accent: (
-                background: transparent !important,
-                color: $cl-ac,
-                fill: $cl-ac,
-                border: 1px solid $cl-ac,
-                shadow: none,
-                transition-color: $cl-ac,
-        ),
-        outline--secondary: (
-                background: transparent !important,
-                color: $cl-sec,
-                fill: $cl-sec,
-                border: 1px solid $cl-sec,
-                shadow: none,
-                transition-color: $cl-sec,
-        ),
-        outline--foreground: (
-                background: transparent !important,
-                color: $cl-txt,
-                fill: $cl-txt,
-                border: 1px solid $cl-txt,
-                shadow: none,
-                transition-color: $cl-txt,
-        ),
-        outline--bg: (
-                background: transparent !important,
-                color: $cl-bg,
-                fill: $cl-bg,
-                border: 1px solid $cl-bg,
-                shadow: none,
-                transition-color: $cl-bg,
-        ),
-        outline--white: (
-                background: transparent !important,
-                color: white,
-                fill: white,
-                border: 1px solid white,
-                shadow: none,
-                transition-color: white,
-        ),
+  color--accent: (
+    background: $cl-ac,
+    color: white,
+    fill: white,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: $cl-ac,
+  ),
+  color--secondary: (
+    background: $cl-sec,
+    color: white,
+    fill: white,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: $cl-sec,
+  ),
+  color--foreground: (
+    background: $cl-txt,
+    color: white,
+    fill: white,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: $cl-txt,
+  ),
+  color--bg: (
+    background: $cl-bg,
+    color: $cl-txt,
+    fill: $cl-txt,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: $cl-bg,
+  ),
+  color--gray: (
+    background: $cl-gray,
+    color: white,
+    fill: white,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: $cl-gray,
+  ),
+  color--transparent--bg: (
+    background: transparent,
+    color: $cl-bg,
+    fill: $cl-bg,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: rgba($cl-bg, 0.1),
+  ),
+  color--transparent--txt: (
+    background: transparent,
+    color: $cl-txt,
+    fill: $cl-txt,
+    border: 1px solid transparent,
+    shadow: none,
+    transition-color: rgba($cl-txt, 0.1),
+  ),
+  outline--accent: (
+    background: transparent !important,
+    color: $cl-ac,
+    fill: $cl-ac,
+    border: 1px solid $cl-ac,
+    shadow: none,
+    transition-color: $cl-ac,
+  ),
+  outline--secondary: (
+    background: transparent !important,
+    color: $cl-sec,
+    fill: $cl-sec,
+    border: 1px solid $cl-sec,
+    shadow: none,
+    transition-color: $cl-sec,
+  ),
+  outline--foreground: (
+    background: transparent !important,
+    color: $cl-txt,
+    fill: $cl-txt,
+    border: 1px solid $cl-txt,
+    shadow: none,
+    transition-color: $cl-txt,
+  ),
+  outline--bg: (
+    background: transparent !important,
+    color: $cl-bg,
+    fill: $cl-bg,
+    border: 1px solid $cl-bg,
+    shadow: none,
+    transition-color: $cl-bg,
+  ),
+  outline--white: (
+    background: transparent !important,
+    color: white,
+    fill: white,
+    border: 1px solid white,
+    shadow: none,
+    transition-color: white,
+  ),
+  outline--gray: (
+    background: transparent !important,
+    color: $cl-gray,
+    fill: $cl-gray,
+    border: 1px solid $cl-gray,
+    shadow: none,
+    transition-color: $cl-gray,
+  ),
 );
 
 $btn-sizes: (
-        size--small: ($height-btn * 0.75),
+  size--big: ($height-btn * 1.25),
+  size--small: ($height-btn * 0.75),
 );
 
 %btn-style {
   min-height: $height-btn;
-  padding: 0 ($height-btn * 0.5);
+  padding: 0 ($height-btn - $font-size-body);
   border-radius: $borad-btn;
   @include unselectable;
   transition: $tr-dur-fast $tr-timing;
@@ -120,13 +121,16 @@ $btn-sizes: (
   align-items: center;
   justify-content: center;
   min-width: $min-width-btn;
+  vertical-align: middle;
+  gap: $font-size-body * 3 / 4;
+  line-height: 1;
 
   &:hover {
-    transform: translateY(-2px);
+    //transform: translateY(-2px);
   }
 
   &:focus {
-    transform: translateY(0);
+    //transform: translateY(0);
   }
 }
 
@@ -141,14 +145,15 @@ $btn-sizes: (
     background: map-get($style, 'background');
     color: map-get($style, 'color');
     fill: map-get($style, 'fill');
-    box-shadow: map-get($style, 'shadow');
 
     &:hover {
+      box-shadow: 0 10px 16px -8px rgba(map-get($style, 'transition-color'), .5);
       background: darken(map-get($style, 'transition-color'), 5%);
+      //transform: scale(1.03);
     }
 
     &:focus {
-      box-shadow: 0 0 0 4px rgba(map-get($style, 'transition-color'), 0.2);
+      box-shadow: 0 0 0 5px rgba(map-get($style, 'transition-color'), 0.2);
     }
   }
 }
@@ -156,6 +161,7 @@ $btn-sizes: (
 @each $class, $height in $btn-sizes {
   .cm_btn.#{$class} {
     min-height: $height;
+    padding: 0 ($height - $font-size-body);
 
     &.square {
       @include btn-make-square($height);

@@ -1,5 +1,6 @@
 @charset "UTF-8";
-/* l00p Studio - l00p.dev */ /*!
+/* l00p Studio - l00p.dev */
+/*!
  * Bootstrap Grid v5.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
@@ -8974,8 +8975,7 @@ swiper-slide {
 
 .swiper-backface-hidden .swiper-slide {
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* 3D Effects */
@@ -9060,8 +9060,7 @@ swiper-slide {
 }
 
 .swiper-centered.swiper-horizontal > .swiper-wrapper > .swiper-slide:first-child {
-  -webkit-margin-start: var(--swiper-centered-offset-before);
-          margin-inline-start: var(--swiper-centered-offset-before);
+  margin-inline-start: var(--swiper-centered-offset-before);
 }
 .swiper-centered.swiper-horizontal > .swiper-wrapper::before {
   height: 100%;
@@ -9070,8 +9069,7 @@ swiper-slide {
 }
 
 .swiper-centered.swiper-vertical > .swiper-wrapper > .swiper-slide:first-child {
-  -webkit-margin-before: var(--swiper-centered-offset-before);
-          margin-block-start: var(--swiper-centered-offset-before);
+  margin-block-start: var(--swiper-centered-offset-before);
 }
 .swiper-centered.swiper-vertical > .swiper-wrapper::before {
   width: 100%;
@@ -9090,7 +9088,7 @@ swiper-slide {
   z-index: 10;
   transform-origin: 50%;
   box-sizing: border-box;
-  border: 4px solid #4ECCA3;
+  border: 4px solid #0DB14B;
   border-radius: 50%;
   border-top-color: transparent;
 }
@@ -9838,8 +9836,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos], [data-aos][data-aos][data-ao
     transform: translate3d(100%, 0, 0);
   }
   html:not(.no-js) [data-aos^=flip][data-aos^=flip] {
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
+    backface-visibility: hidden;
     transition-property: transform;
   }
   html:not(.no-js) [data-aos=flip-left] {
@@ -9941,11 +9938,11 @@ body[data-aos-easing=ease-in-out-quart] [data-aos], [data-aos][data-aos][data-ao
 }
 
 ::-moz-selection {
-  background: rgba(78, 204, 163, 0.5);
+  background: rgba(13, 177, 75, 0.5);
 }
 
 ::selection {
-  background: rgba(78, 204, 163, 0.5);
+  background: rgba(13, 177, 75, 0.5);
 }
 
 .plyr__badge {
@@ -10033,7 +10030,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos], [data-aos][data-aos][data-ao
   outline: 0;
 }
 .plyr__control.plyr__tab-focus {
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #4ECCA3)) dotted 3px;
+  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #0DB14B)) dotted 3px;
   outline-offset: 2px;
 }
 
@@ -10240,7 +10237,7 @@ a.plyr__control::after, a.plyr__control::before {
   width: 6px;
 }
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
-  background: var(--plyr-control-toggle-checked-background, var(--plyr-color-main, #4ECCA3));
+  background: var(--plyr-control-toggle-checked-background, var(--plyr-color-main, #0DB14B));
 }
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::after {
   opacity: 1;
@@ -10266,7 +10263,7 @@ a.plyr__control::after, a.plyr__control::before {
   background: transparent;
   border: 0;
   border-radius: calc(var(--plyr-range-thumb-height, 13px) * 2);
-  color: var(--plyr-range-fill-background, var(--plyr-color-main, #4ECCA3));
+  color: var(--plyr-range-fill-background, var(--plyr-color-main, #0DB14B));
   display: block;
   height: calc((var(--plyr-range-thumb-active-shadow-width, 3px) * 2) + var(--plyr-range-thumb-height, 13px));
   margin: 0;
@@ -10377,15 +10374,15 @@ a.plyr__control::after, a.plyr__control::before {
   outline: 0;
 }
 .plyr--full-ui input[type=range].plyr__tab-focus::-webkit-slider-runnable-track {
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #4ECCA3)) dotted 3px;
+  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #0DB14B)) dotted 3px;
   outline-offset: 2px;
 }
 .plyr--full-ui input[type=range].plyr__tab-focus::-moz-range-track {
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #4ECCA3)) dotted 3px;
+  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #0DB14B)) dotted 3px;
   outline-offset: 2px;
 }
 .plyr--full-ui input[type=range].plyr__tab-focus::-ms-track {
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #4ECCA3)) dotted 3px;
+  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, #0DB14B)) dotted 3px;
   outline-offset: 2px;
 }
 
@@ -10662,7 +10659,7 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr--audio .plyr__control.plyr__tab-focus, .plyr--audio .plyr__control:hover, .plyr--audio .plyr__control[aria-expanded=true] {
-  background: var(--plyr-audio-control-background-hover, var(--plyr-color-main, #4ECCA3));
+  background: var(--plyr-audio-control-background-hover, var(--plyr-color-main, #0DB14B));
   color: var(--plyr-audio-control-color-hover, #fff);
 }
 
@@ -10763,12 +10760,12 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
-  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, #4ECCA3));
+  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, #0DB14B));
   color: var(--plyr-video-control-color-hover, #fff);
 }
 
 .plyr__control--overlaid {
-  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, #4ECCA3));
+  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, #0DB14B));
   border: 0;
   border-radius: 100%;
   color: var(--plyr-video-control-color, #fff);
@@ -11072,8 +11069,7 @@ a.plyr__control::after, a.plyr__control::before {
   height: 0;
   width: 100%;
   transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), height 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -11572,13 +11568,13 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .iziToast.iziToast-color-yellow {
-  background: #75787D;
-  border-color: #75787D;
+  background: #154238;
+  border-color: #154238;
 }
 
 .iziToast.iziToast-color-blue {
-  background: #4ECCA3;
-  border-color: #4ECCA3;
+  background: #0DB14B;
+  border-color: #0DB14B;
 }
 
 .iziToast.iziToast-color-green {
@@ -11671,7 +11667,6 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .iziToast.flipOutX {
-  -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
   animation: iziT-flipOutX 0.7s cubic-bezier(0.4, 0.45, 0.15, 0.91) both;
 }
