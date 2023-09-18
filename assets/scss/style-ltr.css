@@ -738,7 +738,7 @@ code *, pre * {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 12px;
 }
 
 .shadow-box {
@@ -1817,7 +1817,6 @@ input:checked ~ .cm_toggle__input::before {
   top: 50%;
   transform: translate(50%, -50%);
   width: 100%;
-  background-color: white;
   max-height: 90vh;
   overflow-y: auto;
 }
@@ -1902,14 +1901,14 @@ input:checked ~ .cm_toggle__input::before {
   top: 100%;
   transform: translateY(8px);
   background-color: white;
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 50px 50px 10px rgba(0, 0, 0, 0.2);
   max-height: 400px;
   overflow-y: auto;
   z-index: 5;
   border-radius: inherit;
 }
 .cm_combo__dropdown__item {
-  padding: 20px;
+  padding: 13.3333333333px;
   display: flex;
   line-height: 1;
   align-items: center;

@@ -64,7 +64,7 @@
     top: 100%;
     transform: translateY(8px);
     background-color: $cl-bg;
-    box-shadow: 0 20px 40px -20px rgba(black, 0.5);
+    box-shadow: 0 50px 50px 10px rgba(black, 0.2);
     max-height: 400px;
     overflow-y: auto;
     z-index: 5;
@@ -72,7 +72,7 @@
 
     &__item {
       //padding: .4rem .6rem;
-      padding: (($height-input - $font-size-body) / 2);
+      padding: (($height-input - $font-size-body) * 1 / 3);
 
       display: flex;
       line-height: 1;

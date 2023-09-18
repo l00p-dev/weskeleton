@@ -69,7 +69,7 @@ Style of combobox components are like input components. If you want to define ne
 ```html
 <div id="combo-test" class="cm_combo">
     <input type="hidden">
-    <button class="cm_combo__input style--normal" onclick="toggleComboDropdown('combo-test')" onblur="comboHide('combo-test')">
+    <button type="button" class="cm_combo__input style--normal" onclick="toggleComboDropdown('combo-test')" onblur="comboHide('combo-test')">
         <span class="cm_combo__text">Choose One</span>
         <div class="cm_combo__dropdown d-none">
             <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-test', 'Set 1', 1)">Set 1</span>
@@ -207,7 +207,7 @@ Html Code:
 ```html
 <div class="cm_input__password">
     <input type="password" placeholder="Password" class="cm_input style--normal" autocomplete="new-password" />
-    <button class="cm_btn color--transparent square">
+    <button type="button" class="cm_btn color--transparent square">
         <svg class="icon-20 invis">
             <use href="assets/sprites.svg#password-invisible"></use>
         </svg>
@@ -217,7 +217,7 @@ Html Code:
     </button>
 </div>
 ```
-# Floating Inputs 
+### Floating Inputs 
 Html Code: If you want to show a message under the input, use ``span`` inside ``.cm_input__floating__status``.
 ```html
 <label class="cm_input__floating mb-4">
@@ -241,7 +241,7 @@ Html Code: If you want to show a message under the input, use ``span`` inside ``
 </label>
 ```
 
-## LIBRARIES
+## Imported Libraries
 In this freamwork we use [aos](https://michalsnik.github.io/aos/http:// "aos"), [bootstrap grid](https://github.com/twbs/bootstrap/blob/main/scss/bootstrap-grid.scss "bootstrap grid"), [bootstrap utilities](https://github.com/twbs/bootstrap/blob/main/scss/bootstrap-utilities.scss "bootstrap utilities"), [iziToast](https://izitoast.marcelodolza.com/ "iziToast"), [plyr](https://plyr.io/ "plyr"), and [Swiper](https://swiperjs.com/ "Swiper") libraries.
 
 ### Swiper.JS

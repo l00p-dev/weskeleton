@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fa-IR">
+
+<head>
+    <!--Primary Meta Tags-->
+    <title>Weskeleton Freamwork</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Weskeleton Freamwork">
+    <meta name="description" content="">
+    <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="author" content="l00p studio - l00p.dev">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Colors for browser and OS-->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../assets/img/favicon/ms-icon-144x144.png">
+    
+    <!--Links-->
+    <link rel="stylesheet" href="../assets/scss/style-rtl.css">
+    <link rel="stylesheet" href="../assets/scss/lib-rtl.css">
+
+    <!--Social Media Meta Tags-->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+
+    <!--Favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+</head>
+
+<body>
+    <main class="container py-6">
+        <div class="row gy-5 gx-sm-6">
+            <div class="col-md-6 col-lg-7">
+                <iframe height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=46.02825164794922%2C37.957733641508185%2C46.481437683105476%2C38.18962493801858&amp;layer=mapnik" class="w-100 bg-0 borad-10 mb-5"></iframe>
+                <p class="mb-5">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque laborum sunt ipsam odio perferendis, doloribus omnis accusamus excepturi ad est quam animi voluptas corporis itaque quis. Voluptates deleniti sapiente numquam.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque laborum sunt ipsam odio perferendis, doloribus omnis accusamus excepturi ad est quam animi voluptas corporis itaque quis. Voluptates deleniti sapiente numquam.
+                </p>
+                <div class="flex-box">
+                    <a href="#" class="cm_btn outline--secondary square" title="پیج اینستاگرام">
+                        <svg><use href="../assets/sprites.svg#instagram"></use></svg>
+                    </a>
+                    <a href="#" class="cm_btn outline--secondary square" title="پیج لینکدین">
+                        <svg><use href="../assets/sprites.svg#linkedin"></use></svg>
+                    </a>
+                    <a href="#" class="cm_btn outline--secondary square" title="ایمیل">
+                        <svg><use href="../assets/sprites.svg#email"></use></svg>
+                    </a>
+                    <a href="#" class="cm_btn outline--secondary square" title="پیج توییتر">
+                        <svg><use href="../assets/sprites.svg#twitter"></use></svg>
+                    </a>
+                    <a href="#" class="cm_btn outline--secondary square" title="تلگرام">
+                        <svg><use href="../assets/sprites.svg#telegram"></use></svg>
+                    </a>
+                    <a href="#" class="cm_btn outline--secondary square" title="پیج واتس اپ">
+                        <svg><use href="../assets/sprites.svg#whatsapp"></use></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <form action="">
+                    <div class="row gy-3">
+                        <div class="col-12">
+                            <label>
+                                <p class="small cl-5 mb-2">نام / نام شرکت</p>
+                                <input type="text" class="cm_input style--normal" placeholder="نام شما">
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
+                                <p class="small cl-5 mb-2">شماره تلفن / آدرس ایمیل</p>
+                                <input type="text" class="cm_input style--normal" placeholder="اطلاعات تماس">
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
+                                <p class="small cl-5 mb-2">موضوع درخواست</p>
+                                <div id="combo-subject" class="cm_combo">
+                                    <input type="hidden">
+                                    <button type="button" class="cm_combo__input style--normal" onclick="toggleComboDropdown('combo-subject')" onblur="comboHide('combo-subject')">
+                                        <span class="cm_combo__text">انتخاب کنید</span>
+                                        <div class="cm_combo__dropdown d-none">
+                                            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-subject', 'درخواست پشتیبانی', 1)">درخواست پشتیبانی</span>
+                                            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-subject', 'درخواست پاسخ', 2)">درخواست پاسخ</span>
+                                            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-subject', 'ثبت شکایت', 3)">ثبت شکایت</span>
+                                            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-subject', 'پیشنهاد', 4)">پیشنهاد</span>
+                                            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-subject', 'دیگر', 5)">دیگر</span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <label>
+                                <p class="small cl-5 mb-2">پیام شما</p>
+                                <textarea class="cm_input style--normal" placeholder="متن پیام" rows="4"></textarea>
+                            </label>
+                        </div>
+                        <div class="col-12 pt-4">
+                            <button class="cm_btn color--accent d-flex w-100">
+                                ارسال پیام
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!--Links-->
+    <script src="../assets/js/swiper-bundle.js"></script>
+    <script src="../assets/js/axios.js"></script>
+    <script src="../assets/js/validator.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/aos.js"></script>
+    <script src="../assets/js/autosize.js"></script>
+    <script src="../assets/js/plyr.js"></script>
+    <script src="../assets/js/iziToast.js"></script>
+    <script src="../assets/js/vue-dev.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

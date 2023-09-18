@@ -13,7 +13,7 @@
   &__content {
     @include center-pos();
     width: 100%;
-    background-color: $cl-bg;
+    //background-color: $cl-bg;
     //box-shadow: 0 8px 20px rgba(black, 0.2);
     max-height: 90vh;
     overflow-y: auto;
