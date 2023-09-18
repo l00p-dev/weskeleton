@@ -734,6 +734,17 @@ code *, pre * {
   list-style: inherit;
 }
 
+.flex-box {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.shadow-box {
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.15);
+}
+
 .cl-ac {
   color: #0DB14B !important;
 }
@@ -780,6 +791,18 @@ code *, pre * {
 
 .fl-bg {
   fill: white !important;
+}
+
+.cl-gray {
+  color: #9a99a0 !important;
+}
+
+.bg-gray {
+  background-color: #9a99a0 !important;
+}
+
+.fl-gray {
+  fill: #9a99a0 !important;
 }
 
 .cl-0 {
@@ -1675,6 +1698,7 @@ input:checked ~ .cm_checkbox__input::after {
   border-radius: 50%;
   position: relative;
   transition: 0.2s cubic-bezier(0.75, 0.725, 0.395, 1);
+  flex-shrink: 0;
 }
 .cm_radio__input::before {
   content: "";
