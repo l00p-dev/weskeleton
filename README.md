@@ -110,7 +110,7 @@ If you want one of your accordions be open, put ``open`` class new ``.cm_faq the
 </div>
 ```
 
-# Article Component
+### Article Component
 This component is wrote to hold your article in it. You can put your single pos'ts content inside this component to automaticly put proper styles for multiple purposes:
 - Text will be easier for reader
 - Tables will style perfectly
@@ -132,8 +132,8 @@ Html Code:
     <span class="cm_checkbox__text">Checkbox</span>
 </label>
 ```
-# Radio Button Component
-# Html Code
+### Radio Button Component
+Html Code:
 ```html
 <label class="cm_radio">
     <input type="radio" />
@@ -142,8 +142,8 @@ Html Code:
 </label>
 ```
 
-# Toggle Button Component
-# Html Code
+### Toggle Button Component
+Html Code: 
 ```html
 <label class="cm_toggle">
     <input type="checkbox" />
@@ -152,18 +152,12 @@ Html Code:
 </label>
 ```
 
-# Button Component
-# Html Code
-To set a new style for buttons, you can edit ``$btn-styles`` variable from ``assets/scss/components/_btn.scss``.
-
+### Button Component
+Html Code: To set a new style for buttons, you can edit ``$btn-styles`` variable from ``assets/scss/components/_btn.scss``.
 You can set button components styles to ``<a>`` or ``<button>`` tags.
-
 Use ``size--small`` class is for smaller button size.
-
 Use ``capsule`` class to round the edges.
-
 Use ``circle`` class to have a circle button.
-
 Use ``square`` class to have a square button.
 ```html
 <button class="cm_btn color--accent">Accent</button>
@@ -183,12 +177,9 @@ Use ``square`` class to have a square button.
 <button class="cm_btn outline--foreground square">S</button>
 ```
 
-# Input Component
-# Html Code
-To set a new style for inputs, you can edit ``$input-styles`` variable from ``assets/scss/components/_input.scss``.
-
+### Input Component
+Html Code: To set a new style for inputs, you can edit ``$input-styles`` variable from ``assets/scss/components/_input.scss``.
 Use ``validate--error`` to show error state.
-
 Use ``validate--success`` class to show success state.
 ```html
 <label class="mb-3">
@@ -211,7 +202,8 @@ Use ``validate--success`` class to show success state.
     <textarea placeholder="Message" class="cm_input style--normal" rows="5"></textarea>
 </label>
 ```
-# Password Input Html Code
+### Password Input 
+Html Code:
 ```html
 <div class="cm_input__password">
     <input type="password" placeholder="Password" class="cm_input style--normal" autocomplete="new-password" />
@@ -225,8 +217,8 @@ Use ``validate--success`` class to show success state.
     </button>
 </div>
 ```
-# Floating Inputs Html Code
-If you want to show a message under the input, use ``span`` inside ``.cm_input__floating__status``.
+# Floating Inputs 
+Html Code: If you want to show a message under the input, use ``span`` inside ``.cm_input__floating__status``.
 ```html
 <label class="cm_input__floating mb-4">
     <input type="text" />
@@ -249,11 +241,11 @@ If you want to show a message under the input, use ``span`` inside ``.cm_input__
 </label>
 ```
 
-# LIBRARIES
+## LIBRARIES
 In this freamwork we use [aos](https://michalsnik.github.io/aos/http:// "aos"), [bootstrap grid](https://github.com/twbs/bootstrap/blob/main/scss/bootstrap-grid.scss "bootstrap grid"), [bootstrap utilities](https://github.com/twbs/bootstrap/blob/main/scss/bootstrap-utilities.scss "bootstrap utilities"), [iziToast](https://izitoast.marcelodolza.com/ "iziToast"), [plyr](https://plyr.io/ "plyr"), and [Swiper](https://swiperjs.com/ "Swiper") libraries.
 
-# Swiper.JS
-# Html Code
+### Swiper.JS
+Html Code: 
 ```html
 <div class="swiper">
     <div class="swiper-wrapper">
@@ -270,7 +262,7 @@ In this freamwork we use [aos](https://michalsnik.github.io/aos/http:// "aos"), 
 </div>
 ```
 
-# JavaScript Code
+JavaScript Code: 
 ```js
 const swiper = new Swiper(".swiper", {
     pagination: {
@@ -298,7 +290,7 @@ const swiper = new Swiper(".swiper", {
 });
 ```
 
-# Social Network Sharing Button
+## Social Network Sharing Button
 ```html
 <nav class="d-flex flex-wrap gap-2">
    <button onclick="socialNetwordShare('whatsapp')">
@@ -322,9 +314,8 @@ const swiper = new Swiper(".swiper", {
 </nav>
 ```
 
-# Using Icons
+## Using Icons
 if you want to use an icon, change svg tag to symbol, put the svg code inside svg tag in assets/sprites.svg, then add an id to symbol tag. To use this icons inside of your codes, use code below:
-
 ```html
 <svg>
 <use href="sprites.svg#ID-OF-YOUR-SYMBOL"></use>
