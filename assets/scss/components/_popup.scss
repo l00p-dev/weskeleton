@@ -6,7 +6,7 @@
 
   &__overlay {
     @include str-pos();
-    background-color: rgba(black, 0.8);
+    background-color: rgba(black, 0.5);
     backdrop-filter: blur(3px);
   }
 
@@ -14,7 +14,7 @@
     @include center-pos();
     width: 100%;
     background-color: $cl-bg;
-    box-shadow: 0 8px 20px rgba(black, 0.2);
+    //box-shadow: 0 8px 20px rgba(black, 0.2);
     max-height: 90vh;
     overflow-y: auto;
   }

@@ -5,6 +5,7 @@
     inset: 0;
     z-index: 999;
     background-color: rgba(black, 0.5);
+    backdrop-filter: blur(3px);
     display: block;
   }
 

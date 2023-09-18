@@ -96,36 +96,56 @@ function componentFAQInit(faqTitle) {
 function componentSelectInit(select) {
     const input = select.querySelector('input')
     
-    const selectInput = select.querySelector('.cm_select__input')
-    const selectDropdown = select.querySelector('.cm_select__dropdown')
-    const selectDropdownItems = select.querySelectorAll('.cm_select__dropdown__item')
+    const selectInput = select.querySelector('.cm_combo__input')
+    const selectDropdown = select.querySelector('.cm_combo__dropdown')
+    const selectDropdownItems = select.querySelectorAll('.cm_combo__dropdown__item')
     selectInput.dropdown = selectDropdown
 
-    selectInput.addEventListener('click', event => {
-        if(event.currentTarget.dropdown.style.display === 'block') {
-            event.currentTarget.dropdown.style.display = 'none'
-            event.target.blur()
-        }
-        else {
-            event.currentTarget.dropdown.style.display = 'block'
-        }
-    })
+    // selectInput.addEventListener('click', event => {
+    //     if(event.currentTarget.dropdown.style.display === 'block') {
+    //         event.currentTarget.dropdown.style.display = 'none'
+    //         event.target.blur()
+    //     }
+    //     else {
+    //         event.currentTarget.dropdown.style.display = 'block'
+    //     }
+    // })
 
-    selectInput.addEventListener('blur', event => {
-        const dropdown = event.currentTarget.dropdown
-        dropdown.style.display = 'none'
-    })
+    // selectInput.addEventListener('blur', event => {
+    //     const dropdown = event.currentTarget.dropdown
+    //     dropdown.style.display = 'none'
+    // })
 
-    selectDropdownItems.forEach(dropDownItem => {
-        dropDownItem.data_input = input
-        dropDownItem.data_text = selectInput.querySelector('.cm_select__text')
+    // selectDropdownItems.forEach(dropDownItem => {
+    //     dropDownItem.data_input = input
+    //     dropDownItem.data_text = selectInput.querySelector('.cm_combo__text')
 
-        dropDownItem.addEventListener('click', event => {
-            const value = event.target.dataset.value
-            event.currentTarget.data_input.value = value
-            event.currentTarget.data_text.innerHTML = event.target.innerHTML
-        })
-    })
+    //     dropDownItem.addEventListener('click', event => {
+    //         const value = event.target.dataset.value
+    //         event.currentTarget.data_input.value = value
+    //         event.currentTarget.data_text.innerHTML = event.target.innerHTML
+    //     })
+    // })
+}
+
+function toggleComboDropdown(id) {
+    var dropdown = document.getElementById(id).querySelector('.cm_combo__dropdown')
+    var input = document.getElementById(id).querySelector('.cm_combo__input')
+    
+    dropdown.classList.toggle('d-none')
+}
+
+function comboHide(id) {
+    var dropdown = document.getElementById(id).querySelector('.cm_combo__dropdown')
+    dropdown.classList.add('d-none')
+}
+
+function comboSelect(id, title, value) {
+    var input = document.getElementById(id).querySelector('input')
+    var text = document.getElementById(id).querySelector('.cm_combo__text')
+
+    text.innerHTML = title
+    input.value = value
 }
 
 function componentAudioInit(audio) {
@@ -208,7 +228,7 @@ function openPopup(id) {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: .5,
+        duration: .3,
     }, '<')
 }
 
@@ -231,7 +251,7 @@ function closePopup(id) {
         opacity: 0,
         y: -10,
         scale: .95,
-        duration: .5,
+        duration: .3,
         onComplete: function() {
             document.querySelector('#' + id).classList.add('d-none')
         },

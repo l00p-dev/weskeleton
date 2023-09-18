@@ -2,7 +2,7 @@
 
 .cm_combo {
   select, input {
-    @include vh;
+    //@include vh;
   }
 
   &__input {
@@ -18,7 +18,7 @@
       top: 40%;
       transform: translateY(-50%);
       transform-origin: right center;
-      #{$end}: 24px;
+      #{$end}: 20px;
       width: 10px;
       height: 2px;
       border-radius: 2px;
@@ -57,22 +57,25 @@
   }
 
   &__dropdown {
-    display: none;
+    //display: none;
     position: absolute;
     right: 0;
     left: 0;
     top: 100%;
     transform: translateY(8px);
     background-color: $cl-bg;
-    box-shadow: 0 20px 40px -10px rgba(black, 0.3);
-    max-height: 200px;
+    box-shadow: 0 20px 40px -20px rgba(black, 0.5);
+    max-height: 400px;
     overflow-y: auto;
     z-index: 5;
     border-radius: inherit;
 
     &__item {
-      padding: .4rem .6rem;
+      //padding: .4rem .6rem;
+      padding: (($height-input - $font-size-body) / 2);
+
       display: flex;
+      line-height: 1;
       align-items: center;
       gap: 24px;
       width: 100%;
@@ -89,7 +92,7 @@
 }
 
 @each $class, $style in $input-styles {
-  .cm_select__input.#{$class} {
+  .cm_combo__input.#{$class} {
     border: map-get($style, 'border');
     background: map-get($style, 'background');
     color: map-get($style, 'color');
@@ -115,7 +118,7 @@
 }
 
 @each $class, $height in $input-sizes {
-  .cm_select__input.#{$class} {
+  .cm_combo__input.#{$class} {
     min-height: $height;
     padding: 0 ($height * .4);
   }

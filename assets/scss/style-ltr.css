@@ -1590,7 +1590,7 @@ input.valuable ~ .cm_input__floating__text {
 .cm_input.style--normal:focus {
   background: white;
   border: 1px solid #0db14b;
-  box-shadow: 0 0 0 5px rgba(13, 177, 75, 0.2);
+  box-shadow: none;
 }
 
 .cm_input.size--small {
@@ -1807,7 +1807,7 @@ input:checked ~ .cm_toggle__input::before {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
@@ -1818,7 +1818,6 @@ input:checked ~ .cm_toggle__input::before {
   transform: translate(50%, -50%);
   width: 100%;
   background-color: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   max-height: 90vh;
   overflow-y: auto;
 }
@@ -1828,6 +1827,8 @@ input:checked ~ .cm_toggle__input::before {
   inset: 0;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   display: block;
 }
 .cm_menu__content {
@@ -1851,16 +1852,6 @@ input:checked ~ .cm_toggle__input::before {
   transform: translateX(0);
 }
 
-.cm_combo select, .cm_combo input {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
 .cm_combo__input {
   position: relative;
   -webkit-touch-callout: none;
@@ -1876,7 +1867,7 @@ input:checked ~ .cm_toggle__input::before {
   top: 40%;
   transform: translateY(-50%);
   transform-origin: right center;
-  right: 24px;
+  right: 20px;
   width: 10px;
   height: 2px;
   border-radius: 2px;
@@ -1905,22 +1896,22 @@ input:checked ~ .cm_toggle__input::before {
   gap: 24px;
 }
 .cm_combo__dropdown {
-  display: none;
   position: absolute;
   right: 0;
   left: 0;
   top: 100%;
   transform: translateY(8px);
   background-color: white;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
-  max-height: 200px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+  max-height: 400px;
   overflow-y: auto;
   z-index: 5;
   border-radius: inherit;
 }
 .cm_combo__dropdown__item {
-  padding: 0.4rem 0.6rem;
+  padding: 20px;
   display: flex;
+  line-height: 1;
   align-items: center;
   gap: 24px;
   width: 100%;
@@ -1932,36 +1923,36 @@ input:checked ~ .cm_toggle__input::before {
   background-color: #FAFAFA;
 }
 
-.cm_select__input.style--normal {
+.cm_combo__input.style--normal {
   border: 1px solid transparent;
   background: rgba(0, 0, 0, 0.05);
   color: #232931;
   box-shadow: none;
   border-radius: 6px;
 }
-.cm_select__input.style--normal::-moz-placeholder {
+.cm_combo__input.style--normal::-moz-placeholder {
   color: #A7A7A7;
 }
-.cm_select__input.style--normal::placeholder {
+.cm_combo__input.style--normal::placeholder {
   color: #A7A7A7;
 }
-.cm_select__input.style--normal:hover {
+.cm_combo__input.style--normal:hover {
   background: rgba(0, 0, 0, 0.1);
   border: 1px solid transparent;
   box-shadow: none;
 }
-.cm_select__input.style--normal:focus {
+.cm_combo__input.style--normal:focus {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid transparent;
-  box-shadow: 0 0 0 5px rgba(13, 177, 75, 0.2);
+  box-shadow: none;
 }
 
-.cm_select__input.size--small {
+.cm_combo__input.size--small {
   min-height: 42px;
   padding: 0 16.8px;
 }
 
-.cm_select__input.size--big {
+.cm_combo__input.size--big {
   min-height: 84px;
   padding: 0 33.6px;
 }

@@ -74,15 +74,14 @@ The data-value attribute act's as value for ``<option>``.
 
 Style of combobox components are like input components. If you want to define new style or change defult one, go to ``assets/scss/components/_input.scss`` and edit ``$input-styles variable``.
 ```html
-<div class="cm_combo">
-    <input type="text" readonly>
-    <button class="cm_combo__input style--normal">
+<div id="combo-test" class="cm_combo">
+    <input type="hidden">
+    <button class="cm_combo__input style--normal" onclick="toggleComboDropdown('combo-test')" onblur="comboHide('combo-test')">
         <span class="cm_combo__text">Choose One</span>
-        <div class="cm_combo__dropdown">
-            <span class="cm_combo__dropdown__item" data-value="123">Item One</span>
-            <span class="cm_combo__dropdown__item" data-value="123">Item Two</span>
-            <span class="cm_combo__dropdown__item" data-value="123">Item Three</span>
-            <span class="cm_combo__dropdown__item" data-value="123">Item Four</span>
+        <div class="cm_combo__dropdown d-none">
+            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-test', 'Set 1', 1)">Set 1</span>
+            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-test', 'Set 2', 2)">Set 2</span>
+            <span class="cm_combo__dropdown__item" onclick="comboSelect('combo-test', 'Set 3', 3)">Set 3</span>
         </div>
     </button>
 </div>
