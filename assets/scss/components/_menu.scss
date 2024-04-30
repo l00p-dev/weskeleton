@@ -1,22 +1,27 @@
 .cm_menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  pointer-events: none;
+  @include unselectable;
 
   &__overlay {
-    position: fixed;
+    position: absolute;
     inset: 0;
-    z-index: 999;
-    background-color: rgba(black, 0.5);
-    backdrop-filter: blur(3px);
-    display: block;
+    background-color: rgba(black, .6);
+    pointer-events: initial;
   }
 
   &__content {
-    position: fixed;
-    z-index: 999;
+    position: absolute;
     top: 0;
     bottom: 0;
-    background-color: $cl-bg;
-    transition: $tr-dur-fast $tr-timing;
+    background-color: rgb($color-background);
+    transition: .4s;
+    pointer-events: initial;
     width: 100%;
+    max-width: 20em;
+    overflow-y: auto;
 
     &.position--start {
       #{$start}: 0;
@@ -39,9 +44,9 @@
         transform: translateX(100%);
       }
     }
-  }
 
-  &.open &__content {
-    transform: translateX(0);
+    &.open {
+      transform: translateX(0);
+    }
   }
 }

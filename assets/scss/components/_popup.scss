@@ -1,21 +1,40 @@
 .cm_popup {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  display: block;
+  z-index: 9999999;
+  @include unselectable;
 
   &__overlay {
-    @include str-pos();
-    background-color: rgba(black, 0.5);
-    backdrop-filter: blur(3px);
+    position: fixed;
+    inset: 0;
+    background-color: rgba(black, .6);
+  }
+
+  &__body {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    padding: 2em;
   }
 
   &__content {
-    @include center-pos();
-    width: 100%;
-    //background-color: $cl-bg;
-    //box-shadow: 0 8px 20px rgba(black, 0.2);
-    max-height: 90vh;
+    max-width: 40em;
+    pointer-events: initial;
+    max-height: 90%;
     overflow-y: auto;
+  }
+}
+
+.cm_popup {
+  &.style--plain {
+    .cm_popup__content {
+      background-color: rgb($color-background);
+      padding: 2em;
+      border-radius: .6em;
+      box-shadow: 0 0 0 5px rgba(black, .2);
+    }
   }
 }

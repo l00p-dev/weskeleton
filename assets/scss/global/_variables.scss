@@ -1,88 +1,77 @@
-$is_dark_theme : false;
-$cl-ac : #2196f3;
-$cl-sec : #0a2f4c;
-$cl-txt : #232931;
-$cl-gray : #9a99a0;
-$cl-bg : white;
+:root {
+  --primary-color: 30, 150, 250;
+  --secondary-color: 10, 50, 70;
+  --foreground-color: 35, 40, 50;
+  --background-color: 255, 255, 255;
+  --gray-color: 133, 132, 141;
 
-$cl-success : #6bbf59;
-$cl-warning : #ffb627;
-$cl-error : #ef233c;
+  --success-color: 70, 170, 80;
+  --warning-color: 230, 120, 0;
+  --error-color: 240, 40, 60;
 
-$cl-gray-0 : #FAFAFA;
-$cl-gray-1 : #F0F0F0;
-$cl-gray-2 : #E5E5E5;
-$cl-gray-3 : #DBDBDB;
-$cl-gray-4 : #D1D1D1;
-$cl-gray-5 : #C6C6C6;
-$cl-gray-6 : #BCBCBC;
-$cl-gray-7 : #B1B1B1;
-$cl-gray-8 : #A7A7A7;
-$cl-gray-9 : #9D9D9D;
-$cl-gray-10 : #929292;
-$cl-gray-11 : #878787;
-$cl-gray-12 : #787878;
-$cl-gray-13 : #6D6D6D;
-$cl-gray-14 : #626262;
-$cl-gray-15 : #585858;
-$cl-gray-16 : #4E4E4E;
-$cl-gray-17 : #434343;
-$cl-gray-18 : #393939;
-$cl-gray-19 : #2E2E2E;
-$cl-gray-20 : #242424;
-$cl-gray-21 : #1A1A1A;
-$cl-gray-22 : #0F0F0F;
-$cl-gray-23 : #050505;
+  --gray-0-color : 250, 250, 250;
+  --gray-1-color : 240, 240, 240;
+  --gray-2-color : 230, 230, 230;
+  --gray-3-color : 220, 220, 220;
+  --gray-4-color : 210, 210, 210;
+  --gray-5-color : 200, 200, 200;
+  --gray-6-color : 190, 190, 190;
+  --gray-7-color : 180, 180, 180;
+  --gray-8-color : 170, 170, 170;
+  --gray-9-color : 160, 160, 160;
+  --gray-10-color : 150, 150, 150;
+  --gray-11-color : 140, 140, 140;
+  --gray-12-color : 130, 130, 130;
+  --gray-13-color : 120, 120, 120;
+  --gray-14-color : 110, 110, 110;
+  --gray-15-color : 100, 100, 100;
+  --gray-16-color : 90, 90, 90;
+  --gray-17-color : 80, 80, 80;
+  --gray-18-color : 70, 70, 70;
+  --gray-19-color : 60, 60, 60;
+  --gray-20-color : 50, 50, 50;
+  --gray-21-color : 40, 40, 40;
+  --gray-22-color : 30, 30, 30;
+  --gray-23-color : 20, 20, 20;
+  --gray-24-color : 10, 10, 10;
 
-$tr-timing : cubic-bezier(0.750, 0.725, 0.395, 1.000);
-$tr-dur-fast : .2s;
-$tr-dur-med : .5s;
-$tr-dur-slow : .7s;
-
-$borad-btn : 10px;
-$height-btn: 56px;
-$min-width-btn: unset;
-
-$font-size-body: 16px;
-
-$borad-input : 6px;
-$height-input: 56px;
-
-$borad-check : 4px;
-$size-check : 24px;
-
-$size-radio : 24px;
-
-$height-toggle-track : 24px;
-$width-toggle-track : 40px;
-$padding-toggle-track : 2px;
-$size-toggle-thumb : 20px;
-
-@if($is_dark_theme) {
-  $cl-gray-23 : #FAFAFA;
-  $cl-gray-22 : #F0F0F0;
-  $cl-gray-21 : #E5E5E5;
-  $cl-gray-20 : #DBDBDB;
-  $cl-gray-19 : #D1D1D1;
-  $cl-gray-18 : #C6C6C6;
-  $cl-gray-17 : #BCBCBC;
-  $cl-gray-16 : #B1B1B1;
-  $cl-gray-15 : #A7A7A7;
-  $cl-gray-14 : #9D9D9D;
-  $cl-gray-13 : #929292;
-  $cl-gray-12 : #878787;
-  $cl-gray-11 : #787878;
-  $cl-gray-10 : #6D6D6D;
-  $cl-gray-9 : #626262;
-  $cl-gray-8 : #585858;
-  $cl-gray-7 : #4E4E4E;
-  $cl-gray-6 : #434343;
-  $cl-gray-5 : #393939;
-  $cl-gray-4 : #2E2E2E;
-  $cl-gray-3 : #242424;
-  $cl-gray-2 : #1A1A1A;
-  $cl-gray-1 : #0F0F0F;
-  $cl-gray-0 : #050505;
+  color-scheme: only light;
 }
 
-$cl-placeholder : $cl-gray-8;
+$color-primary : var(--primary-color);
+$color-secondary : var(--secondary-color);
+$color-foreground : var(--foreground-color);
+$color-background : var(--background-color);
+$color-gray : var(--gray-color);
+
+$color-success : var(--success-color);
+$color-warning : var(--warning-color);
+$color-error : var(--error-color);
+
+$cl-gray-0 : var(--gray-0-color);
+$cl-gray-1 : var(--gray-1-color);
+$cl-gray-2 : var(--gray-2-color);
+$cl-gray-3 : var(--gray-3-color);
+$cl-gray-4 : var(--gray-4-color);
+$cl-gray-5 : var(--gray-5-color);
+$cl-gray-6 : var(--gray-6-color);
+$cl-gray-7 : var(--gray-7-color);
+$cl-gray-8 : var(--gray-8-color);
+$cl-gray-9 : var(--gray-9-color);
+$cl-gray-10 : var(--gray-10-color);
+$cl-gray-11 : var(--gray-11-color);
+$cl-gray-12 : var(--gray-12-color);
+$cl-gray-13 : var(--gray-13-color);
+$cl-gray-14 : var(--gray-14-color);
+$cl-gray-15 : var(--gray-15-color);
+$cl-gray-16 : var(--gray-16-color);
+$cl-gray-17 : var(--gray-17-color);
+$cl-gray-18 : var(--gray-18-color);
+$cl-gray-19 : var(--gray-19-color);
+$cl-gray-20 : var(--gray-20-color);
+$cl-gray-21 : var(--gray-21-color);
+$cl-gray-22 : var(--gray-22-color);
+$cl-gray-23 : var(--gray-23-color);
+$cl-gray-24 : var(--gray-24-color);
+
+$font-size-body: 14px;

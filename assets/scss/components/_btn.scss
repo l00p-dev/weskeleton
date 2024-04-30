@@ -1,194 +1,264 @@
-$btn-styles: (
-  color--accent: (
-    background: $cl-ac,
-    color: white,
-    fill: white,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: $cl-ac,
-  ),
-  color--secondary: (
-    background: $cl-sec,
-    color: white,
-    fill: white,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: $cl-sec,
-  ),
-  color--foreground: (
-    background: $cl-txt,
-    color: white,
-    fill: white,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: $cl-txt,
-  ),
-  color--bg: (
-    background: $cl-bg,
-    color: $cl-txt,
-    fill: $cl-txt,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: $cl-bg,
-  ),
-  color--gray: (
-    background: $cl-gray,
-    color: white,
-    fill: white,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: $cl-gray,
-  ),
-  color--transparent--bg: (
-    background: transparent,
-    color: $cl-bg,
-    fill: $cl-bg,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: rgba($cl-bg, 0.1),
-  ),
-  color--transparent--txt: (
-    background: transparent,
-    color: $cl-txt,
-    fill: $cl-txt,
-    border: 1px solid transparent,
-    shadow: none,
-    transition-color: rgba($cl-txt, 0.1),
-  ),
-  outline--accent: (
-    background: transparent !important,
-    color: $cl-ac,
-    fill: $cl-ac,
-    border: 1px solid $cl-ac,
-    shadow: none,
-    transition-color: $cl-ac,
-  ),
-  outline--secondary: (
-    background: transparent !important,
-    color: $cl-sec,
-    fill: $cl-sec,
-    border: 1px solid $cl-sec,
-    shadow: none,
-    transition-color: $cl-sec,
-  ),
-  outline--foreground: (
-    background: transparent !important,
-    color: $cl-txt,
-    fill: $cl-txt,
-    border: 1px solid $cl-txt,
-    shadow: none,
-    transition-color: $cl-txt,
-  ),
-  outline--bg: (
-    background: transparent !important,
-    color: $cl-bg,
-    fill: $cl-bg,
-    border: 1px solid $cl-bg,
-    shadow: none,
-    transition-color: $cl-bg,
-  ),
-  outline--white: (
-    background: transparent !important,
-    color: white,
-    fill: white,
-    border: 1px solid white,
-    shadow: none,
-    transition-color: white,
-  ),
-  outline--gray: (
-    background: transparent !important,
-    color: $cl-gray,
-    fill: $cl-gray,
-    border: 1px solid $cl-gray,
-    shadow: none,
-    transition-color: $cl-gray,
-  ),
-);
+// Filled Style Buttons
+.cm_btn {
+  &.style--fill--primary {
+    color: white;
+    fill: white;
+    background-color: rgb($color-primary);
+    border-color: rgb($color-primary);
+    box-shadow: 0 3px 5px rgba($color-primary, .3);
 
-$btn-sizes: (
-  size--big: ($height-btn * 1.25),
-  size--small: ($height-btn * 0.75),
-);
-
-%btn-style {
-  min-height: $height-btn;
-  padding: 0 ($height-btn - $font-size-body);
-  border-radius: $borad-btn;
-  @include unselectable;
-  transition: $tr-dur-fast $tr-timing;
-  border: 1px solid transparent;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: $min-width-btn;
-  vertical-align: middle;
-  gap: $font-size-body * 3 / 4;
-  line-height: 1;
-
-  &:hover {
-    //transform: translateY(-2px);
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-primary, .3);
+    }
   }
 
-  &:focus {
-    //transform: translateY(0);
+  &.style--fill--secondary {
+    color: white;
+    fill: white;
+    background-color: rgb($color-secondary);
+    border-color: rgb($color-secondary);
+    box-shadow: 0 3px 5px rgba($color-secondary, .3);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-secondary, .3);
+    }
+  }
+
+  &.style--fill--gray {
+    color: white;
+    fill: white;
+    background-color: rgb($color-gray);
+    border-color: rgb($color-gray);
+    box-shadow: 0 3px 5px rgba($color-gray, .3);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-gray, .3);
+    }
+  }
+
+  &.style--fill--success {
+    color: white;
+    fill: white;
+    background-color: rgb($color-success);
+    border-color: rgb($color-success);
+    box-shadow: 0 3px 5px rgba($color-success, .3);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-success, .3);
+    }
+  }
+
+  &.style--fill--warning {
+    color: white;
+    fill: white;
+    background-color: rgb($color-warning);
+    border-color: rgb($color-warning);
+    box-shadow: 0 3px 5px rgba($color-warning, .3);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-warning, .3);
+    }
+  }
+
+  &.style--fill--error {
+    color: white;
+    fill: white;
+    background-color: rgb($color-error);
+    border-color: rgb($color-error);
+    box-shadow: 0 3px 5px rgba($color-error, .3);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-error, .3);
+    }
   }
 }
 
-%btn-disabled-style {
-  opacity: 0.3;
-  pointer-events: none;
+// Outlined Style Buttons
+.cm_btn {
+  &.style--stroke--primary {
+    color: rgb($color-primary);
+    fill: rgb($color-primary);
+    border-color: rgb($color-primary);
+    box-shadow: 0 3px 5px rgba($color-primary, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-primary, .3);
+    }
+  }
+
+  &.style--stroke--secondary {
+    color: rgb($color-secondary);
+    fill: rgb($color-secondary);
+    border-color: rgb($color-secondary);
+    box-shadow: 0 3px 5px rgba($color-secondary, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-secondary, .3);
+    }
+  }
+
+  &.style--stroke--gray {
+    color: rgb($color-gray);
+    fill: rgb($color-gray);
+    border-color: rgb($color-gray);
+    box-shadow: 0 3px 5px rgba($color-gray, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-gray, .3);
+    }
+  }
+
+  &.style--stroke--white {
+    color: white;
+    fill: white;
+    border-color: white;
+    box-shadow: 0 3px 5px rgba(white, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(white, .3);
+    }
+  }
+
+  &.style--stroke--success {
+    color: rgb($color-success);
+    fill: rgb($color-success);
+    border-color: rgb($color-success);
+    box-shadow: 0 3px 5px rgba($color-success, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-success, .3);
+    }
+  }
+
+  &.style--stroke--warning {
+    color: rgb($color-warning);
+    fill: rgb($color-warning);
+    border-color: rgb($color-warning);
+    box-shadow: 0 3px 5px rgba($color-warning, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-warning, .3);
+    }
+  }
+
+  &.style--stroke--error {
+    color: rgb($color-error);
+    fill: rgb($color-error);
+    border-color: rgb($color-error);
+    box-shadow: 0 3px 5px rgba($color-error, .15);
+    background-color: transparent;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-error, .3);
+    }
+  }
 }
 
-@each $class, $style in $btn-styles {
-  .cm_btn.#{$class} {
-    border: map-get($style, 'border');
-    background: map-get($style, 'background');
-    color: map-get($style, 'color');
-    fill: map-get($style, 'fill');
+// Solid Style Buttons
+.cm_btn {
+  &.style--solid--foreground {
+    color: rgb($color-foreground);
+    fill: rgb($color-foreground);
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: unset;
 
-    &:hover {
-      box-shadow: 0 10px 16px -8px rgba(map-get($style, 'transition-color'), .5);
-      background: darken(map-get($style, 'transition-color'), 5%);
-      //transform: scale(1.03);
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-foreground, .08);
+    }
+  }
+  &.style--solid--white {
+    color: white;
+    fill: white;
+    border-color: transparent;
+    background-color: transparent;
+    box-shadow: unset;
+
+    &::after {
+      background-color: white;
     }
 
     &:focus {
-      box-shadow: 0 0 0 5px rgba(map-get($style, 'transition-color'), 0.2);
-    }
-  }
-}
-
-@each $class, $height in $btn-sizes {
-  .cm_btn.#{$class} {
-    min-height: $height;
-    padding: 0 ($height - $font-size-body);
-
-    &.square {
-      @include btn-make-square($height);
-    }
-
-    &.circle {
-      @include btn-make-circle($height);
+      box-shadow: 0 0 0 3px rgba(white, .1);
     }
   }
 }
 
 .cm_btn {
-  @extend %btn-style;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  cursor: pointer;
+  font-size: 1em;
+  padding: .5em 1.4em;
+  gap: 1.2em;
+  border-radius: 5em;
+  background-color: rgb($color-background);
+  border: 1px solid rgba($color-foreground, .08);
+  box-shadow: 0 3px 5px rgba(black, .03);
+  transition: .2s;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  fill: rgb($color-foreground);
+  color: rgb($color-foreground);
+  @include unselectable;
 
-  &.square {
-    @include btn-make-square($height-btn);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0;
+    transition: inherit;
   }
 
-  &.circle {
-    @include btn-make-circle($height-btn);
+  &:hover {
+    &::after {
+      opacity: 0.05;
+    }
   }
 
-  &.capsule {
-    border-radius: 200px;
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($color-foreground, .15);
   }
 
-  &.disabled, &:disabled {
-    @extend %btn-disabled-style;
+  &:disabled, &.disabled {
+    cursor: not-allowed;
+    opacity: .3;
+  }
+
+  svg {
+    margin-right: -.6em;
+    margin-left: -.6em;
+    flex-shrink: 0;
+  }
+
+  &.iconic {
+    padding: .5em;
+
+    svg {
+      margin: 0;
+    }
+  }
+
+  &.shadowless {
+    box-shadow: unset;
+  }
+
+  &.type--toggle {
+    .state--idle {
+      display: initial;
+    }
+    .state--toggled {
+      display: none;
+    }
   }
 }

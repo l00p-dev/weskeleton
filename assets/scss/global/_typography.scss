@@ -16,6 +16,7 @@
 
 * {
   font-family: Vazirmatn;
+  font-family: sans-serif;
 }
 
 body {
@@ -23,9 +24,11 @@ body {
   font-size: $font-size-body;
 }
 
-p {
-  &.justify {
-    text-align: justify;
+header, main, footer {
+  font-size: .9em;
+
+  @include res(sm) {
+    font-size: 1em;
   }
 }
 
@@ -36,31 +39,31 @@ h1, h2, h3, h4, h5, h6,
 }
 
 h1, .h1 {
-  font-size: 195%;
+  font-size: 2.1em;
 }
 
 h2, .h2 {
-  font-size: 180%;
+  font-size: 1.90em;
 }
 
 h3, .h3 {
-  font-size: 165%;
+  font-size: 1.70em;
 }
 
 h4, .h4 {
-  font-size: 150%;
+  font-size: 1.50em;
 }
 
 h5, .h5 {
-  font-size: 135%;
+  font-size: 1.30em;
 }
 
 h6, .h6 {
-  font-size: 120%;
+  font-size: 1.10em;
 }
 
 small, .small, * small {
-  font-size: 85%;
+  font-size: 90%;
 }
 
 code, pre {

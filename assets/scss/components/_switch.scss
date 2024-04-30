@@ -1,0 +1,90 @@
+.cm_switch {
+  display: flex;
+  align-items: center;
+  gap: .8em;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  padding: .7em 1em;
+  @include unselectable;
+
+  input:disabled ~ * {
+    @include disable
+  }
+
+  input {
+    @include vh;
+  }
+
+  input:checked ~ &__input {
+    background-color: rgb($color-primary);
+    border-color: rgb($color-primary);
+    box-shadow: 0 0 0 .2em rgba($color-primary, .4);
+
+    &::after {
+      margin-#{$end}: 1em;
+      margin-#{$start}: 0;
+      background-color: white;
+    }
+  }
+
+  input:checked ~ &__input ~ &__text {
+    &::after {
+      background-color: rgb($color-background);
+      box-shadow: 0 3px 5px rgba(black, .05);
+      border: 1px solid rgba($color-foreground, .12);
+    }
+  }
+
+  &__input {
+    flex-shrink: 0;
+    padding: 2px;
+    border-radius: 1em;
+    //border: 1px solid rgba($color-foreground, .25);
+    transition: .2s;
+    box-shadow: inset 0 .1em .1em rgba(black, .1);
+    background-color: rgba($color-foreground, .05);
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 1.2em;
+      height: 1.2em;
+      transition: inherit;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-color: rgb($color-background);
+      box-shadow: 0 .2em .4em rgba(black, .3);
+      border-radius: 100%;
+      margin-#{$start}: 1em;
+    }
+  }
+
+  &__text {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: .9em;
+      background-color: rgba($color-foreground, .04);
+      transition: .2s;
+      border: 1px solid transparent;
+    }
+  }
+}
+
+// Styles
+.cm_switch {
+  &.style--solid {
+    padding: 0;
+    .cm_switch__text {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.cm_accordion {
+  overflow: hidden;
+  border-bottom: 0.15em solid rgba($color-foreground, .2);
+
+  &__title {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 0;
+    @include unselectable;
+
+    svg {
+      transition: .3s;
+    }
+  }
+
+  &__body {
+    overflow-y: hidden;
+  }
+
+  &__content {
+    padding-bottom: 1em;
+    color: rgba($color-foreground, .5);
+  }
+
+  &.open &__title svg {
+    transform: rotate(180deg);
+  }
+}

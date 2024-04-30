@@ -6,10 +6,26 @@ $direction-sign : 1;
 
 
 @import "global/variables";
-@import "libs/bootstrap/bootstrap-grid";
-@import "libs/bootstrap/bootstrap-utilities";
-@import "libs/swiper/core";
-@import "libs/aos/aos";
-@import "libs/plyr/plyr";
-@import "libs/izitoast/iziToast";
+//@import "libs/bootstrap/bootstrap-grid";
+//@import "libs/bootstrap/bootstrap-utilities";
+//@import "libs/swiper/core";
+//@import "libs/aos/aos";
+//@import "libs/plyr/plyr";
+//@import "libs/izitoast/iziToast";
 //@import "libs/wordpress/wp";
+
+
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/plyr/src/sass/plyr.scss";
+@import "../../node_modules/aos/src/sass/aos.scss";
+@import "../../node_modules/izitoast/dist/css/iziToast.min.css";
+@import "../../node_modules/photoswipe/dist/photoswipe.css";
+
+@if($direction == rtl) {
+  @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+  @import "../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";
+}
+@else {
+  @import "../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+  @import "../../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";
+}

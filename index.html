@@ -17,8 +17,8 @@
     <meta name="msapplication-TileImage" content="assets/img/favicon/ms-icon-144x144.png">
     
     <!--Links-->
-    <link rel="stylesheet" href="assets/scss/style-rtl.css">
-    <link rel="stylesheet" href="assets/scss/lib-rtl.css">
+    <link rel="stylesheet" href="assets/scss/style-ltr.css">
+    <link rel="stylesheet" href="assets/scss/lib-ltr.css">
 
     <!--Social Media Meta Tags-->
     <meta property="og:type" content="website">
@@ -46,24 +46,825 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+
+
 </head>
 
-<body>
-    <main class="container flex-box justify-content-center">
-        <img src="assets/img/weskeleton-logo.svg" alt="Weskeleton Logo" class="w-100 mw-500">
+<body class="p-5">
+    <main>
+
+        <button class="cm_btn" onclick='iziToast.success({title: "Header",message: "sdfdsf",timeout: 4000,});'>Click to Success</button>
+        <button class="cm_btn" onclick='iziToast.warning({title: "Header",message: "sdfdsf",timeout: 4000,});'>Click to warning</button>
+        <button class="cm_btn" onclick='iziToast.error({title: "Header",message: "sdfdsf",timeout: 4000,});'>Click to error</button>
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <video src="" class="mb-5"></video>
+
+        <audio src=""></audio>
+
+        <h1>Heading</h1>
+        <h2>Heading</h2>
+        <h3>Heading</h3>
+        <h4>Heading</h4>
+        <h5>Heading</h5>
+        <h6>Heading</h6>
+        
+        <p>
+            Welcome to my website <img src="assets/img/emojis/Drooling%20Face.png" alt="sdfs" class="emoji"> But you can't jodge me
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eum minima numquam optio repellat. Facilis, illum repellendus? Ad dignissimos exercitationem in maiores nisi odit officia quos ratione soluta, voluptatem voluptatum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad alias, amet autem blanditiis cupiditate delectus deleniti deserunt earum eius fuga ipsum labore magnam modi provident ratione rerum similique suscipit ullam?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid, blanditiis consequatur doloribus dolorum ducimus eos esse et ex explicabo hic molestias odio quas quia quibusdam quos ratione tempora voluptatem?
+        </p>
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn size--large">
+                I'm a button
+            </button>
+            <button class="cm_btn size--large">
+                <svg>
+                    <use href="assets/sprites.svg#ri-heart-add-line"></use>
+                </svg>
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn size--large">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+                I'm a button
+            </button>
+            <button class="cm_btn size--large">
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn size--large iconic">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn">
+                I'm a button
+            </button>
+            <button class="cm_btn">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+                I'm a button
+            </button>
+            <button class="cm_btn">
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn iconic">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn size--small">
+                I'm a button
+            </button>
+            <button class="cm_btn size--small">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn size--small">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+                I'm a button
+            </button>
+            <button class="cm_btn size--small">
+                I'm a button
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+            <button class="cm_btn size--small iconic">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn style--fill--primary">
+                Styleed
+            </button>
+            <button class="cm_btn style--fill--secondary">
+                Styleed
+            </button>
+            <button class="cm_btn style--fill--gray">
+                Styleed
+            </button>
+
+            <button class="cm_btn style--fill--success">
+                Styleed
+            </button>
+            <button class="cm_btn style--fill--warning">
+                Styleed
+            </button>
+            <button class="cm_btn style--fill--error">
+                Styleed
+            </button>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn style--stroke--primary">
+                Styleed
+            </button>
+            <button class="cm_btn style--stroke--secondary">
+                Styleed
+            </button>
+            <button class="cm_btn style--stroke--gray">
+                Styleed
+            </button>
+
+            <button class="cm_btn style--stroke--success">
+                Styleed
+            </button>
+            <button class="cm_btn style--stroke--warning">
+                Styleed
+            </button>
+            <button class="cm_btn style--stroke--error shadowless">
+                Styleed
+            </button>
+            <button class="cm_btn style--stroke--white shadowless">
+                Styleed
+            </button>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mb-4">
+            <button class="cm_btn style--solid--foreground">
+                Styleed
+            </button>
+            <button class="cm_btn style--solid--white">
+                Styleed
+            </button>
+        </div>
+
+        <div class="mb-5">
+            <button class="cm_btn" onclick="openMenu('l00p')">Open l00p Settings</button>
+            <div id="l00p" class="cm_menu">
+                <div class="cm_menu__overlay d-none" onclick="closeMenu('l00p')"></div>
+                <div class="cm_menu__content position--end p-4 unselectable">
+                    <div class="mb-4">
+                        <p class="h6 mb-2">Choose Theme</p>
+                        <button class="l00p_theme one mb-3" onclick="switchTheme(this)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <button class="l00p_theme two mb-3" onclick="switchTheme(this)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <button class="l00p_theme three" onclick="switchTheme(this)">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="h6 mb-2">Options</p>
+                        <label class="cm_switch mb-2">
+                            <input id="weskeleton-ise-input" type="checkbox" checked oninput="weskeletonToggleISE(this)">
+                            <span class="cm_switch__input"></span>
+                            <span class="cm_switch__text">Interact sound effects</span>
+                        </label>
+                        <label class="cm_switch text-j">
+                            <input id="weskeleton-increase-font-size-input" type="checkbox" oninput="weskeletonToggleFontSize(this)">
+                            <span class="cm_switch__input"></span>
+                            <span class="cm_switch__text">Scale UI <small>(for elders)</small></span>
+                        </label>
+                    </div>
+
+                    <div class="mb-4">
+                        <p class="h6 mb-2">Credits</p>
+                        <ul>
+                            <li>Sound effects from Pixabay</li>
+                            <li>Icons from Remix</li>
+                            <li>Developed at l00p Studio</li>
+                        </ul>
+                    </div>
+
+                    <div class="my-5">
+                        <p class="mb-3 cl-gray-6 small">Unlock the full potential of website features by ensuring you're using the latest version of modern browsers.</p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <img src="assets/img/browsers/chrome.svg" alt="Google Chrome" class="icon-1-8em">
+                            <img src="assets/img/browsers/firefox.svg" alt="Mozilla Firefox" class="icon-1-8em">
+                            <img src="assets/img/browsers/safari.svg" alt="Apple Safari" class="icon-1-8em">
+                            <img src="assets/img/browsers/edge.svg" alt="Microsoft Edge" class="icon-1-8em">
+                        </div>
+                    </div>
+
+
+                    <button class="cm_btn w-100 mb-2" onclick="weskeletonReset()">Reset to defaults</button>
+                    <button class="cm_btn w-100" onclick="closeMenu('l00p')">Close Site Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+            <div class="spacer-5em bg-foreground mw-40em"></div>
+            <div class="cm_gallery">
+
+                <a href="https://unsplash.com"
+                   data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1666"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1667"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg"
+                   data-pswp-width="1875"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://unsplash.com"
+                   data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1666"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1667"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg"
+                   data-pswp-width="1875"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://unsplash.com"
+                   data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1666"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1667"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-2500.jpg"
+                   data-pswp-width="1875"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/7/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://unsplash.com"
+                   data-pswp-src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1666"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg" alt="" />
+                </a>
+
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-2500.jpg"
+                   data-pswp-width="2500"
+                   data-pswp-height="1667"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/6/img-200.jpg" alt="" />
+                </a>
+                <a href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+                   data-pswp-width="1669"
+                   data-pswp-height="2500"
+                   data-cropped="true"
+                   target="_blank">
+                    <img src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg" alt="" />
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-5">
+
+            <div class="cm_content">
+                <h1>Lorem Ipsum dolor</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ex mollitia quaerat qui sed. Animi, fugiat sunt. Accusamus debitis delectus distinctio error ipsa libero maiores, officiis reprehenderit sed tenetur, voluptatum?
+                </p>
+                <h2>Some heding here</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eum illum iure labore nemo nobis, numquam quia repellendus sint voluptates? Cupiditate esse id labore nesciunt sapiente sequi ut! Illo, possimus!
+                </p>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Grade</th>
+                    </tr>
+                    <tr>
+                        <td>50</td>
+                        <td>Orman Faghihi MOhaddes</td>
+                    </tr>
+                </table>
+                <h3>Some heding here</h3>
+                <p>Lorem ipsum <a href="sdsdf">sdfdsgdf</a> dolor sit amet, consectetur adipisicing elit. Adipisci excepturi, quis? A culpa deleniti doloremque earum impedit incidunt ipsa magnam magni minima, neque odit omnis quas reprehenderit tempore vero voluptatem!</p>
+                <figure>
+                    <img src="https://uploads.sitepoint.com/wp-content/uploads/2023/09/1695167777react-accordion-component.jpg" alt="">
+                    <figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</figcaption>
+                </figure>
+                <h4>Some heding here</h4>
+                <blockquote>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam commodi explicabo ipsa nam nostrum nulla perferendis rerum saepe voluptates? A aliquam error expedita magnam non quidem quos veniam voluptates.
+                    <cite>Orman Faghihi Mohaddes</cite>
+                </blockquote>
+                <ul>
+                    <li>asdfasdf</li>
+                    <li>dfgdfg</li>
+                </ul>
+                <ol>
+                    <li>sdfsdf</li>
+                    <li>sdfgfgdf</li>
+                </ol>
+                <h5>Some heding here</h5>
+                <h6>Some heding here</h6>
+                <p>Lorem ipsum <kbd>dolor</kbd> sit amet, consectetur adipisicing elit. Commodi cupiditate doloribus magnam molestias praesentium suscipit! Amet, consequuntur, dicta dolorem eius inventore laborum neque non optio repellendus sunt tempora temporibus voluptatem?</p>
+                <p>Lorem ipsum dolor <q>E = MC&2 and we can do it</q> sit amet, consectetur adipisicing elit. Animi, autem, nam. Ab iure pariatur quia? Aliquam corporis eum explicabo facere itaque, iusto obcaecati provident similique unde vel. Maiores, molestiae voluptatibus.</p>
+                <code>sdfsdf</code>
+            </div>
+
+
+            <div class="cm_accordion king" data-group="group_name">
+                <div class="cm_accordion__title" onclick="toggleAccordion(this)">
+                    First Question?
+                    <svg>
+                        <use href="assets/sprites.svg#arrow-down"></use>
+                    </svg>
+                </div>
+                <div class="cm_accordion__body" style="height: 0;">
+                    <div class="cm_accordion__content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos labore quod similique soluta! Alias aliquid at dicta earum error, ipsa iusto quasi reiciendis repellat reprehenderit sapiente, tempore ullam, ut voluptates.
+                    </div>
+                </div>
+            </div>
+            <div class="cm_accordion king" data-group="group_name">
+                <div class="cm_accordion__title" onclick="toggleAccordion(this)">
+                    First Question?
+                    <svg class="icon-10em">
+                        <use href="assets/sprites.svg#arrow-down"></use>
+                    </svg>
+                </div>
+                <div class="cm_accordion__body" style="height: 0;">
+                    <div class="cm_accordion__content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos labore quod similique soluta! Alias aliquid at dicta earum error, ipsa iusto quasi reiciendis repellat reprehenderit sapiente, tempore ullam, ut voluptates.
+                    </div>
+                </div>
+            </div>
+            <div class="cm_accordion king" data-group="group_name">
+                <div class="cm_accordion__title" onclick="toggleAccordion(this)">
+                    First Question?
+                    <svg>
+                        <use href="assets/sprites.svg#arrow-down"></use>
+                    </svg>
+                </div>
+                <div class="cm_accordion__body" style="height: 0;">
+                    <div class="cm_accordion__content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos labore quod similique soluta! Alias aliquid at dicta earum error, ipsa iusto quasi reiciendis repellat reprehenderit sapiente, tempore ullam, ut voluptates.
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="mb-5">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur, ducimus esse ex labore, laudantium, nam placeat quae quam quia rem voluptatem. Maiores rem rerum, saepe totam veritatis vitae voluptas? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi aspernatur deleniti dolore dolorem et facilis hic in, iure, labore minima nihil numquam repellat rerum tempore temporibus tenetur veritatis voluptas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cumque dolores nam quos tempora. Debitis dicta eos, ipsum laudantium pariatur praesentium reiciendis suscipit veritatis. Ex maiores nobis odit tenetur voluptas.</p>
+
+        </div>
+
+        <div class="mb-5">
+            <div class="cm_tab">
+                <nav class="cm_tab__nav">
+                    <button class="cm_tab__nav__item active" onclick="navigateTab(this)">Tab One</button>
+                    <button class="cm_tab__nav__item" onclick="navigateTab(this)">Tab Two</button>
+                    <button class="cm_tab__nav__item" onclick="navigateTab(this)">Tab Three</button>
+                </nav>
+                <div class="cm_tab__content">
+                    <div class="cm_tab__content__item active">
+                        1) Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="cm_tab__content__item">
+                        2) Lorem ipsum dolor sit amet
+                    </div>
+                    <div class="cm_tab__content__item">
+                        3) Lorem ipsum dolor sit amet
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <button class="cm_btn" onclick="openMenu('bbb')">Open a menu</button>
+
+            <div id="bbb" class="cm_menu">
+                <div class="cm_menu__overlay d-none" onclick="closeMenu('bbb')"></div>
+                <div class="cm_menu__content position--start">
+                    asdfasdfasdf
+                    <button class="cm_btn" onclick="closeMenu('bbb')">Open a menu</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <button onclick="openPopup('aaa')" class="cm_btn">Click Me</button>
+
+            <div id="aaa" class="cm_popup style--plain d-none">
+                <div class="cm_popup__overlay" onclick="closePopup('aaa')"></div>
+                <div class="cm_popup__body">
+                    <div class="cm_popup__content">
+                        <p class="mb-2">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt expedita, ipsam itaque laboriosam quae quasi unde. Aperiam est eum eveniet exercitationem expedita facilis fuga neque, quaerat quasi sint totam voluptate.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto culpa in ipsam quia. Accusamus accusantium aliquam asperiores at dolores est, facere harum ipsa iusto molestias quam quas quibusdam saepe sint.
+                            L Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, ad assumenda atque deserunt distinctio ducimus fugit id libero necessitatibus porro quasi quo saepe similique ut vel! Ab deleniti doloribus velit.
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus doloribus eveniet ipsa iusto nihil officia optio perspiciatis provident qui quisquam repellat saepe, voluptatem? Architecto distinctio illo nisi numquam velit!
+                        </p>
+                        <button class="cm_btn" onclick="closePopup('aaa')">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row gx-2">
+            <div class="mb-5 col-lg-4">
+                <label class="cm_switch mb-2">
+                    <input type="checkbox">
+                    <span class="cm_switch__input"></span>
+                    <span class="cm_switch__text">Light / Dark Theme Switch</span>
+                </label>
+                <label class="cm_switch mb-2">
+                    <input type="checkbox" disabled>
+                    <span class="cm_switch__input"></span>
+                    <span class="cm_switch__text">Light / Dark Theme Switch</span>
+                </label>
+                <label class="cm_switch mb-2">
+                    <input type="checkbox">
+                    <span class="cm_switch__input"></span>
+                    <span class="cm_switch__text">Light / Dark Theme Switch</span>
+                </label>
+            </div>
+
+            <div class="mb-5 col-lg-4">
+                <p class="cm_input__label">Some hint here</p>
+                <label class="cm_radio mb-2">
+                    <input type="radio" name="sex" disabled>
+                    <span class="cm_radio__input"></span>
+                    <span class="cm_radio__text">I'm Male</span>
+                </label>
+                <label class="cm_radio mb-2">
+                    <input type="radio" name="sex">
+                    <span class="cm_radio__input"></span>
+                    <span class="cm_radio__text">I'm Female</span>
+                </label>
+            </div>
+
+            <div class="mb-5 col-lg-4">
+                <label class="cm_check mb-2">
+                    <input type="checkbox" disabled>
+                    <span class="cm_check__input"></span>
+                    <span class="cm_check__text">Lorem Ipsum Lorem ipsum dolor sit amet.</span>
+                </label>
+                <label class="cm_check mb-2">
+                    <input type="checkbox">
+                    <span class="cm_check__input"></span>
+                    <span class="cm_check__text">Lorem Ipsum Lorem ipsum dolor sit amet.</span>
+                </label>
+                <label class="cm_check mb-2">
+                    <input type="checkbox">
+                    <span class="cm_check__input"></span>
+                    <span class="cm_check__text">Lorem Ipsum Lorem ipsum dolor sit amet.</span>
+                </label>
+                <label class="cm_check mb-2">
+                    <input type="checkbox">
+                    <span class="cm_check__input"></span>
+                    <span class="cm_check__text">Lorem Ipsum Lorem ipsum dolor sit amet.</span>
+                </label>
+                <label class="cm_check mb-2">
+                    <input type="checkbox">
+                    <span class="cm_check__input"></span>
+                    <span class="cm_check__text">Lorem Ipsum Lorem ipsum dolor sit amet.</span>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="mb-5">
+
+
+
+
+            <div class="cm_select mb-4" tabindex="-1" onfocus="openSelect(this)">
+                <label class="cm_select__input cm_input">
+                    <span class="cm_input__label">Disabled Lorem Ipsum</span>
+                    <input type="hidden" disabled>
+                    <p class="cm_select__preview placeholder">Placeholder Here</p>
+                    <svg>
+                        <use href="assets/sprites.svg#ri-expand-up-down-fill"></use>
+                    </svg>
+                </label>
+                <div class="cm_select__dropdown d-none" tabindex="-1">
+                    <div class="cm_select__options">
+                        <button class="cm_select__option" data-value="" data-placeholder>Clear Text</button>
+                        <button class="cm_select__option" data-value="2">Text xcbvdfg</button>
+                        <button class="cm_select__option" data-value="3">Text Here asdfasf</button>
+                        <button class="cm_select__option" data-value="4">Text 23r5</button>
+                        <button class="cm_select__option" data-value="5">Text asdf 1</button>
+                        <button class="cm_select__option" data-value="2">Text xcbvdfg</button>
+                        <button class="cm_select__option" data-value="3">Text Here asdfasf</button>
+                        <button class="cm_select__option" data-value="4">Text 23r5</button>
+                        <button class="cm_select__option" data-value="5">Text asdf 1</button>
+                        <button class="cm_select__option" data-value="2">Text xcbvdfg</button>
+                        <button class="cm_select__option" data-value="3">Text Here asdfasf</button>
+                        <button class="cm_select__option" data-value="4">Text 23r5</button>
+                        <button class="cm_select__option" data-value="5">Text asdf 1</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cm_select" tabindex="-1" onfocus="openSelect(this)">
+                <label class="cm_select__input cm_input">
+                    <span class="cm_input__label">Lorem Ipsum</span>
+                    <input type="hidden">
+                    <p class="cm_select__preview placeholder">I'm a text</p>
+                    <svg>
+                        <use href="assets/sprites.svg#ri-expand-up-down-fill"></use>
+                    </svg>
+                </label>
+                <div class="cm_select__dropdown d-none" tabindex="-1">
+                    <label class="cm_select__search cm_input">
+                        <input type="text" placeholder="Search...">
+                        <svg>
+                            <use href="assets/sprites.svg#search"></use>
+                        </svg>
+                    </label>
+                    <div class="cm_select__options">
+                        <button class="cm_select__option" data-value="" data-placeholder>Clear Text</button>
+                        <button class="cm_select__option" data-value="2">Text Here 1</button>
+                        <button class="cm_select__option" data-value="3">Text Here 2</button>
+                        <button class="cm_select__option" data-value="4">Text Here 3</button>
+                        <button class="cm_select__option" data-value="5">Text Here 4</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+        <div class="mb-5">
+            <div class="square bg-primary b-rad-circle"></div>
+            <div class="square bg-sec"></div>
+            <div class="square bg-txt"></div>
+            <div class="square bg-0"></div>
+            <div class="square bg-1"></div>
+            <div class="square bg-2"></div>
+            <div class="square bg-3"></div>
+            <div class="square bg-4"></div>
+            <div class="square bg-5"></div>
+        </div>
+
+        <div class="mb-5">
+            <label class="cm_input validate--success mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input validate--warning mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input validate--error mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Disabled Placeholder" type="text" class="cm_input" disabled>
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input size--small mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input size--large mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <input placeholder="Test Placeholder" type="text" class="cm_input">
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input mb-3">
+                <span class="cm_input__label">Lorem Ipsum</span>
+                <textarea placeholder="Test Placeholder" class="cm_input" name="" id="" cols="30" rows="2"></textarea>
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+            <label class="cm_input type--password size--big mb-3">
+                <span class="cm_input__label">Password</span>
+                <input placeholder="Test Placeholder" type="password" class="cm_input">
+                <button class="cm_btn style--solid--foreground iconic type--toggle" onclick="togglePassword(this); toggleButton(this)">
+                    <svg class="state--idle">
+                        <use href="assets/sprites.svg#ri-eye-line"></use>
+                    </svg>
+                    <svg class="state--toggled">
+                        <use href="assets/sprites.svg#ri-eye-close-line"></use>
+                    </svg>
+                </button>
+            </label>
+
+
+
+            <label class="cm_input mb-3">
+                <textarea placeholder="Test Placeholder" class="cm_input" name="" id="" cols="30" rows="2"></textarea>
+                <svg>
+                    <use href="assets/sprites.svg#ri-notification-3-line"></use>
+                </svg>
+            </label>
+
+
+
+
+        </div>
+
+
     </main>
 
-    <!--Links-->
-    <script src="assets/js/swiper-bundle.js"></script>
-    <script src="assets/js/axios.js"></script>
-    <script src="assets/js/validator.js"></script>
-    <script src="assets/js/chart.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/autosize.js"></script>
-    <script src="assets/js/plyr.js"></script>
-    <script src="assets/js/iziToast.js"></script>
-    <script src="assets/js/vue-dev.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="node_modules/izitoast/dist/js/iziToast.min.js"></script>
+    <script src="node_modules/plyr/dist/plyr.polyfilled.min.js"></script>
+    <script src="node_modules/autosize/dist/autosize.min.js"></script>
+    <script src="node_modules/validator/validator.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/vue/dist/vue.global.js"></script>
+    <script src="node_modules/gsap/dist/gsap.min.js"></script>
+    <script src="node_modules/aos/dist/aos.js"></script>
+
+
+
+
+    <script src="assets/js/weskeleton.js"></script>
+    <script src="assets/js/app.js" type="module"></script>
+
 </body>
 </html>

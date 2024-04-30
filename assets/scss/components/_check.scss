@@ -1,73 +1,89 @@
-.cm_checkbox {
-  @include unselectable;
+.cm_check {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: .8em;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
+  padding: .7em 1em;
+  @include unselectable;
+
+  input:disabled ~ * {
+    @include disable
+  }
 
   input {
     @include vh;
   }
 
-  &__input {
-    content: "";
-    display: inline-block;
-    width: $size-check;
-    height: $size-check;
-    border: 2px solid $cl-gray-2;
-    border-radius: $borad-check;
-    position: relative;
-    transition: $tr-dur-fast $tr-timing;
-
-    &::before {
-      content: "";
-      position: absolute;
-      right: 10px;
-      bottom: 4px;
-      width: 0;
-      height: 2px;
-      border-radius: 8px;
-      background-color: $cl-ac;
-      transform: rotate(45deg);
-      transform-origin: right center;
-      transition: $tr-dur-fast $tr-timing;
-      transition-delay: .1s;
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      right: 10px;
-      bottom: 4px;
-      width: 0;
-      height: 2px;
-      border-radius: 8px;
-      background-color: $cl-ac;
-      transform: rotate(135deg);
-      transform-origin: right center;
-      transition: $tr-dur-fast $tr-timing;
-    }
-  }
-
   input:checked ~ &__input {
-    border-color: $cl-ac;
-
-    &::before {
-      width: 8px;
-    }
+    background-color: rgb($color-primary);
+    border-color: rgb($color-primary);
+    box-shadow: 0 0 0 .2em rgba($color-primary, .4);
 
     &::after {
-      width: 16px;
+      opacity: 1;
     }
   }
 
   input:checked ~ &__input ~ &__text {
+    &::after {
+      background-color: rgb($color-background);
+      box-shadow: 0 3px 5px rgba(black, .05);
+      border: 1px solid rgba($color-foreground, .12);
+    }
+  }
 
+  &__input {
+    flex-shrink: 0;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: .2em;
+    border: 1px solid rgba($color-foreground, .25);
+    transition: .2s;
+    position: relative;
+    box-shadow: inset 0 .1em .1em rgba(black, .1);
+    background-color: rgb($color-background);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 80%;
+      height: 80%;
+      transform: translate(-50%, -50%);
+      transition: inherit;
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Layer_1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12.58 9.29'%3E%3Cpath d='M5,9c-.39,.39-1.02,.39-1.41,0L.29,5.71c-.39-.39-.39-1.02,0-1.41H.29c.39-.39,1.02-.39,1.41,0l2.59,2.59L10.88,.29c.39-.39,1.02-.39,1.41,0h0c.39,.39,.39,1.02,0,1.41l-7.29,7.29Z' style='fill:%23fff;'/%3E%3C/svg%3E");
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  &__text {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: .9em;
+      background-color: rgba($color-foreground, .04);
+      transition: .2s;
+      border: 1px solid transparent;
+    }
   }
 }
 
-//<label class="cm_checkbox">
-//<input type="checkbox">
-//<span class="cm_checkbox__input"></span>
-//<span class="cm_checkbox__text">Checkbox</span>
-//</label>
+// Styles
+.cm_check {
+  &.style--solid {
+    padding: 0;
+    .cm_check__text {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

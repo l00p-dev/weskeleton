@@ -1,54 +1,87 @@
 .cm_radio {
-  @include unselectable;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: .8em;
   cursor: pointer;
+  position: relative;
+  z-index: 0;
+  padding: .7em 1em;
+  @include unselectable;
+
+  input:disabled ~ * {
+    @include disable
+  }
 
   input {
     @include vh;
   }
 
-  &__input {
-    content: "";
-    display: inline-block;
-    width: $size-radio;
-    height: $size-radio;
-    border: 2px solid $cl-gray-2;
-    border-radius: 50%;
-    position: relative;
-    transition: $tr-dur-fast $tr-timing;
-    flex-shrink: 0;
-
-    &::before {
-      content: "";
-      @include center-pos;
-      background-color: $cl-bg;
-      transition: $tr-dur-fast $tr-timing;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      transition-delay: .1s;
-    }
-  }
-
   input:checked ~ &__input {
-    border-color: $cl-ac;
-    background-color: $cl-ac;
+    background-color: rgb($color-primary);
+    border-color: rgb($color-primary);
+    box-shadow: 0 0 0 .2em rgba($color-primary, .4);
 
-    &::before {
-      width: 40%;
-      height: 40%;
+    &::after {
+      opacity: 1;
     }
   }
 
   input:checked ~ &__input ~ &__text {
+    &::after {
+      background-color: rgb($color-background);
+      box-shadow: 0 3px 5px rgba(black, .05);
+      border: 1px solid rgba($color-foreground, .12);
+    }
+  }
 
+  &__input {
+    flex-shrink: 0;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 100%;
+    border: 1px solid rgba($color-foreground, .25);
+    transition: .2s;
+    position: relative;
+    box-shadow: inset 0 .1em .1em rgba(black, .1);
+    background-color: rgb($color-background);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 50%;
+      transform: translate(-50%, -50%);
+      transition: inherit;
+      background-color: white;
+      opacity: 0;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      border-radius: .9em;
+      background-color: rgba($color-foreground, .04);
+      transition: .2s;
+      border: 1px solid transparent;
+    }
   }
 }
 
-//<label class="cm_radio">
-//<input type="radio" name="gender">
-//<span class="cm_radio__input"></span>
-//<span class="cm_radio__text">Radio Button</span>
-//</label>
+// Styles
+.cm_radio {
+  &.style--solid {
+    padding: 0;
+    .cm_radio__text {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

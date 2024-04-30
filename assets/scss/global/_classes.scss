@@ -1,0 +1,189 @@
+// Size
+.size--small {
+  font-size: .85em !important;
+}
+
+.size--large {
+  font-size: 1.15em !important;
+}
+
+// Colors
+$colors: (
+        primary : rgb($color-primary),
+        secondary : rgb($color-secondary),
+        foreground : rgb($color-foreground),
+        background : rgb($color-background),
+        gray : rgb($color-gray),
+        gray-0 : rgb($cl-gray-0),
+        gray-1 : rgb($cl-gray-1),
+        gray-2 : rgb($cl-gray-2),
+        gray-3 : rgb($cl-gray-3),
+        gray-4 : rgb($cl-gray-4),
+        gray-5 : rgb($cl-gray-5),
+        gray-6 : rgb($cl-gray-6),
+        gray-7 : rgb($cl-gray-7),
+        gray-8 : rgb($cl-gray-8),
+        gray-9 : rgb($cl-gray-9),
+        gray-10 : rgb($cl-gray-10),
+        gray-11 : rgb($cl-gray-11),
+        gray-12 : rgb($cl-gray-12),
+        gray-13 : rgb($cl-gray-13),
+        gray-14 : rgb($cl-gray-14),
+        gray-15 : rgb($cl-gray-15),
+        gray-16 : rgb($cl-gray-16),
+        gray-17 : rgb($cl-gray-17),
+        gray-18 : rgb($cl-gray-18),
+        gray-19 : rgb($cl-gray-19),
+        gray-20 : rgb($cl-gray-20),
+        gray-21 : rgb($cl-gray-21),
+        gray-22 : rgb($cl-gray-22),
+        gray-23 : rgb($cl-gray-23),
+
+        success : rgb($color-success),
+        warning : rgb($color-warning),
+        error : rgb($color-error),
+);
+
+@each $id, $color in $colors {
+  .cl-#{$id} {
+    color: $color !important;
+  }
+
+  .bg-#{$id} {
+    background-color: $color !important;
+  }
+
+  .fl-#{$id} {
+    fill: $color !important;
+  }
+}
+
+// Borders
+$radiuses: (
+        '0' : 0,
+        '0-1' : 0.1em,
+        '0-2' : 0.2em,
+        '0-3' : 0.3em,
+        '0-4' : 0.4em,
+        '0-5' : 0.5em,
+        '0-6' : 0.6em,
+        '0-7' : 0.7em,
+        '0-8' : 0.8em,
+        '0-9' : 0.9em,
+        '1-1' : 1.1em,
+        '1-2' : 1.2em,
+        '1-3' : 1.3em,
+        '1-4' : 1.4em,
+        '1-5' : 1.5em,
+        '1-6' : 1.6em,
+        '1-7' : 1.7em,
+        '1-8' : 1.8em,
+        '1-9' : 1.9em,
+        '1' : 1em,
+        '2' : 2em,
+        '3' : 3em,
+        '4' : 4em,
+        '5' : 5em,
+        'full' : 100%,
+);
+
+@each $class, $value in $radiuses {
+  .b-rad-#{$class} {
+    border-radius: $value !important;
+  }
+}
+
+// Spacers
+$spacers: (
+        '1px' : 1px,
+        '1em' : 1em,
+        '2em' : 2em,
+        '3em' : 3em,
+        '4em' : 4em,
+        '5em' : 5em,
+        '6em' : 6em,
+        '7em' : 7em,
+        '8em' : 8em,
+        '9em' : 9em,
+        '10em' : 10em,
+        '11em' : 11em,
+        '12em' : 12em,
+        '13em' : 13em,
+        '14em' : 14em,
+        '15em' : 15em,
+        '16em' : 16em,
+        '17em' : 17em,
+        '18em' : 18em,
+        '19em' : 19em,
+        '20em' : 20em,
+        '100vh': 100vh,
+);
+
+@each $class, $value in $spacers {
+  .spacer-#{$class} {
+    height: $value !important;
+  }
+}
+
+// Max width
+$max-widthes: (
+        '10em' : 10em,
+        '20em' : 20em,
+        '30em' : 30em,
+        '40em' : 40em,
+        '50em' : 50em,
+        '60em' : 60em,
+        '70em' : 70em,
+        '80em' : 80em,
+);
+
+@each $class, $value in $max-widthes {
+  .mw-#{$class} {
+    max-width: $value !important;
+  }
+}
+
+//Icon Sizes
+$icon-sizes: (
+        '1em' : 1em,
+        '1-1em' : 1.1em,
+        '1-2em' : 1.2em,
+        '1-3em' : 1.3em,
+        '1-4em' : 1.4em,
+        '1-5em' : 1.5em,
+        '1-6em' : 1.6em,
+        '1-7em' : 1.7em,
+        '1-8em' : 1.8em,
+        '1-9em' : 1.9em,
+        '2em' : 2em
+);
+
+@each $class, $value in $icon-sizes {
+  .icon-#{$class} {
+    width: $value !important;
+    height: $value !important;
+  }
+}
+
+
+// Other
+.unselectable {
+  @include unselectable;
+}
+
+.vh {
+  @include  vh;
+}
+
+.list-raw {
+  list-style: none;
+
+  ul, ol {
+    margin-left: 0;
+    list-style: inherit;
+  }
+}
+
+.text-justify {
+  text-align: justify;
+}

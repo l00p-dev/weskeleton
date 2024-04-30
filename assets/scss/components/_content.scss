@@ -1,48 +1,52 @@
 .cm_content {
-  font-size: 100%;
+  font-size: 1.1em;
 
   h1, .h1 {
-    font-size: 210%;
+    font-size: 2.1em;
   }
 
   h2, .h2 {
-    font-size: 190%;
+    font-size: 1.90em;
   }
 
   h3, .h3 {
-    font-size: 170%;
+    font-size: 1.70em;
   }
 
   h4, .h4 {
-    font-size: 150%;
+    font-size: 1.50em;
   }
 
   h5, .h5 {
-    font-size: 130%;
+    font-size: 1.30em;
   }
 
   h6, .h6 {
-    font-size: 100%;
+    font-size: 1.10em;
   }
 
-  h1, h2, h3, h4, h5, h6, p, blockquote, figure, ol, ul, pre, iframe, table {
+  p, blockquote, figure, ol, ul, pre, iframe, table {
     &:not(:last-child) {
-      margin-bottom: 24px;
+      margin-bottom: .5rem;
     }
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 8px;
+    &:not(:last-child) {
+      margin-bottom: .2rem;
+    }
 
     &:not(:first-child) {
-      margin-top: 40px;
+      margin-top: 1.5rem;
     }
   }
 
   code, kbd {
-    background-color: rgba(black, .1);
-    border-radius: 10px;
-    padding: 12px;
+    background-color: rgba($color-foreground, .1);
+    border: 0.1em solid rgba($color-foreground, .1);
+    border-radius: .5em;
+    padding: .3em .5em;
+    font-size: .9em;
   }
 
   p {
@@ -50,35 +54,38 @@
   }
 
   blockquote {
-    background-color: $cl-gray-0;
-    border-#{$start}: 4px solid $cl-gray-3;
-    padding: 20px 24px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: rgba($color-primary, .1);
+    border-#{$start}: .3em solid rgb($color-primary);
+    padding: 1em 1.5em;
 
     cite {
-      color: $cl-gray-10;
+      color: rgb($color-primary);
+      font-size: .9em;
     }
   }
 
   q {
-    background-color: $cl-gray-1;
-    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
-    padding: 6px;
+    background-color: rgba($color-primary, .1);
+    color: rgb($color-primary);
+    padding: .3em .4em;
+    border-radius: .5em;
   }
 
-  ul, ol {
-    li {
-      &::marker {
-        color: $cl-ac;
-      }
+  ul {
+    li::marker {
+      font-size: 1.3em;
+      line-height: 0;
     }
   }
 
-  pre {
-    background-color: $cl-gray-0;
-    padding: 20px 24px;
+  ul, ol {
+    list-style-position: inside;
+
+    li {
+      &::marker {
+        color: rgb($color-primary);
+      }
+    }
   }
 
   figure {
@@ -88,30 +95,32 @@
 
     figcaption {
       text-align: center;
-      margin-top: 8px;
-      font-size: 80%;
-      color: $cl-gray-8;
+      margin-top: .5em;
+      font-size: .9em;
+      color: rgba($color-foreground, .4);
     }
   }
 
   a {
-    color: $cl-ac;
+    color: rgb($color-primary);
     position: relative;
 
     &::after {
       content: "";
       position: absolute;
       #{$start}: 0;
-      bottom: 0;
+      bottom: -.2em;
       width: 50%;
-      height: 1px;
-      background-color: $cl-ac;
-      transition: $tr-dur-fast $tr-timing;
+      height: .15em;
+      background-color: rgb($color-primary);
+      transition: .3s;
+      opacity: .4;
     }
 
     &:hover, &:focus {
       &::after {
         width: 100%;
+        opacity: 1;
       }
     }
   }
@@ -119,26 +128,27 @@
   table {
     width: 100%;
     border-collapse: separate;
-    border: 1px solid $cl-gray-2;
-    border-radius: 4px;
+    border: .1em solid rgba($color-foreground, .2);
+    border-radius: .8em;
 
     td, th {
-      border: 1px solid $cl-gray-1;
-      border-width: 0 1px 1px 0;
+      border-style: solid;
+      border-color: rgba($color-foreground, .1);
+      border-width: 0 0.1em 0.1em 0;
       text-align: #{$start};
-      padding: .45rem .75rem;
+      padding: .5em 1em;
     }
 
     tr {
       td, th {
         &:last-child {
-          border-width: 0 0 1px 0;
+          border-width: 0 0 .1em 0;
         }
       }
 
       &:last-child {
         td, th {
-          border-width: 0 1px 0 0;
+          border-width: 0 .1em 0 0;
 
           &:last-child {
             border-width: 0;
