@@ -1,0 +1,238 @@
+$utilities: (
+        "display": (
+                responsive: true,
+                print: true,
+                property: display,
+                class: d,
+                values: inline inline-block block grid inline-grid flex inline-flex none
+        ),
+        "position": (
+                property: position,
+                values: static relative absolute fixed sticky
+        ),
+        "flex": (
+                responsive: true,
+                property: flex,
+                values: (fill: 1 1 auto)
+        ),
+        "flex-direction": (
+                responsive: true,
+                property: flex-direction,
+                class: flex,
+                values: row column row-reverse column-reverse
+        ),
+        "flex-grow": (
+                responsive: true,
+                property: flex-grow,
+                class: flex,
+                values: (
+                        grow-0: 0,
+                        grow-1: 1,
+                )
+        ),
+        "flex-shrink": (
+                responsive: true,
+                property: flex-shrink,
+                class: flex,
+                values: (
+                        shrink-0: 0,
+                        shrink-1: 1,
+                )
+        ),
+        "flex-wrap": (
+                responsive: true,
+                property: flex-wrap,
+                class: flex,
+                values: wrap nowrap wrap-reverse
+        ),
+        "justify-content": (
+                responsive: true,
+                property: justify-content,
+                values: (
+                        start: flex-start,
+                        end: flex-end,
+                        center: center,
+                        between: space-between,
+                        around: space-around,
+                        evenly: space-evenly,
+                )
+        ),
+        "align-items": (
+                responsive: true,
+                property: align-items,
+                values: (
+                        start: flex-start,
+                        end: flex-end,
+                        center: center,
+                        baseline: baseline,
+                        stretch: stretch,
+                )
+        ),
+        "align-content": (
+                responsive: true,
+                property: align-content,
+                values: (
+                        start: flex-start,
+                        end: flex-end,
+                        center: center,
+                        between: space-between,
+                        around: space-around,
+                        stretch: stretch,
+                )
+        ),
+        "align-self": (
+                responsive: true,
+                property: align-self,
+                values: (
+                        auto: auto,
+                        start: flex-start,
+                        end: flex-end,
+                        center: center,
+                        baseline: baseline,
+                        stretch: stretch,
+                )
+        ),
+        "order": (
+                responsive: true,
+                property: order,
+                values: (
+                        first: -1,
+                        0: 0,
+                        1: 1,
+                        2: 2,
+                        3: 3,
+                        4: 4,
+                        5: 5,
+                        last: 6,
+                ),
+        ),
+        "margin": (
+                responsive: true,
+                property: margin,
+                class: m,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-x": (
+                responsive: true,
+                property: margin-right margin-left,
+                class: mx,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-y": (
+                responsive: true,
+                property: margin-top margin-bottom,
+                class: my,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-top": (
+                responsive: true,
+                property: margin-top,
+                class: mt,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-end": (
+                responsive: true,
+                property: margin-#{$end},
+                class: me,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-bottom": (
+                responsive: true,
+                property: margin-bottom,
+                class: mb,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "margin-start": (
+                responsive: true,
+                property: margin-#{$start},
+                class: ms,
+                values: map-merge($spacers, (auto: auto))
+        ),
+        "padding": (
+                responsive: true,
+                property: padding,
+                class: p,
+                values: $spacers
+        ),
+        "padding-x": (
+                responsive: true,
+                property: padding-right padding-left,
+                class: px,
+                values: $spacers
+        ),
+        "padding-y": (
+                responsive: true,
+                property: padding-top padding-bottom,
+                class: py,
+                values: $spacers
+        ),
+        "padding-top": (
+                responsive: true,
+                property: padding-top,
+                class: pt,
+                values: $spacers
+        ),
+        "padding-end": (
+                responsive: true,
+                property: padding-#{$end},
+                class: pe,
+                values: $spacers
+        ),
+        "padding-bottom": (
+                responsive: true,
+                property: padding-bottom,
+                class: pb,
+                values: $spacers
+        ),
+        "padding-start": (
+                responsive: true,
+                property: padding-#{$start},
+                class: ps,
+                values: $spacers
+        ),
+        "gap": (
+                responsive: true,
+                property: gap,
+                class: gap,
+                values: $spacers
+        ),
+        "row-gap": (
+                responsive: true,
+                property: row-gap,
+                class: row-gap,
+                values: $spacers
+        ),
+        "column-gap": (
+                responsive: true,
+                property: column-gap,
+                class: column-gap,
+                values: $spacers
+        ),
+        "font-weight": (
+                property: font-weight,
+                class: fw,
+                values: (
+                        light: $font-weight-light,
+                        normal: $font-weight-normal,
+                        medium: $font-weight-medium,
+                        semibold: $font-weight-semibold,
+                        bold: $font-weight-bold,
+                        300 : $font-weight-light,
+                        400 : $font-weight-normal,
+                        500 : $font-weight-medium,
+                        600 : $font-weight-semibold,
+                        700 : $font-weight-bold,
+                )
+        ),
+        "text-align": (
+                responsive: true,
+                property: text-align,
+                class: text,
+                values: (
+                        start: #{$start},
+                        end: #{$end},
+                        center: center,
+                        justify: justify,
+                )
+        ),
+);

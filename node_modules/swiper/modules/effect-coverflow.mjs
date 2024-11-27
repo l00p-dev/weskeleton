@@ -1,7 +1,7 @@
 import { c as createShadow } from '../shared/create-shadow.mjs';
 import { e as effectInit } from '../shared/effect-init.mjs';
 import { e as effectTarget } from '../shared/effect-target.mjs';
-import { g as getSlideTransformEl } from '../shared/utils.mjs';
+import { g as getSlideTransformEl, o as getRotateFix } from '../shared/utils.mjs';
 
 function EffectCoverflow(_ref) {
   let {
@@ -32,6 +32,7 @@ function EffectCoverflow(_ref) {
     const center = isHorizontal ? -transform + swiperWidth / 2 : -transform + swiperHeight / 2;
     const rotate = isHorizontal ? params.rotate : -params.rotate;
     const translate = params.depth;
+    const r = getRotateFix(swiper);
     // Each slide offset from center
     for (let i = 0, length = slides.length; i < length; i += 1) {
       const slideEl = slides[i];
@@ -59,15 +60,7 @@ function EffectCoverflow(_ref) {
       if (Math.abs(rotateY) < 0.001) rotateY = 0;
       if (Math.abs(rotateX) < 0.001) rotateX = 0;
       if (Math.abs(scale) < 0.001) scale = 0;
-      if (swiper.browser && swiper.browser.need3dFix) {
-        if (Math.abs(rotateY) / 90 % 2 === 1) {
-          rotateY += 0.001;
-        }
-        if (Math.abs(rotateX) / 90 % 2 === 1) {
-          rotateX += 0.001;
-        }
-      }
-      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+      const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${r(rotateX)}deg) rotateY(${r(rotateY)}deg) scale(${scale})`;
       const targetEl = effectTarget(params, slideEl);
       targetEl.style.transform = slideTransform;
       slideEl.style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;

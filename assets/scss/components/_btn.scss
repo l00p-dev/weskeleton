@@ -173,6 +173,7 @@
       box-shadow: 0 0 0 3px rgba($color-foreground, .08);
     }
   }
+
   &.style--solid--white {
     color: white;
     fill: white;
@@ -210,6 +211,8 @@
   fill: rgb($color-foreground);
   color: rgb($color-foreground);
   @include unselectable;
+  line-height: 1.3em;
+  flex-shrink: 0;
 
   &::after {
     content: "";
@@ -235,16 +238,17 @@
     opacity: .3;
   }
 
-  svg {
+  svg, img {
     margin-right: -.6em;
     margin-left: -.6em;
     flex-shrink: 0;
   }
 
   &.iconic {
-    padding: .5em;
+    padding: .8em;
+    min-width: 3.03em;
 
-    svg {
+    svg, img {
       margin: 0;
     }
   }

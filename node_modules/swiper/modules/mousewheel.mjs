@@ -312,6 +312,7 @@ function Mousewheel(_ref) {
             lastEventBeforeSnap = newEvent;
             recentWheelEvents.splice(0);
             timeout = nextTick(() => {
+              if (swiper.destroyed || !swiper.params) return;
               swiper.slideToClosest(swiper.params.speed, true, undefined, snapToThreshold);
             }, 0); // no delay; move on next tick
           }
@@ -321,6 +322,7 @@ function Mousewheel(_ref) {
             // we'll consider a scroll "complete" when there haven't been any wheel events
             // for 500ms.
             timeout = nextTick(() => {
+              if (swiper.destroyed || !swiper.params) return;
               const snapToThreshold = 0.5;
               lastEventBeforeSnap = newEvent;
               recentWheelEvents.splice(0);

@@ -1,14 +1,45 @@
 // Size
-.size--small {
-  font-size: .85em !important;
-}
-
-.size--large {
-  font-size: 1.15em !important;
+@each $class, $value in (
+        'small' : .85em,
+        'large' : 1.15em,
+        '0-5em' : .5em,
+        '0-6em' : .6em,
+        '0-7em' : .7em,
+        '0-8em' : .8em,
+        '0-9em' : .9em,
+        '0-55em' : .55em,
+        '0-65em' : .65em,
+        '0-75em' : .75em,
+        '0-85em' : .85em,
+        '0-95em' : .95em,
+        '1-1em' : 1.1em,
+        '1-2em' : 1.2em,
+        '1-3em' : 1.3em,
+        '1-4em' : 1.4em,
+        '1-5em' : 1.5em,
+        '1-05em' : 0.5em,
+        '1-15em' : 1.15em,
+        '1-25em' : 1.25em,
+        '1-35em' : 1.35em,
+        '1-45em' : 1.45em,
+        '1-55em' : 1.55em,
+        '1em' : 1em,
+        '2em' : 2em,
+        '3em' : 3em,
+        '4em' : 4em,
+        '5em' : 5em,
+        '6em' : 6em,
+        '7em' : 7em,
+        '8em' : 8em,
+        '9em' : 9em,
+) {
+  .size-#{$class} {
+    font-size: $value !important;
+  }
 }
 
 // Colors
-$colors: (
+@each $id, $color in (
         primary : rgb($color-primary),
         secondary : rgb($color-secondary),
         foreground : rgb($color-foreground),
@@ -38,13 +69,10 @@ $colors: (
         gray-21 : rgb($cl-gray-21),
         gray-22 : rgb($cl-gray-22),
         gray-23 : rgb($cl-gray-23),
-
         success : rgb($color-success),
         warning : rgb($color-warning),
         error : rgb($color-error),
-);
-
-@each $id, $color in $colors {
+) {
   .cl-#{$id} {
     color: $color !important;
   }
@@ -58,8 +86,8 @@ $colors: (
   }
 }
 
-// Borders
-$radiuses: (
+// Border Radius's
+@each $class, $value in (
         '0' : 0,
         '0-1' : 0.1em,
         '0-2' : 0.2em,
@@ -85,16 +113,15 @@ $radiuses: (
         '4' : 4em,
         '5' : 5em,
         'full' : 100%,
-);
-
-@each $class, $value in $radiuses {
+) {
   .b-rad-#{$class} {
     border-radius: $value !important;
   }
 }
 
 // Spacers
-$spacers: (
+
+@each $class, $value in (
         '1px' : 1px,
         '1em' : 1em,
         '2em' : 2em,
@@ -117,35 +144,42 @@ $spacers: (
         '19em' : 19em,
         '20em' : 20em,
         '100vh': 100vh,
-);
-
-@each $class, $value in $spacers {
+) {
   .spacer-#{$class} {
     height: $value !important;
   }
 }
 
 // Max width
-$max-widthes: (
+@each $class, $value in (
+        '2em' : 2em,
+        '4em' : 4em,
+        '6em' : 6em,
+        '8em' : 8em,
         '10em' : 10em,
+        '12em' : 12em,
+        '15em' : 15em,
         '20em' : 20em,
+        '25em' : 25em,
         '30em' : 30em,
+        '35em' : 35em,
         '40em' : 40em,
+        '45em' : 45em,
         '50em' : 50em,
+        '55em' : 55em,
         '60em' : 60em,
+        '65em' : 65em,
         '70em' : 70em,
+        '75em' : 75em,
         '80em' : 80em,
-);
-
-@each $class, $value in $max-widthes {
+) {
   .mw-#{$class} {
     max-width: $value !important;
   }
 }
 
 //Icon Sizes
-$icon-sizes: (
-        '1em' : 1em,
+@each $class, $value in (
         '1-1em' : 1.1em,
         '1-2em' : 1.2em,
         '1-3em' : 1.3em,
@@ -155,13 +189,48 @@ $icon-sizes: (
         '1-7em' : 1.7em,
         '1-8em' : 1.8em,
         '1-9em' : 1.9em,
-        '2em' : 2em
-);
-
-@each $class, $value in $icon-sizes {
+        '1em' : 1em,
+        '2em' : 2em,
+        '3em' : 3em,
+        '4em' : 4em,
+        '5em' : 5em,
+        '6em' : 6em,
+        '7em' : 7em,
+        '8em' : 8em,
+        '9em' : 9em,
+        '10em': 10em,
+) {
   .icon-#{$class} {
     width: $value !important;
     height: $value !important;
+  }
+}
+
+//Opacities
+@each $opacity, $value in (
+        '0' : 0,
+        '1' : 1,
+        '0-1' : 0.1,
+        '0-2' : 0.2,
+        '0-3' : 0.3,
+        '0-4' : 0.4,
+        '0-5' : 0.5,
+        '0-6' : 0.6,
+        '0-7' : 0.7,
+        '0-8' : 0.8,
+        '0-9' : 0.9,
+        '0-15' : 0.15,
+        '0-25' : 0.25,
+        '0-35' : 0.35,
+        '0-45' : 0.45,
+        '0-55' : 0.55,
+        '0-65' : 0.65,
+        '0-75' : 0.75,
+        '0-85' : 0.85,
+        '0-95' : 0.95,
+) {
+  .opacity-#{$opacity} {
+    opacity: $value !important;
   }
 }
 
@@ -172,18 +241,30 @@ $icon-sizes: (
 }
 
 .vh {
-  @include  vh;
+  @include vh;
 }
 
 .list-raw {
   list-style: none;
+  padding: 0;
+  margin: 0;
 
   ul, ol {
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
     list-style: inherit;
   }
 }
 
-.text-justify {
-  text-align: justify;
+.stretched-link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+  }
+}
+
+.w-100 {
+  width: 100% !important;
 }

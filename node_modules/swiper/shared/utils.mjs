@@ -184,7 +184,22 @@ function elementChildren(element, selector) {
   if (selector === void 0) {
     selector = '';
   }
-  return [...element.children].filter(el => el.matches(selector));
+  const children = [...element.children];
+  if (element instanceof HTMLSlotElement) {
+    children.push(...element.assignedElements());
+  }
+  if (!selector) {
+    return children;
+  }
+  return children.filter(el => el.matches(selector));
+}
+function elementIsChildOf(el, parent) {
+  const isChild = parent.contains(el);
+  if (!isChild && parent instanceof HTMLSlotElement) {
+    const children = [...parent.assignedElements()];
+    return children.includes(el);
+  }
+  return isChild;
 }
 function showWarning(text) {
   try {
@@ -288,5 +303,13 @@ function elementOuterSize(el, size, includeMargins) {
 function makeElementsArray(el) {
   return (Array.isArray(el) ? el : [el]).filter(e => !!e);
 }
+function getRotateFix(swiper) {
+  return v => {
+    if (Math.abs(v) > 0 && swiper.browser && swiper.browser.need3dFix && Math.abs(v) % 90 === 0) {
+      return v + 0.001;
+    }
+    return v;
+  };
+}
 
-export { elementParents as a, elementOffset as b, createElement as c, now as d, elementChildren as e, elementOuterSize as f, getSlideTransformEl as g, elementIndex as h, classesToTokens as i, getTranslate as j, elementTransitionEnd as k, isObject as l, makeElementsArray as m, nextTick as n, elementStyle as o, elementNextAll as p, elementPrevAll as q, animateCSSModeScroll as r, setCSSProperty as s, showWarning as t, extend as u, deleteProps as v };
+export { elementParents as a, elementOffset as b, createElement as c, now as d, elementChildren as e, elementOuterSize as f, getSlideTransformEl as g, elementIndex as h, classesToTokens as i, getTranslate as j, elementTransitionEnd as k, isObject as l, makeElementsArray as m, nextTick as n, getRotateFix as o, elementStyle as p, elementNextAll as q, elementPrevAll as r, setCSSProperty as s, animateCSSModeScroll as t, showWarning as u, elementIsChildOf as v, extend as w, deleteProps as x };

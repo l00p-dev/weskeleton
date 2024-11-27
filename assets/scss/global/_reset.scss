@@ -48,10 +48,10 @@ table {
   box-sizing: border-box;
 }
 
-ul[class],
-ol[class] {
-  padding: 0;
-}
+//ul[class],
+//ol[class] {
+//  padding: 0;
+//}
 
 body,
 h1,
@@ -77,10 +77,10 @@ body {
   line-height: 1.5;
 }
 
-ul[class],
-ol[class] {
-  list-style: none;
-}
+//ul[class],
+//ol[class] {
+//  list-style: none;
+//}
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
@@ -141,6 +141,11 @@ a {
   &:hover {
     text-decoration: none;
     color: inherit;
+  }
+
+  &:visited {
+    fill: inherit;
+    svg { fill: inherit; }
   }
 }
 
@@ -336,10 +341,10 @@ input[type=text] {
 }
 
 ol, ul {
-  list-style-position: inside;
+  padding-left: 1.5em;
 
   ol, ul {
-    margin-left: 12px;
+    margin-left: 1em;
   }
 }
 

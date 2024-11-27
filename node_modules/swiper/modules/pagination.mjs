@@ -65,6 +65,16 @@ function Pagination(_ref) {
       }
     }
   }
+  function getMoveDirection(prevIndex, nextIndex, length) {
+    prevIndex = prevIndex % length;
+    nextIndex = nextIndex % length;
+    if (nextIndex === prevIndex + 1) {
+      return 'next';
+    } else if (nextIndex === prevIndex - 1) {
+      return 'previous';
+    }
+    return;
+  }
   function onBulletClick(e) {
     const bulletEl = e.target.closest(classesToSelector(swiper.params.pagination.bulletClass));
     if (!bulletEl) {
@@ -74,7 +84,14 @@ function Pagination(_ref) {
     const index = elementIndex(bulletEl) * swiper.params.slidesPerGroup;
     if (swiper.params.loop) {
       if (swiper.realIndex === index) return;
-      swiper.slideToLoop(index);
+      const moveDirection = getMoveDirection(swiper.realIndex, index, swiper.slides.length);
+      if (moveDirection === 'next') {
+        swiper.slideNext();
+      } else if (moveDirection === 'previous') {
+        swiper.slidePrev();
+      } else {
+        swiper.slideToLoop(index);
+      }
     } else {
       swiper.slideTo(index);
     }

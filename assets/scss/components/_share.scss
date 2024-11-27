@@ -1,0 +1,10 @@
+.cm_share {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  justify-content: center;
+
+  &__copy {
+    margin-right: auto;
+  }
+}

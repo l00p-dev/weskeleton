@@ -1,0 +1,46 @@
+$plyr-color-main: rgb($color-primary);
+
+.swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .6em;
+
+  .swiper-pagination-bullet {
+    width: .5em;
+    height: .5em;
+    background-color: rgba($color-foreground, .2);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: rgb($color-primary);
+    cursor: pointer;
+  }
+}
+
+.swiper-scrollbar {
+  height: .3em;
+  background-color: rgba($color-foreground, .1);
+
+  .swiper-scrollbar-drag {
+    background-color: rgb($color-primary);
+    height: inherit;
+    cursor: pointer;
+  }
+}
+
+.iziToast.iziToast-color-red {
+  background: rgb(var(--error-color)) !important;
+  border-color: rgb(var(--error-color)) !important;
+}
+.iziToast.iziToast-color-orange {
+  background: rgb(var(--warning-color)) !important;
+  border-color: rgb(var(--warning-color)) !important;
+}
+.iziToast.iziToast-color-green {
+  background: rgb(var(--success-color)) !important;
+  border-color: rgb(var(--success-color)) !important;
+}
+

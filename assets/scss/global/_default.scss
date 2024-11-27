@@ -26,6 +26,11 @@ svg {
   align-self: center;
 }
 
+mark {
+  background-color: rgba($color-secondary, .1);
+  color: rgb($color-secondary);
+}
+
 // Scrollbar
 
 $cl-scrollbar-bg : transparent;
@@ -51,88 +56,4 @@ $cl-scrollbar-thumb : rgba($color-foreground, .25);
 
   scrollbar-color: $cl-scrollbar-thumb $cl-scrollbar-bg;
   scrollbar-width: thin;
-}
-
-// Libraries
-.swiper-pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: .5em;
-
-  .swiper-pagination-bullet {
-    width: .5em;
-    height: .5em;
-    background-color: rgba($color-foreground, .2);
-    border-radius: 50%;
-  }
-  .swiper-pagination-bullet-active {
-    background-color: rgb($color-primary);
-    cursor: pointer;
-  }
-}
-
-.swiper-scrollbar {
-  height: .3em;
-  background-color: rgba($color-foreground, .1);
-
-  .swiper-scrollbar-drag {
-    background-color: rgb($color-primary);
-    height: inherit;
-    cursor: pointer;
-  }
-}
-
-.iziToast.iziToast-color-red {
-  background: rgb(var(--error-color)) !important;
-  border-color: rgb(var(--error-color)) !important;
-}
-.iziToast.iziToast-color-orange {
-  background: rgb(var(--warning-color)) !important;
-  border-color: rgb(var(--warning-color)) !important;
-}
-.iziToast.iziToast-color-green {
-  background: rgb(var(--success-color)) !important;
-  border-color: rgb(var(--success-color)) !important;
-}
-
-:root {
-  --plyr-color-main: rgb(var(--primary-color));
-  --plyr-audio-controls-background: rgba(var(--foreground-color), .05);
-  --plyr-badge-background: rgb(var(--foreground-color));
-  --plyr-badge-text-color: rgb(var(--foreground-color));
-  --plyr-captions-text-color: rgb(var(--foreground-color));
-  --plyr-video-control-color: rgb(var(--foreground-colorforeground));
-  --plyr-video-control-color-hover: rgba(var(--foreground-color), .85);
-  --plyr-audio-control-color: rgb(var(--foreground-color));
-  --plyr-audio-control-color-hover: rgb(var(--foreground-color));
-  --plyr-menu-color: rgb(var(--foreground-color));
-  --plyr-menu-item-arrow-color: rgb(var(--foreground-color));
-  --plyr-menu-border-color: rgba(var(--foreground-color), 2);
-  --plyr-menu-border-shadow-color: rgb(var(--foreground-color));
-  --plyr-range-thumb-background: rgb(var(--foreground-color));
-  --plyr-tooltip-color: rgb(var(--foreground-color));
-
-  --plyr-control-icon-size: 1.3em;
-  --plyr-badge-border-radius: .2em;
-  --plyr-control-spacing: .7em;
-  --plyr-control-radius: .5em;
-  --plyr-menu-radius: .5em;
-  --plyr-menu-arrow-size: .4em;
-  --plyr-menu-item-arrow-size: .3em;
-  --plyr-progress-loading-size: 1.8em;
-  --plyr-range-thumb-height: 1em;
-  --plyr-font-size-base: 1em;
-  --plyr-font-size-small: .9em;
-  --plyr-font-size-large: 1.1em;
-}
-
-//other
-.emoji {
-  display: inline-block;
-  width: 1.7em;
-  height: 1.7em;
-  vertical-align: middle;
-  @include unselectable;
 }

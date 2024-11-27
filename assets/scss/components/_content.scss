@@ -1,5 +1,6 @@
 .cm_content {
   font-size: 1.1em;
+  line-height: 2em;
 
   h1, .h1 {
     font-size: 2.1em;
@@ -27,17 +28,17 @@
 
   p, blockquote, figure, ol, ul, pre, iframe, table {
     &:not(:last-child) {
-      margin-bottom: .5rem;
+      margin-bottom: 1rem;
     }
   }
 
   h1, h2, h3, h4, h5, h6 {
     &:not(:last-child) {
-      margin-bottom: .2rem;
+      margin-bottom: 1rem;
     }
 
     &:not(:first-child) {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
   }
 
@@ -55,8 +56,21 @@
 
   blockquote {
     background-color: rgba($color-primary, .1);
-    border-#{$start}: .3em solid rgb($color-primary);
     padding: 1em 1.5em;
+    position: relative;
+    border-radius: .5em;
+    margin-left: .7em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: .3em;
+      background-color: rgb($color-primary);
+      top: 0;
+      bottom: 0;
+      #{$start}: -.7em;
+      border-radius: .3em;
+    }
 
     cite {
       color: rgb($color-primary);
@@ -79,8 +93,6 @@
   }
 
   ul, ol {
-    list-style-position: inside;
-
     li {
       &::marker {
         color: rgb($color-primary);
@@ -123,6 +135,17 @@
         opacity: 1;
       }
     }
+  }
+
+  iframe {
+    background-color: rgb($color-gray);
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   table {

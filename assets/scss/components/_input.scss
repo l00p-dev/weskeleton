@@ -105,7 +105,7 @@
       color: rgb($color-success);
     }
 
-    input, .cm_select__preview {
+    input, textarea, .cm_select__preview {
       border-color: rgba($color-success, .3);
 
       &:hover {
@@ -141,7 +141,7 @@
       color: rgb($color-warning);
     }
 
-    input, .cm_select__preview {
+    input, textarea, .cm_select__preview {
       border-color: rgba($color-warning, .3);
 
       &:hover {
@@ -177,7 +177,7 @@
       color: rgb($color-error);
     }
 
-    input, .cm_select__preview {
+    input, textarea, .cm_select__preview {
       border-color: rgba($color-error, .3);
 
       &:hover {

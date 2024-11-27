@@ -1,117 +1,13 @@
-// Variables
-let interactSoundEffectsEnabled = true
-let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('direction') === 'rtl'
-
-// Weskeleton
-{
-    function weskeletonSettingsInit() {
-        const savedPrimaryColor = localStorage.getItem("setting-primary-color")
-        const savedSecondaryColor = localStorage.getItem("setting-secondary-color")
-        const savedForegroundColor = localStorage.getItem("setting-foreground-color")
-        const savedBackgroundColor = localStorage.getItem("setting-background-color")
-        const savedGrayColor = localStorage.getItem("setting-gray-color")
-
-        if(
-            savedPrimaryColor &&
-            savedSecondaryColor &&
-            savedForegroundColor &&
-            savedBackgroundColor &&
-            savedGrayColor
-        ) {
-            changeRootVariable('primary-color', savedPrimaryColor)
-            changeRootVariable('secondary-color', savedSecondaryColor)
-            changeRootVariable('foreground-color', savedForegroundColor)
-            changeRootVariable('background-color', savedBackgroundColor)
-            changeRootVariable('gray-color', savedGrayColor)
-        }
-
-        if(localStorage.getItem('setting-is-bigger-font-size')) {
-            // Make switch update on DOM
-            document.getElementById('weskeleton-increase-font-size-input').checked = true
-            let currentFontSize = parseFloat(window.getComputedStyle(document.body).fontSize);
-            document.body.style.fontSize = (currentFontSize * 1.2) + 'px';
-        }
-
-        if(localStorage.getItem('setting-is-ise-off')) {
-            interactSoundEffectsEnabled = false
-            document.getElementById('weskeleton-ise-input').checked = false
-        }
-    }
-
-    function weskeletonReset() {
-        localStorage.removeItem("setting-primary-color")
-        localStorage.removeItem("setting-secondary-color")
-        localStorage.removeItem("setting-foreground-color")
-        localStorage.removeItem("setting-background-color")
-        localStorage.removeItem("setting-gray-color")
-        localStorage.removeItem("setting-is-bigger-font-size");
-        localStorage.removeItem("setting-is-ise-off");
-
-        location.reload()
-    }
-
-    function weskeletonToggleFontSize(el) {
-        if(el.checked) {
-            localStorage.setItem("setting-is-bigger-font-size", true);
-            let currentFontSize = parseFloat(window.getComputedStyle(document.body).fontSize);
-            document.body.style.fontSize = (currentFontSize * 1.2) + 'px';
-        }
-        else {
-            localStorage.removeItem("setting-is-bigger-font-size");
-            document.body.style.removeProperty('font-size')
-        }
-    }
-
-    function weskeletonToggleISE(el) {
-        if(!el.checked) {
-            localStorage.setItem("setting-is-ise-off", true);
-            interactSoundEffectsEnabled = false
-        }
-        else {
-            localStorage.removeItem("setting-is-ise-off");
-            interactSoundEffectsEnabled = true
-        }
-    }
+// Function to detect text direction
+function getDirection() {
+    var bodyElement = document.body
+    var style = window.getComputedStyle(bodyElement)
+    var direction = style.getPropertyValue('direction')
+    return direction === 'rtl'
 }
 
 // Helper functions
 {
-    function switchTheme(el) {
-        const primaryColor = extractRGBValues(window.getComputedStyle(el.children[0], null).getPropertyValue('background-color'))
-        const secondaryColor = extractRGBValues(window.getComputedStyle(el.children[1], null).getPropertyValue('background-color'))
-        const backgroundColor = extractRGBValues(window.getComputedStyle(el.children[2], null).getPropertyValue('background-color'))
-        const grayColor = extractRGBValues(window.getComputedStyle(el.children[3], null).getPropertyValue('background-color'))
-        const ForegroundColor = extractRGBValues(window.getComputedStyle(el.children[4], null).getPropertyValue('background-color'))
-
-
-        changeRootVariable('primary-color', primaryColor)
-        changeRootVariable('secondary-color', secondaryColor)
-        changeRootVariable('foreground-color', ForegroundColor)
-        changeRootVariable('background-color', backgroundColor)
-        changeRootVariable('gray-color', grayColor)
-
-        function extractRGBValues(rgbString) {
-            let values = rgbString.match(/\((.*?)\)/)[1];
-            let rgbArray = values.split(',').map(value => value.trim());
-            return rgbArray.join(', ');
-        }
-    }
-
-    function changeRootVariable(variableName, newValue) {
-        document.documentElement.style.setProperty(`--${variableName}`, newValue);
-        localStorage.setItem("setting-" + variableName, newValue);
-    }
-
-    function playInteractionSoundEffect(src) {
-        if(interactSoundEffectsEnabled) {
-            let audio = new Audio(src);
-            audio.play();
-            audio.onended = function() {
-                audio.remove();
-            };
-        }
-    }
-
     function querySelectorParent(query, el) {
         let currentElement = el
         while(!currentElement.parentNode.querySelector(query)) {
@@ -122,6 +18,20 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
 
     function go(href) {
         document.location.href = href;
+    }
+
+    function copy(text, alert = null) {
+        const input = document.createElement('textarea');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        input.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(input.value);
+        document.body.removeChild(input);
+
+        if(alert) {
+            iziToast.success({title: alert})
+        }
     }
 
     function socialNetwordShare(to, url = window.location.href, text = '') {
@@ -149,6 +59,10 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
             case  'telegram':
                 window.open(`https://telegram.me/share/url?url=${url}&text=${text}`, '_blank');
                 break;
+
+            case  'copy':
+                copy(url, 'Copied!')
+                break;
         }
     }
 }
@@ -164,16 +78,16 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         if(input.disabled)
             return
 
-        playInteractionSoundEffect('assets/audio/ise/drop.mp3')
-
         dropdown.style = "translate: none; rotate: none; scale: none; transform: translate(0px, -1.9em) scale(0.98, 0.98); opacity: 0;"
         dropdown.classList.remove('d-none')
+        select.dataset.isOpen = 'true'
         gsap.to(dropdown, {
             opacity : 1,
             y : '0',
-            duration: 0.1,
+            duration: 0.15,
             scale: 1,
             ease: "power4.in",
+            display: 'block',
         })
 
         select.addEventListener('blur', closeDropdown, {once: true})
@@ -202,24 +116,28 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         }
 
         function closeDropdown(event) {
-            if(!select.contains(event.relatedTarget)) {
-                gsap.to(dropdown, {
-                    opacity: 0,
-                    y: '-1.9em',
-                    duration: 0.1,
-                    scale: 0.98,
-                    ease: "power4.out",
-                    onComplete() {
-                        dropdown.classList.add('d-none')
-                    }
-                })
+            if(select.dataset.isOpen === 'true') {
+                if(!select.contains(event.relatedTarget)) {
+                    select.dataset.isOpen = 'false'
+                    gsap.to(dropdown, {
+                        opacity: 0,
+                        y: '-1.9em',
+                        duration: 0.15,
+                        scale: 0.98,
+                        ease: "power4.out",
+                        onComplete() {
+                            dropdown.classList.add('d-none')
+                        }
+                    })
+                }
             }
         }
 
         function choose(event) {
             const text = event.target.textContent
-            const value = event.target.dataset.value
             const placeholder = event.target.dataset.placeholder
+            const value = event.target.dataset.value
+            const href = event.target.href
 
             if(placeholder !== undefined) {
                 preview.classList.add('placeholder')
@@ -229,7 +147,14 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
             }
 
             preview.textContent = text
-            input.value = value
+
+            if(value) {
+                input.value = value
+                input.dispatchEvent(new Event('input', { 'bubbles': true }));
+            }
+            if(href) {
+                go(href)
+            }
             closeDropdown(dropdown)
         }
     }
@@ -238,7 +163,6 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         const popup = document.getElementById(id)
         const content = popup.querySelector('.cm_popup__body')
 
-        playInteractionSoundEffect('assets/audio/ise/bloop.mp3')
         gsap.to(popup, {
             opacity: 0,
         })
@@ -250,17 +174,22 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
             duration: .2,
             onComplete() {
                 popup.classList.add('d-none')
+                popup.setAttribute('aria-hidden', 'true');
                 document.body.style.overflowY = 'auto'
             }
         })
     }
 
-    function openPopup(id) {
+    function openPopup(id, preventPageScroll = false) {
         const popup = document.getElementById(id)
         const content = popup.querySelector('.cm_popup__body')
         const overlay = popup.querySelector('.cm_popup__overlay')
         popup.classList.remove('d-none')
-        document.body.style.overflowY = 'hidden'
+        popup.setAttribute('aria-hidden', 'false');
+
+        if(preventPageScroll) {
+            document.body.style.overflowY = 'hidden'
+        }
 
         gsap.fromTo(popup, {
             opacity: 0,
@@ -281,14 +210,18 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         })
     }
 
-    function openMenu(id) {
+    function openMenu(id, preventPageScroll = false) {
         const menu = document.getElementById(id)
         const content = menu.querySelector('.cm_menu__content')
         const overlay = menu.querySelector('.cm_menu__overlay')
 
         overlay.classList.remove('d-none')
+        menu.setAttribute('aria-hidden', 'false');
         content.classList.add('open')
-        document.body.style.overflowY = 'hidden'
+
+        if(preventPageScroll) {
+            document.body.style.overflowY = 'hidden'
+        }
 
         gsap.fromTo(overlay, {
             opacity: 0,
@@ -306,8 +239,6 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         if(!content.classList.contains('open'))
             return
 
-        playInteractionSoundEffect('assets/audio/ise/swing-whoosh.mp3')
-
         content.classList.remove('open')
 
         gsap.to(overlay, {
@@ -315,6 +246,7 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
             duration: .3,
             onComplete() {
                 overlay.classList.add('d-none')
+                menu.setAttribute('aria-hidden', 'true');
                 document.body.style.overflowY = 'auto'
             }
         })
@@ -328,8 +260,10 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
 
         nav.querySelectorAll('.cm_tab__nav__item').forEach(item => {
             item.classList.remove('active')
+            item.setAttribute('aria-selected', 'false');
         })
         el.classList.add('active')
+        el.setAttribute('aria-selected', 'true');
 
         content.querySelectorAll('.cm_tab__content__item').forEach(item => {
             item.classList.remove('active')
@@ -337,15 +271,21 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
         content.children[tappedIndex].classList.add('active')
     }
 
+    function initTab(el) {
+        const initialTab = el.dataset.initialTab
+        const nav = el.querySelector('.cm_tab__nav')
+        const targetTab = nav.children[initialTab]
+        navigateTab(targetTab)
+    }
+
     function toggleAccordion(el) {
-        playInteractionSoundEffect('assets/audio/ise/bloop.mp3')
         const accordion = querySelectorParent('.cm_accordion', el)
 
         if(accordion.classList.contains('open')) {
-            collapse(accordion)
+            collapse(accordion, el)
         }
         else {
-            expand(accordion)
+            expand(accordion, el)
 
             if(accordion.classList.contains('king')) {
                 document.querySelectorAll('.cm_accordion').forEach(item => {
@@ -353,15 +293,16 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
                     const currentGroup = accordion.dataset.group
 
                     if(item !== accordion && item.classList.contains('open') && group === currentGroup) {
-                        collapse(item)
+                        collapse(item, el)
                     }
                 })
             }
         }
 
-        function collapse(accordion) {
+        function collapse(accordion, title) {
             const body = accordion.querySelector('.cm_accordion__body')
             accordion.classList.remove('open')
+            title.setAttribute('aria-expanded', 'false');
             gsap.to(body, {
                 height: 0,
                 ease: "power3.out",
@@ -369,9 +310,10 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
             })
         }
 
-        function expand(accordion) {
+        function expand(accordion, title) {
             const body = accordion.querySelector('.cm_accordion__body')
             accordion.classList.add('open')
+            title.setAttribute('aria-expanded', 'true');
             gsap.to(body, {
                 height: 'auto',
                 ease: "power3.out",
@@ -415,55 +357,48 @@ let isRtl = window.getComputedStyle(document.documentElement).getPropertyValue('
 // Inits
 {
     // Calls
-    weskeletonSettingsInit()
+    if(typeof AOS !== 'undefined') {
+        AOS.init();
+    }
 
-    AOS.init();
-
-    isRtl = false;
-
-    iziToast.settings({
-        icon: '',
-        theme: 'dark',
-        rtl: isRtl,
-        position: isRtl ? 'bottomLeft' : 'bottomRight',
-    });
+    if(typeof iziToast !== 'undefined') {
+        iziToast.settings({
+            icon: '',
+            theme: 'dark',
+            rtl: getDirection(),
+            position: 'bottomCenter',
+        });
+    }
 
     // Query Selections
-    document.querySelectorAll('button').forEach(item => {
-        item.addEventListener('click', () => {
-            playInteractionSoundEffect('assets/audio/ise/drop.mp3')
+    if(typeof Plyr !== 'undefined') {
+        document.querySelectorAll('audio:not(.solid)').forEach(audio => {
+            new Plyr(audio, {
+                settings: [],
+                controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+            });
         })
-    })
+        document.querySelectorAll('video:not(.solid)').forEach(video => {
+            new Plyr(video, {
+                settings: [],
+                controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'pip', 'fullscreen'],
+                //ratio: '1:1'
+            });
+        })
+    }
 
-    document.querySelectorAll('input, textarea').forEach(item => {
-        if(item.type === 'radio' || item.type === 'checkbox') {
-            item.addEventListener('change', () => {
-                playInteractionSoundEffect('assets/audio/ise/water-drop.mp3')
-            })
-        }
-        if(item.type === 'text' || item.type === 'password' || item.type === 'number' || item.type === 'email' || item.tagName.toLowerCase() === 'textarea') {
-            item.addEventListener('focus', () => {
-                playInteractionSoundEffect('assets/audio/ise/click.mp3')
-            })
-        }
-    })
+    if(typeof autosize !== 'undefined') {
+        document.querySelectorAll('textarea').forEach(item => {
+            autosize(item)
+        })
+    }
 
-    document.querySelectorAll('audio:not(.solid)').forEach(audio => {
-        new Plyr(audio, {
-            settings: [],
-            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
-        });
+    document.querySelectorAll('.cm_tab').forEach(item => {
+        initTab(item)
     })
-    document.querySelectorAll('video:not(.solid)').forEach(video => {
-        new Plyr(video, {
-            settings: [],
-            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'pip', 'fullscreen'],
-            //ratio: '1:1'
-        });
-    })
-
-    document.querySelectorAll('textarea').forEach(item => {
-        autosize(item)
-    })
-
 }
+
+
+
+
+

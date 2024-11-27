@@ -58,13 +58,17 @@ function Virtual(_ref) {
     }
     return slideEl;
   }
-  function update(force) {
+  function update(force, beforeInit) {
     const {
       slidesPerView,
       slidesPerGroup,
       centeredSlides,
-      loop: isLoop
+      loop: isLoop,
+      initialSlide
     } = swiper.params;
+    if (beforeInit && !isLoop && initialSlide > 0) {
+      return;
+    }
     const {
       addSlidesBefore,
       addSlidesAfter
@@ -314,7 +318,7 @@ function Virtual(_ref) {
     swiper.classNames.push(`${swiper.params.containerModifierClass}virtual`);
     swiper.params.watchSlidesProgress = true;
     swiper.originalParams.watchSlidesProgress = true;
-    update();
+    update(false, true);
   });
   on('setTranslate', () => {
     if (!swiper.params.virtual.enabled) return;

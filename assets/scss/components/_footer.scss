@@ -1,3 +1,21 @@
 .cm_footer {
+  &__logo {
+    display: block;
 
+    img {
+      transition: .85s cubic-bezier(0.19, 1, 0.22, 1);
+      transform: scale3d(1, 1, 1);
+      display: block;
+    }
+
+    &:hover {
+      img {
+        transform: scale3d(1.02, 1.02, 1);
+      }
+    }
+  }
+
+  &__copyright {
+
+  }
 }

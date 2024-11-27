@@ -143,15 +143,16 @@ function Thumb(_ref) {
           init();
           update(true);
         } else if (thumbsElement) {
+          const eventName = `${swiper.params.eventsPrefix}init`;
           const onThumbsSwiper = e => {
             thumbs.swiper = e.detail[0];
-            thumbsElement.removeEventListener('init', onThumbsSwiper);
+            thumbsElement.removeEventListener(eventName, onThumbsSwiper);
             init();
             update(true);
             thumbs.swiper.update();
             swiper.update();
           };
-          thumbsElement.addEventListener('init', onThumbsSwiper);
+          thumbsElement.addEventListener(eventName, onThumbsSwiper);
         }
         return thumbsElement;
       };

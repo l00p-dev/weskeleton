@@ -1,12 +1,12 @@
 :root {
-  --primary-color: 30, 150, 250;
+  --primary-color: 20, 150, 250;
   --secondary-color: 10, 50, 70;
   --foreground-color: 35, 40, 50;
   --background-color: 255, 255, 255;
   --gray-color: 133, 132, 141;
 
   --success-color: 70, 170, 80;
-  --warning-color: 230, 120, 0;
+  --warning-color: 255, 150, 0;
   --error-color: 240, 40, 60;
 
   --gray-0-color : 250, 250, 250;
@@ -74,4 +74,4 @@ $cl-gray-22 : var(--gray-22-color);
 $cl-gray-23 : var(--gray-23-color);
 $cl-gray-24 : var(--gray-24-color);
 
-$font-size-body: 14px;
+$font-size-body: 15px;

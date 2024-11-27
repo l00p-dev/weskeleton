@@ -12,6 +12,7 @@
   &__preview {
     display: block;
     cursor: pointer;
+    background-color: rgba(white, .05) !important;
 
     &.placeholder {
       color: rgba($color-foreground, .3);
@@ -25,6 +26,7 @@
   &__dropdown {
     background-color: rgba($color-background, .92);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     position: absolute;
     inset: 0;
     bottom: unset;

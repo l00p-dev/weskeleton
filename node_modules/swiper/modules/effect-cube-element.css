@@ -1,4 +1,4 @@
-.swiper-cube {
+.swiper.swiper-cube {
   overflow: visible;
 }
 .swiper-cube ::slotted(swiper-slide) {

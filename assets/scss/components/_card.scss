@@ -1,3 +1,34 @@
 .cm_card {
+  &__post {
+    position: relative;
 
+    &__cover {
+      overflow: hidden;
+      position: relative;
+      @include ratio(6, 5);
+
+      img {
+        transition: .85s cubic-bezier(0.19, 1, 0.22, 1);
+        transform: scale3d(1, 1, 1);
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &:hover &__cover {
+      img {
+        transform: scale3d(1.04, 1.04, 1);
+      }
+    }
+
+    &__title {
+      a {
+        @extend .stretched-link;
+      }
+    }
+  }
 }
